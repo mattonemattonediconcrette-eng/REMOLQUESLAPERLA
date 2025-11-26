@@ -94,3 +94,31 @@ footer {
   padding: 15px;
   text-align: center;
 }
+
+/* WhatsApp floating button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+
+
+.logo {
+  width: 220px;
+  margin: 10px auto;
+  display: block;
+}
