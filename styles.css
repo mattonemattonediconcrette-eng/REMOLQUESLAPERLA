@@ -1,9 +1,22 @@
+/* ========================= */
+/*         GLOBAL            */
+/* ========================= */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f4f4;
   color: #222;
 }
+
+h2, h3 {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+/* ========================= */
+/*         HEADER            */
+/* ========================= */
 
 header {
   background: #111;
@@ -24,8 +37,16 @@ nav a {
   text-decoration: none;
 }
 
+nav a:hover {
+  color: #ffb400;
+}
+
+/* ========================= */
+/*          HERO             */
+/* ========================= */
+
 .hero {
-  background: url('https://i.imgur.com/i1z3YkJ.jpeg') center/cover no-repeat;
+  background: url('https://picsum.photos/id/1011/1600/600') center/cover no-repeat;
   height: 360px;
   display: flex;
   justify-content: center;
@@ -51,6 +72,14 @@ nav a {
   font-weight: bold;
 }
 
+.btn:hover {
+  background: #ffc94d;
+}
+
+/* ========================= */
+/*         MODELOS           */
+/* ========================= */
+
 #modelos {
   padding: 40px 20px;
   text-align: center;
@@ -66,6 +95,12 @@ nav a {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.precio {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff9600;
+}
+
 .galeria {
   display: flex;
   flex-wrap: wrap;
@@ -78,13 +113,16 @@ nav a {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
+  transition: transform .2s ease;
 }
 
-.precio {
-  font-size: 22px;
-  font-weight: bold;
-  color: #ff9600;
+.galeria img:hover {
+  transform: scale(1.05);
 }
+
+/* ========================= */
+/*         CONTACTO          */
+/* ========================= */
 
 #contacto {
   padding: 40px 20px;
@@ -93,14 +131,20 @@ nav a {
   text-align: center;
 }
 
-footer {
-  background: #111;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
+#contacto a {
+  color: #ffb400;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* BOTÓN WHATSAPP FLOTANTE BONITO */
+#contacto a:hover {
+  text-decoration: underline;
+}
+
+/* ========================= */
+/*         WHATSAPP          */
+/* ========================= */
+
 .btn-wsp {
   position: fixed;
   bottom: 25px;
@@ -115,7 +159,7 @@ footer {
   align-items: center;
   z-index: 999;
   animation: pop 0.8s ease;
-  transition: transform .2s;
+  transition: transform .2s, box-shadow .2s;
 }
 
 .btn-wsp img {
@@ -124,9 +168,21 @@ footer {
 
 .btn-wsp:hover {
   transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
 @keyframes pop {
   0% { transform: scale(0); }
   100% { transform: scale(1); }
+}
+
+/* ========================= */
+/*         FOOTER            */
+/* ========================= */
+
+footer {
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
 }
