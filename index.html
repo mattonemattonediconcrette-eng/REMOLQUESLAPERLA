@@ -1,263 +1,522 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Remolques La Perla - Fabricación premium de remolques multiusos, food trucks y carga en Jalisco.">
-  <meta name="theme-color" content="#1a1f3a">
-  <title>Remolques La Perla - Fabricación Premium</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Remolques La Perla - Catálogo</title>
+<meta name="description" content="Remolques La Perla - Catálogo completo de remolques: food trucks, multiusos, ganaderos y oficinas móviles. Contacto por WhatsApp." />
 
-  <!-- Optimizaciones -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+  :root{
+    --primary:#6b4423;
+    --secondary:#d97706;
+    --bg:#f8f1e7;
+    --card:#ffffff;
+    --muted:#6b6b6b;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:#111}
+  /* HEADER / HERO */
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:linear-gradient(90deg,var(--primary),#4e2f1a);color:#fff}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:48px;width:auto;border-radius:8px;background:#fff;padding:4px}
+  .brand h1{margin:0;font-size:20px;letter-spacing:1px}
+  .hero{display:flex;gap:24px;align-items:center;padding:36px 24px;background-image:url('assets/hero-bg.jpg');background-size:cover;background-position:center;color:#fff}
+  .hero .copy{max-width:720px;background:rgba(0,0,0,0.35);padding:22px;border-radius:14px}
+  .hero h2{margin:0 0 8px;font-size:34px}
+  .hero p{margin:0 0 12px;color:#f0e9df}
+  .hero .cta{display:inline-block;background:var(--secondary);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none}
+  /* LAYOUT */
+  .container{width:95%;max-width:1200px;margin:26px auto}
+  .controls{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+  .search{flex:1;min-width:220px}
+  .search input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #ddd}
+  .filters{display:flex;gap:8px;flex-wrap:wrap}
+  .filter-btn{padding:8px 12px;border-radius:10px;background:#fff;border:1px solid #eee;cursor:pointer}
+  .filter-btn.active{background:var(--primary);color:#fff;border-color:rgba(0,0,0,0.06)}
+  /* GRID */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.07);cursor:pointer;transition:transform .17s,box-shadow .17s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+  .card img{width:100%;height:170px;object-fit:cover;display:block}
+  .card-body{padding:12px}
+  .card-body h3{margin:0;font-size:18px;color:var(--primary)}
+  .card-body p{margin:8px 0 0;color:var(--muted);font-size:14px}
+  .tag-row{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+  .price{background:var(--secondary);color:#fff;padding:8px 10px;border-radius:8px;font-weight:700}
+  .wh-btn{background:#25D366;color:#fff;padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:700}
+  /* MODAL */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+  .modal{width:100%;max-width:980px;background:#fff;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:420px 1fr}
+  .modal-left{background:#fafafa;padding:16px}
+  .modal-left img{width:100%;height:320px;object-fit:cover;border-radius:10px}
+  .modal-left .quick{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .modal-body{padding:20px}
+  .modal-body h2{margin:0 0 8px;color:var(--primary)}
+  .specs{margin:12px 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .specs li{background:#f6f6f6;padding:8px;border-radius:8px;font-size:14px}
+  .modal-desc{color:#444;line-height:1.45}
+  .modal-actions{display:flex;gap:12px;margin-top:16px}
+  .btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer}
+  .btn-primary{background:var(--secondary);color:#fff;font-weight:700}
+  .btn-outline{background:#fff;border:1px solid #ddd}
+  .close-x{position:absolute;right:12px;top:10px;font-size:22px;background:#fff;border-radius:8px;padding:6px;cursor:pointer}
+  /* FOOTER */
+  footer{padding:20px;text-align:center;color:#666}
+  /* RESPONSIVE */
+  @media (max-width:920px){
+    .modal{grid-template-columns:1fr}
+    .modal-left img{height:220px}
+  }
+</style>
 </head>
-
 <body>
 
-<!-- BOTÓN WHATSAPP FLOTANTE -->
-<a href="https://wa.me/5213347540496?text=Hola%20Remolques%20La%20Perla%2C%20me%20interesa%20información"
-   class="whatsapp-btn" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- HEADER -->
-<header class="header">
-  <div class="header-content">
-    <img src="assets/logo.png" alt="Logo Remolques La Perla" class="logo-img">
-    <div>
-      <h1 class="logo-text">REMOLQUES LA PERLA</h1>
-      <p class="tagline">Fabricación Premium de Remolques</p>
-    </div>
-  </div>
-
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#modelos">Modelos</a>
-    <a href="#venta-renta">Venta/Renta</a>
-    <a href="#fabricacion">Proceso</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section id="inicio" class="hero">
-  <div class="hero-text">
-    <h2>Remolques Multiusos y Especializados</h2>
-    <p>Diseño profesional • Resistencia extrema • Listos para emplacar</p>
-    <a href="#modelos" class="btn btn-primary">VER CATÁLOGO</a>
-  </div>
-</section>
-
-<!-- CONTENIDO PRINCIPAL -->
-<main>
-
-  <!-- MODELOS -->
-  <section id="modelos" class="modelos-section">
-    <h2>Nuestros Modelos</h2>
-    <p class="section-subtitle">Selecciona la categoría para ver ejemplos.</p>
-
-    <!-- MULTIUSOS -->
-    <div class="categoria">
-      <div class="categoria-header">
-        <h3>🚛 Remolques Multiusos</h3>
-        <span class="precio-badge">$9,500 - $55,000 MXN</span>
-      </div>
-      <div class="galeria">
-        <div class="foto-item" onclick="mostrarDetalles('multiusos-1')">
-          <img src="assets/remolque-multiusos-1.jpg">
-          <p>Multiusos 1 - $9,500</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('multiusos-2')">
-          <img src="assets/remolque-multiusos-2.jpg">
-          <p>Multiusos 2</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- FOOD TRUCKS -->
-    <div class="categoria">
-      <div class="categoria-header">
-        <h3>🍔 Food Trucks Móviles</h3>
-        <span class="precio-badge">$45,000 - $75,000 MXN</span>
-      </div>
-      <div class="galeria">
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-1')">
-          <img src="assets/food-truck-1.jpg">
-          <p>Food Truck 1</p>
-        </div>
-        <div class="foto-item">
-          <img src="assets/food-truck-2.jpg">
-          <p>Food Truck 2 - $60,000</p>
-        </div>
-        <div class="foto-item">
-          <img src="assets/food-truck-3.jpg">
-          <p>Food Truck 3</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARGA -->
-    <div class="categoria">
-      <div class="categoria-header">
-        <h3>📦 Remolques de Carga General</h3>
-        <span class="precio-badge">$15,000 - $22,000 MXN</span>
-      </div>
-      <div class="galeria">
-        <div class="foto-item">
-          <img src="assets/carga-1.jpg">
-          <p>Carga 1</p>
-        </div>
-        <div class="foto-item">
-          <img src="assets/carga-2.jpg">
-          <p>Carga 2</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- GANADEROS -->
-    <div class="categoria">
-      <div class="categoria-header">
-        <h3>🐄 Remolques Ganaderos</h3>
-        <span class="precio-badge">$25,000 - $45,000 MXN</span>
-      </div>
-      <div class="galeria">
-        <div class="foto-item">
-          <img src="assets/ganadero-2.jpg">
-          <p>Ganadero 2 - $60,000</p>
-        </div>
-        <div class="foto-item">
-          <img src="assets/ganadero-4.jpg">
-          <p>Ganadero 4 - $105,000</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- OFICINAS -->
-    <div class="categoria">
-      <div class="categoria-header">
-        <h3>🏢 Oficinas Móviles</h3>
-        <span class="precio-badge">$35,000 - $65,000 MXN</span>
-      </div>
-      <div class="galeria">
-        <div class="foto-item">
-          <img src="assets/oficina-movil-1.jpg">
-          <p>Oficina Móvil 1</p>
-        </div>
-        <div class="foto-item">
-          <img src="assets/oficina-movil-2.jpg">
-          <p>Oficina Móvil 2</p>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- VENTA Y RENTA -->
-  <section id="venta-renta" class="venta-renta-section">
-    <h2>Venta y Renta de Remolques</h2>
-
-    <div class="venta-renta-grid">
-      <div class="venta-renta-card">
-        <h3>Venta</h3>
-        <p>Remolques nuevos, certificados, y listos para emplacar.</p>
-        <a href="https://wa.me/5213347540496?text=Hola%20vengo%20por%20información%20de%20venta" class="btn btn-primary">
-          Contactar Venta
-        </a>
-      </div>
-
-      <div class="venta-renta-card">
-        <h3>Renta</h3>
-        <p>Opciones por día, semana o mes. Mantenimiento incluido.</p>
-        <a href="https://wa.me/5213347540496?text=Hola%20vengo%20por%20información%20de%20renta" class="btn btn-primary">
-          Contactar Renta
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESO -->
-  <section id="fabricacion" class="fabricacion-section">
-    <h2>Proceso de Fabricación</h2>
-
-    <div class="proceso-grid">
-      <div class="proceso-card">
-        <div class="proceso-number">1</div>
-        <h4>Diseño</h4>
-        <p>Plan personalizado a tus medidas.</p>
-      </div>
-
-      <div class="proceso-card">
-        <div class="proceso-number">2</div>
-        <h4>Estructura</h4>
-        <p>Soldadura experta y armado reforzado.</p>
-      </div>
-
-      <div class="proceso-card">
-        <div class="proceso-number">3</div>
-        <h4>Acabados</h4>
-        <p>Detalles, pintura y ajustes finales.</p>
-      </div>
-
-      <div class="proceso-card">
-        <div class="proceso-number">4</div>
-        <h4>Pruebas</h4>
-        <p>Control de calidad completo.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="contacto-section">
-    <h2>Contacto</h2>
-
-    <div class="contact-grid">
+  <!-- TOP / HERO -->
+  <div class="topbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Logo Remolques La Perla">
       <div>
-        <p><i class="fas fa-phone"></i> 33 4754 0496</p>
-        <p><i class="fas fa-map-pin"></i> Tlajomulco de Zúñiga, Jalisco</p>
-        <p><i class="fas fa-clock"></i> Lunes a Sábado: 9am - 7pm</p>
+        <h1>Remolques La Perla</h1>
+        <div style="font-size:12px;color:#ffeecc;margin-top:3px">Fabricación premium • Jalisco</div>
       </div>
+    </div>
+    <div>
+      <a href="https://wa.me/5213347540496" target="_blank" style="background:#25D366;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700">Contactar por WhatsApp</a>
+    </div>
+  </div>
 
-      <form class="contact-form">
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="tel" placeholder="Teléfono" required>
-        <textarea placeholder="Mensaje"></textarea>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </form>
+  <section class="hero" role="banner" aria-label="Hero">
+    <div style="flex:1"></div>
+    <div class="copy" style="backdrop-filter:blur(2px)">
+      <h2>Remolques Multiusos • Food Trucks • Ganaderos • Oficinas Móviles</h2>
+      <p>Fabricación premium en Guadalajara. Personalización, soporte para emplacar y entregas según proyecto. Consulta precios y tiempos por WhatsApp.</p>
+      <a class="cta" href="#catalogo">Ver catálogo</a>
     </div>
   </section>
 
-</main>
+  <main class="container" id="catalogo">
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2025 Remolques La Perla. Todos los derechos reservados.</p>
-</footer>
+    <!-- CONTROLES -->
+    <div class="controls">
+      <div class="search">
+        <input id="searchInput" placeholder="Buscar por modelo, categoría o palabra clave..." />
+      </div>
 
-<!-- MODAL DETALLES -->
-<div id="modalDetalles" class="modal">
-  <span class="modal-close" onclick="cerrarDetalles()">&times;</span>
-  <img id="modalImg" class="modal-content">
-  <div id="modalTxt" class="modal-caption"></div>
-</div>
+      <div class="filters" role="tablist" aria-label="Filtros">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="food">Food Trucks</button>
+        <button class="filter-btn" data-filter="multi">Multiusos</button>
+        <button class="filter-btn" data-filter="ganado">Ganaderos</button>
+        <button class="filter-btn" data-filter="oficina">Oficinas</button>
+      </div>
+    </div>
 
-<!-- SCRIPT -->
+    <!-- GRID -->
+    <div id="grid" class="grid" aria-live="polite"></div>
+
+  </main>
+
+  <!-- MODAL -->
+  <div id="modalOverlay" class="modal-overlay" onclick="cerrarModal(event)">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="event.stopPropagation()">
+      <span class="close-x" onclick="cerrarModal(event)">✕</span>
+      <div class="modal-left">
+        <img id="modalImage" src="" alt="">
+        <div class="quick">
+          <div style="font-size:13px;color:#666">Medidas:</div>
+          <div id="modalMedidas" style="font-weight:700"></div>
+        </div>
+        <div style="margin-top:12px">
+          <div style="font-size:13px;color:#666">Opciones</div>
+          <div id="modalOpciones" style="margin-top:6px"></div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <h2 id="modalTitle"></h2>
+        <div style="display:flex;gap:12px;align-items:center">
+          <div style="font-size:18px;color:#333;font-weight:800" id="modalPrice"></div>
+          <div style="color:#888;font-size:14px" id="modalCategoria"></div>
+        </div>
+
+        <p class="modal-desc" id="modalDesc"></p>
+
+        <h4 style="margin-top:14px">Especificaciones</h4>
+        <ul class="specs" id="modalSpecs"></ul>
+
+        <div class="modal-actions">
+          <a id="modalWhats" class="btn btn-primary" target="_blank">Contactar por WhatsApp</a>
+          <button class="btn btn-outline" onclick="abrirMapa()">Ver ubicación</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER / MAP -->
+  <footer>
+    <div style="max-width:900px;margin:0 auto;text-align:left">
+      <h3 style="margin-bottom:8px">Ubicación</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px">
+          <p style="margin:0 0 8px"><strong>Remolques La Perla</strong><br/>Tlajomulco de Zúñiga, Jalisco</p>
+          <p style="margin:0">📱 <a href="tel:+5213347540496">3347540496</a> • 📧 <a href="mailto:remolqueslaperla@gmail.com">remolqueslaperla@gmail.com</a></p>
+        </div>
+        <div style="flex:1;min-width:300px">
+          <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.167789521685!2d-103.5122911!3d20.5403146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f550069f7efe1%3A0x95ec392f8fcaa3d3!2sRemolques%20La%20Perla!5e0!3m2!1ses-419!2smx!4v1764324631003!5m2!1ses-419!2smx" width="100%" height="180" style="border:0;border-radius:10px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:13px;color:#777">&copy; 2025 Remolques La Perla. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a id="whatsappFloat" href="https://wa.me/5213347540496" target="_blank" title="Contactar por WhatsApp" style="position:fixed;right:18px;bottom:18px;background:#25D366;color:white;padding:14px;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,0.2);z-index:9999;text-decoration:none;font-weight:800">WA</a>
+
 <script>
-function mostrarDetalles(id) {
-  const modal = document.getElementById("modalDetalles");
-  const img = document.getElementById("modalImg");
-  const txt = document.getElementById("modalTxt");
+/* =========================
+   BASE DE DATOS - MODELOS
+   =========================
+   Rutas de imagen: assets/<nombre>.jpg
+   Ajusta la carpeta si la tuya es distinta.
+*/
+const modelos = [
+  /* FOOD TRUCKS */
+  {
+    id:'food-truck-1',
+    categoria:'Food Trucks',
+    tag:'food',
+    nombre:'Food Truck 1 - Proyecto Personalizado',
+    precio:'Consultar / Personalizado',
+    imagen:'assets/food-truck-1.jpg',
+    descripcion:'Modelo personalizado: hacemos renders y adaptación a tu idea. Incluye instalación eléctrica básica y fregadero.',
+    medidas:'1.50 x 2.00 m (base)',
+    opciones:'Consulta tu idea por WhatsApp',
+    specs:{'Acabado':'Sanitario','Equipamiento':'Fregadero, barra','Rin':'13'}
+  },
+  {
+    id:'food-truck-2',
+    categoria:'Food Trucks',
+    tag:'food',
+    nombre:'Food Truck 2 - Mini',
+    precio:'$60,000 MXN',
+    imagen:'assets/food-truck-2.jpg',
+    descripcion:'Modelo mini listo para emplacar, incluye 2 equipos de cocina.',
+    medidas:'1.50 x 2.00 m',
+    opciones:'Entrega inmediata',
+    specs:{'Equipos':'2 equipos de cocina','Muelles':'2000 lb','Listo':'Sí'}
+  },
+  {
+    id:'food-truck-3',
+    categoria:'Food Trucks',
+    tag:'food',
+    nombre:'Food Truck 3 - Perfet',
+    precio:'$70,000 / $92,000 / $99,000 MXN',
+    imagen:'assets/food-truck-3.jpg',
+    descripcion:'Modelo perfet, incluye 3 equipos de cocina. Opcional doble eje.',
+    medidas:'2 x 3 m',
+    opciones:'Opcional doble eje',
+    specs:{'Equipos':'3','Rin':'15','Capacidad':'3500 lb'}
+  },
+  {
+    id:'food-truck-4',
+    categoria:'Food Trucks',
+    tag:'food',
+    nombre:'Food Truck 4 - Mini Madera',
+    precio:'$63,500 MXN',
+    imagen:'assets/food-truck-4.jpg',
+    descripcion:'Modelo mini con acabado en madera, incluye todo lo necesario.',
+    medidas:'1.50 x 2.00 m',
+    opciones:'Entrega inmediata',
+    specs:{'Acabado':'Madera','Rin':'13','Muelles':'2000 lb'}
+  },
+  {
+    id:'food-truck-4-alt',
+    categoria:'Food Trucks',
+    tag:'food',
+    nombre:'Food Truck 4 - Acero Inoxidable',
+    precio:'$100,000 MXN',
+    imagen:'assets/food-truck-4-alt.jpg',
+    descripcion:'Forrado y equipado en acero inoxidable. Medida personalizable.',
+    medidas:'1.50 x 2.50 m (personalizable)',
+    opciones:'Precio para medida base',
+    specs:{'Material':'Acero inoxidable','Listo':'Sí'}
+  },
 
-  img.src = "assets/" + id + ".jpg";
-  txt.textContent = id.replace("-", " ").toUpperCase();
+  /* MULTIUSOS */
+  {
+    id:'remolque-multiusos-1',
+    categoria:'Multiusos',
+    tag:'multi',
+    nombre:'Remolque Multiusos 1',
+    precio:'$9,500 MXN',
+    imagen:'assets/remolque-multiusos-1.jpg',
+    descripcion:'Compacto y resistente. Ideal para cuatrimotos.',
+    medidas:'130cm x 180cm',
+    opciones:'Venta inmediata',
+    specs:{'Carga':'700 kg','Rin':'13','Estructura':'Reforzada'}
+  },
+  {
+    id:'remolque-multiusos-2',
+    categoria:'Multiusos',
+    tag:'multi',
+    nombre:'Remolque Multiusos 2',
+    precio:'Consultar',
+    imagen:'assets/remolque-multiusos-2.jpg',
+    descripcion:'Mayor capacidad y robustez para traslados ligeros.',
+    medidas:'140cm x 250cm',
+    opciones:'Venta inmediata',
+    specs:{'Capacidad':'2000 lb','Rin':'13'}
+  },
+  {
+    id:'remolque-multiusos-3',
+    categoria:'Multiusos',
+    tag:'multi',
+    nombre:'Remolque Multiusos 3',
+    precio:'Consultar',
+    imagen:'assets/remolque-multiusos-3.jpg',
+    descripcion:'Versátil para múltiples aplicaciones comerciales.',
+    medidas:'Varía según proyecto',
+    opciones:'Personalizable',
+    specs:{'Uso':'Multi-propósito','Estructura':'Acero'}
+  },
+  {
+    id:'remolque-multiusos-4',
+    categoria:'Multiusos',
+    tag:'multi',
+    nombre:'Remolque Multiusos 4 / Cama Baja 3T',
+    precio:'$50,000 MXN',
+    imagen:'assets/cama-baja-3t.jpg',
+    descripcion:'Cama baja 3 toneladas, 5 birlos, listo para emplacar.',
+    medidas:'Consultar',
+    opciones:'Venta inmediata',
+    specs:{'Soporta':'3 toneladas','Birlos':'5','Estado':'Nuevo'}
+  },
+  {
+    id:'cama-baja-6t',
+    categoria:'Multiusos',
+    tag:'multi',
+    nombre:'Cama Baja 6T',
+    precio:'$70,000 MXN',
+    imagen:'assets/cama-baja-6t.jpg',
+    descripcion:'Cama baja doble eje, 8 birlos, soporta 6 toneladas.',
+    medidas:'Consultar',
+    opciones:'Venta inmediata',
+    specs:{'Soporta':'6 toneladas','Birlos':'8','Ejes':'Doble'}
+  },
 
-  modal.style.display = "block";
+  /* GANADEROS */
+  {
+    id:'ganadero-2',
+    categoria:'Ganaderos',
+    tag:'ganado',
+    nombre:'Remolque Ganadero 2 - Doble Eje',
+    precio:'$60,000 MXN',
+    imagen:'assets/ganadero-2.jpg',
+    descripcion:'Ideal para 2 caballos, doble eje, listo para emplacar.',
+    medidas:'Consultar',
+    opciones:'Venta inmediata',
+    specs:{'Ejes':'Doble','Capacidad':'2 caballos','Incluye':'Redilas'}
+  },
+  {
+    id:'ganadero-4',
+    categoria:'Ganaderos',
+    tag:'ganado',
+    nombre:'Remolque Ganadero 4 - Norte',
+    precio:'$105,000 MXN',
+    imagen:'assets/ganadero-4.jpg',
+    descripcion:'Remolque nuevo y equipado con piso de madera y accesorios ganaderos.',
+    medidas:'5 ft x 16 ft',
+    opciones:'Disponible en 12", 14"',
+    specs:{'Llantas':'700-15','Pisos':'Madera','Redilas':'Desmontables'}
+  },
+
+  /* OFICINAS MÓVILES */
+  {
+    id:'ganadero-1-as-oficina',
+    categoria:'Oficinas',
+    tag:'oficina',
+    nombre:'Remolque Ganadero 1 (Reconvertido a Oficina Móvil)',
+    precio:'Consultar',
+    imagen:'assets/ganadero-1.jpg',
+    descripcion:'Remolque convertido en oficina móvil, ideal como módulo de trabajo móvil.',
+    medidas:'5 x 16 pies',
+    opciones:'Renta / Venta',
+    specs:{'Uso':'Oficina móvil','Aislamiento':'Básico','Ventanas':'Incluidas'}
+  },
+  {
+    id:'oficina-movil-1',
+    categoria:'Oficinas',
+    tag:'oficina',
+    nombre:'Oficina Móvil Premium',
+    precio:'$210,000 MXN',
+    imagen:'assets/oficina-movil-1.jpg',
+    descripcion:'Oficina móvil equipada con acabados premium, lista para trabajar.',
+    medidas:'Consultar',
+    opciones:'Renta disponible',
+    specs:{'Equipamiento':'Total','Aislamiento':'Térmico','Listo':'Sí'}
+  },
+  {
+    id:'oficina-movil-5',
+    categoria:'Oficinas',
+    tag:'oficina',
+    nombre:'Oficina Móvil 5',
+    precio:'$120,000 MXN',
+    imagen:'assets/oficina-movil-5.jpg',
+    descripcion:'Oficina móvil equipada, ideal para proyectos en campo o empresas que requieren movilidad.',
+    medidas:'Consultar',
+    opciones:'Venta inmediata',
+    specs:{'Aislamiento':'Térmico y acústico','Ventanas':'Seguridad','Entrega':'Inmediata'}
+  },
+  {
+    id:'oficina-movil-rellena',
+    categoria:'Oficinas',
+    tag:'oficina',
+    nombre:'Oficina Móvil Rellena - Proyecto Completo',
+    precio:'Consultar',
+    imagen:'assets/oficina-movil-rellena.jpg',
+    descripcion:'Oficina móvil completamente equipada y funcional. Proyecto personalizado.',
+    medidas:'Consultar',
+    opciones:'Venta e implementación personalizada',
+    specs:{'Mobiliario':'Incluido','Iluminación':'Completa'}
+  }
+];
+
+/* =========================
+   RENDERING Y FILTROS
+   ========================= */
+const grid = document.getElementById('grid');
+const searchInput = document.getElementById('searchInput');
+const filterBtns = document.querySelectorAll('.filter-btn');
+
+function crearCard(modelo){
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.setAttribute('data-tag', modelo.tag);
+  div.setAttribute('data-nombre', modelo.nombre.toLowerCase());
+  div.setAttribute('data-cat', modelo.categoria.toLowerCase());
+
+  div.innerHTML = `
+    <img src="${modelo.imagen}" alt="${modelo.nombre}">
+    <div class="card-body">
+      <h3>${modelo.nombre}</h3>
+      <p style="margin-top:8px">${modelo.descripcion}</p>
+      <div class="tag-row">
+        <div class="price">${modelo.precio}</div>
+        <a class="wh-btn" href="https://wa.me/5213347540496?text=${encodeURIComponent('Hola%20Remolques%20La%20Perla%20-%20Me%20interesa%20el%20modelo%20' + modelo.nombre + '%20(%20ID:%20' + modelo.id + ' )')}" target="_blank">WA</a>
+      </div>
+    </div>
+  `;
+  div.addEventListener('click', ()=> abrirModal(modelo.id));
+  return div;
 }
 
-function cerrarDetalles() {
-  document.getElementById("modalDetalles").style.display = "none";
+function renderAll(list){
+  grid.innerHTML = '';
+  if(!list.length){ grid.innerHTML = '<div style="grid-column:1/-1;padding:30px;text-align:center;color:#666">No hay items que coincidan.</div>'; return }
+  list.forEach(m => grid.appendChild(crearCard(m)));
 }
+
+// render inicial
+renderAll(modelos);
+
+// FILTROS
+filterBtns.forEach(b=>{
+  b.addEventListener('click', ()=>{
+    filterBtns.forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.getAttribute('data-filter');
+    if(f==='all') renderAll(modelos);
+    else renderAll(modelos.filter(m=>m.tag===f));
+  });
+});
+
+// BUSCADOR
+searchInput.addEventListener('input', (e)=>{
+  const q = e.target.value.trim().toLowerCase();
+  if(!q) {
+    const active = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+    if(active==='all') renderAll(modelos);
+    else renderAll(modelos.filter(m=>m.tag===active));
+    return;
+  }
+  const filtered = modelos.filter(m=>{
+    return m.nombre.toLowerCase().includes(q) ||
+           m.descripcion.toLowerCase().includes(q) ||
+           m.categoria.toLowerCase().includes(q)
+  });
+  renderAll(filtered);
+});
+
+/* =========================
+   MODAL: abrir / cerrar / poblar
+   ========================= */
+const modalOverlay = document.getElementById('modalOverlay');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalPrice = document.getElementById('modalPrice');
+const modalDesc = document.getElementById('modalDesc');
+const modalSpecs = document.getElementById('modalSpecs');
+const modalMedidas = document.getElementById('modalMedidas');
+const modalOpciones = document.getElementById('modalOpciones');
+const modalCategoria = document.getElementById('modalCategoria');
+const modalWhats = document.getElementById('modalWhats');
+
+function abrirModal(id){
+  const modelo = modelos.find(m=>m.id===id);
+  if(!modelo) return;
+  modalImage.src = modelo.imagen;
+  modalTitle.textContent = modelo.nombre;
+  modalPrice.textContent = modelo.precio;
+  modalDesc.textContent = modelo.descripcion;
+  modalCategoria.textContent = ' • ' + modelo.categoria;
+  modalMedidas.textContent = modelo.medidas;
+  modalOpciones.textContent = modelo.opciones;
+
+  // specs
+  modalSpecs.innerHTML = '';
+  for(const k in modelo.specs){
+    const li = document.createElement('li');
+    li.textContent = `${k}: ${modelo.specs[k]}`;
+    modalSpecs.appendChild(li);
+  }
+
+  // WhatsApp link con texto dinámico
+  const mensaje = `Hola Remolques La Perla, estoy interesado en el modelo *${modelo.nombre}* (ID: ${modelo.id}) — ¿me pueden dar precio y disponibilidad?`;
+  modalWhats.href = `https://wa.me/5213347540496?text=${encodeURIComponent(mensaje)}`;
+
+  modalOverlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModal(e){
+  // cerrar si el overlay fue clickeado o el botón
+  if(e && e.target && (e.target===modalOverlay || e.target.classList.contains('close-x'))){
+    modalOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+  } else if(!e){ // llamada directa
+    modalOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') cerrarModal();
+});
+
+/* =========================
+   UTIL: abrir mapa en ventana
+   ========================= */
+function abrirMapa(){
+  window.open('https://www.google.com/maps/place/Remolques+La+Perla/@20.5403146,-103.5122911,15z', '_blank');
+}
+
+/* =========================
+   Si necesitas cargar más items dinámicamente, usa:
+   modelos.push(nuevoObjeto); renderAll(modelos);
+   ========================= */
 </script>
 
 </body>
