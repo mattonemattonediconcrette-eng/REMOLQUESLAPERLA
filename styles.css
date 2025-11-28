@@ -430,8 +430,6 @@ nav a:hover {
   color: var(--surface);
   text-align: center;
 }
-  text-align: center;
-}
 
 /* Grid para información y mapa */
 .contact-grid {
