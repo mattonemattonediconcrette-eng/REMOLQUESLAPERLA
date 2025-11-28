@@ -98,9 +98,13 @@
           <img src="assets/food-truck-3.jpg" alt="Food Truck 3" loading="lazy">
           <p>Food Truck 3 - $70,000 / $92,000 / $99,000</p>
         </div>
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-4')">
           <img src="assets/food-truck-4.jpg" alt="Food Truck 4" loading="lazy">
-          <p>Food Truck 4</p>
+          <p>Food Truck 4 (madera) - $63,500</p>
+        </div>
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-4-alt')">
+          <img src="assets/food-truck-4-alt.jpg" alt="Food Truck 4 Acero" loading="lazy">
+          <p>Food Truck 4 (acero) - $100,000</p>
         </div>
       </div>
     </div>
@@ -140,9 +144,9 @@
       </div>
       <p class="categoria-desc">Diseño especializado para transporte seguro de ganado. Ventilación óptima y materiales resistentes.</p>
       <div class="galeria">
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('ganadero-1')">
           <img src="assets/ganadero-1.jpg" alt="Ganadero 1" loading="lazy">
-          <p>Ganadero 1</p>
+          <p>Ganadero 1 (5x16 pies)</p>
         </div>
         <div class="foto-item">
           <img src="assets/ganadero-2.jpg" alt="Ganadero 2" loading="lazy">
@@ -167,9 +171,9 @@
       </div>
       <p class="categoria-desc">Espacios de trabajo móviles totalmente equipados. Ideales para empresas, consultoría y atención al cliente.</p>
       <div class="galeria">
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('oficina-movil-1')">
           <img src="assets/oficina-movil-1.jpg" alt="Oficina Móvil 1" loading="lazy">
-          <p>Oficina Móvil 1</p>
+          <p>Oficina Móvil 1 - $210,000</p>
         </div>
         <div class="foto-item">
           <img src="assets/oficina-movil-2.jpg" alt="Oficina Móvil 2" loading="lazy">
@@ -268,6 +272,60 @@
 
 <script>
 const remolquesData = {
+  'food-truck-4': {
+    titulo: 'Food Truck Mini Madera',
+    precio: 63500,
+    descripcion: 'Modelo mini con acabado en madera, incluye todo lo necesario.',
+    especificaciones: [
+      'Incluye 2 equipos de cocina',
+      'Rin 13',
+      'Muelles de 2000 lb',
+      'Acabado en madera',
+      'Precio con IVA',
+      'Listo para emplacar'
+    ],
+    medidas: '1.50 x 2.00 m',
+    opciones: 'Remolque nuevo, entrega inmediata'
+  },
+  'food-truck-4-alt': {
+    titulo: 'Food Truck Acero Inoxidable',
+    precio: 100000,
+    descripcion: 'Food truck forrado y equipado en acero inoxidable. Medida personalizable.',
+    especificaciones: [
+      'Forrado y equipado en acero inoxidable',
+      'Medida base: 1.50 x 2.50 m',
+      'Se fabrica en la medida que guste',
+      'Listo para emplacar'
+    ],
+    medidas: '1.50 x 2.50 m (personalizable)',
+    opciones: 'Precio mostrado para la medida base'
+  },
+  'oficina-movil-1': {
+    titulo: 'Oficina Móvil Premium',
+    precio: 210000,
+    descripcion: 'Oficina móvil equipada, lista para trabajar en cualquier lugar.',
+    especificaciones: [
+      'Totalmente equipada',
+      'Acabados premium',
+      'Listo para emplacar',
+      'Entrega inmediata'
+    ],
+    medidas: 'Consultar dimensiones',
+    opciones: 'Renta disponible, consulta por WhatsApp'
+  },
+  'ganadero-1': {
+    titulo: 'Remolque Ganadero 5x16 pies',
+    precio: null,
+    descripcion: 'Remolque ganadero 5x16 pies. Renta disponible.',
+    especificaciones: [
+      'Redilas desmontables',
+      'Puerta trasera abatible',
+      'Estructura reforzada',
+      'Listo para emplacar'
+    ],
+    medidas: '5 x 16 pies',
+    opciones: 'Renta: consultar por WhatsApp'
+  },
   'ganadero-4': {
     titulo: 'Remolque Ganadero 4 - NORTE',
     precio: 105000,
