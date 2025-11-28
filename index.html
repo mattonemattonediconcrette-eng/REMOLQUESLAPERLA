@@ -3,197 +3,471 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Remolques La Perla - Catálogo Profesional</title>
+  <title>Remolques La Perla - Catálogo 2025</title>
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- ESTILOS COMPLETOS -->
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0d2647 url('https://www.transparenttextures.com/patterns/cubes.png');
-      background-size: 400px;
-      color: #fff;
-    }
-    header {
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.3);
-    }
-    header img {
-      height: 60px;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #1a1a1a; color: white; }
+
+    /* HERO */
     .hero {
+      width: 100%;
+      height: 65vh;
+      background: url('assets/hero-bg.jpg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 80px 20px;
-      background: rgba(0, 0, 0, 0.25);
     }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.55);
+      top: 0; left: 0;
     }
-    h2 {
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px black;
+    }
+    .hero p { margin-top: 10px; font-size: 1.2rem; }
+
+    /* LOGO */
+    .logo-top {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 120px;
+      z-index: 20;
+    }
+
+    /* CONTENEDORES */
+    .section-title {
       text-align: center;
-      margin-bottom: 20px;
-      color: #aad0ff;
+      font-size: 2rem;
+      margin: 40px 0 10px;
+      font-weight: bold;
+      color: #e6e6e6;
     }
-    .grid {
+
+    .catalog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 25px;
+      padding: 20px;
     }
+
     .card {
-      background: #ffffff;
-      color: #000;
-      border-radius: 12px;
+      background: #2b2b2b;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s;
       cursor: pointer;
+      transition: .25s;
+      border: 2px solid #3b3b3b;
     }
-    .card:hover {
-      transform: scale(1.03);
-    }
+    .card:hover { transform: scale(1.03); }
+
     .card img {
       width: 100%;
-      height: 180px;
+      height: 210px;
       object-fit: cover;
     }
+
     .card-body {
       padding: 15px;
-      font-weight: bold;
-      text-align: center;
     }
-    .btn {
-      display: inline-block;
-      padding: 10px 16px;
-      background: #0e5bb3;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
+    .card-body h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
     }
-    footer {
-      color: #fff;
-      background: rgba(0,0,0,0.4);
-      padding: 30px;
-      text-align: center;
-    }
-    /* Modal */
-    #modal {
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
+      background: rgba(0,0,0,.75);
       align-items: center;
-      padding: 20px;
+      justify-content: center;
+      z-index: 2000;
     }
-    .modal-content {
-      background: #fff;
-      color: #000;
-      max-width: 600px;
-      width: 100%;
+    .modal {
+      width: 90%;
+      max-width: 650px;
+      background: #202020;
       border-radius: 12px;
       padding: 20px;
-      position: relative;
+      animation: fadeIn .25s;
     }
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
+    @keyframes fadeIn { from {opacity:0; transform:scale(.9);} to {opacity:1; transform:scale(1);} }
+
+    .modal img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+
+    .close-modal {
+      background: #c62828;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
-      font-size: 22px;
-      font-weight: bold;
+      margin-top: 15px;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 1rem;
     }
-    .medidas {
-      font-size: 18px;
-      font-weight: bold;
-      margin: 10px 0 20px 0;
+
+    /* BOTÓN WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 5000;
     }
+    .whatsapp-float img {
+      width: 70px;
+      filter: drop-shadow(0 0 5px black);
+    }
+
+    /* GOOGLE MAP */
+    .map-container {
+      width: 100%;
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    iframe {
+      width: 90%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+    }
+
   </style>
 </head>
+
 <body>
 
-<header>
-  <img src="https://drive.google.com/uc?export=view&id=1mC6kJTMcUiXjDVR9L2DD_FZ6NYWX5Qsr" alt="Logo" />
-  <a class="btn" href="https://www.facebook.com/profile.php?id=61581853655810" target="_blank">Facebook</a>
-</header>
+  <!-- LOGO ESQUINA -->
+  <img src="assets/logo.png" class="logo-top" alt="Logo Remolques La Perla" />
 
-<div class="hero">
-  <h1>Catálogo Profesional de Remolques</h1>
-  <p>Fabricación, calidad y entrega inmediata</p>
-</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>REMOLQUES LA PERLA</h1>
+      <p>Fabricación profesional — Carga • Cama Baja • Ganaderos • Food Trucks • Oficinas Móviles</p>
+    </div>
+  </section>
 
-<div class="container">
+  <!-- ======================
+       SECCIÓN: CAMA BAJA
+  ======================= -->
+  <h2 class="section-title">Cama Baja</h2>
 
-  <h2>Food Trucks</h2>
-  <div class="grid">
-    <div class="card" onclick="openModal('Food Truck 1', 'food-truck-1.jpg', 'Medidas: 160 x 300 cm')">
-      <img src="food-truck-1.jpg" />
-      <div class="card-body">Food Truck 1</div>
+  <div class="catalog-grid">
+
+    <div class="card" onclick="openModal('cama-baja-3t')">
+      <img src="assets/cama-baja-3t.jpg" />
+      <div class="card-body">
+        <h3>Cama Baja 3T</h3>
+        <p>Capacidad, durabilidad y alto desempeño.</p>
+      </div>
     </div>
-    <div class="card" onclick="openModal('Food Truck 2', 'food-truck-2.jpg', 'Medidas: 150 x 250 cm')">
-      <img src="food-truck-2.jpg" />
-      <div class="card-body">Food Truck 2</div>
+
+    <div class="card" onclick="openModal('cama-baja-6t')">
+      <img src="assets/cama-baja-6t.jpg" />
+      <div class="card-body">
+        <h3>Cama Baja 6T</h3>
+        <p>Refuerzo extra para cargas pesadas.</p>
+      </div>
     </div>
-    <div class="card" onclick="openModal('Food Truck 3', 'food-truck-3.jpg', 'Medidas: 180 x 300 cm')">
-      <img src="food-truck-3.jpg" />
-      <div class="card-body">Food Truck 3</div>
+
+  </div>
+
+  <!-- ======================
+       SECCIÓN: MULTIUSOS
+  ======================= -->
+  <h2 class="section-title">Multiusos</h2>
+
+  <div class="catalog-grid">
+
+    <div class="card" onclick="openModal('multiusos-1')">
+      <img src="assets/remolque-multiusos-1.jpg" />
+      <div class="card-body">
+        <h3>Multiusos 1</h3>
+      </div>
     </div>
-    <div class="card" onclick="openModal('Food Truck 4', 'food-truck-4-alt.jpg', 'Medidas: 200 x 350 cm')">
-      <img src="food-truck-4-alt.jpg" />
-      <div class="card-body">Food Truck 4</div>
+
+    <div class="card" onclick="openModal('multiusos-2')">
+      <img src="assets/remolque-multiusos-2.jpg" />
+      <div class="card-body">
+        <h3>Multiusos 2</h3>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('multiusos-3')">
+      <img src="assets/remolque-multiusos-3.jpg" />
+      <div class="card-body">
+        <h3>Multiusos 3</h3>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('multiusos-4')">
+      <img src="assets/remolque-multiusos-4.jpg" />
+      <div class="card-body">
+        <h3>Multiusos 4</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================
+       SECCIÓN: GANADEROS
+  ======================= -->
+  <h2 class="section-title">Ganaderos</h2>
+
+  <div class="catalog-grid">
+
+    <div class="card" onclick="openModal('ganadero-1')">
+      <img src="assets/ganadero-1.jpg" />
+      <div class="card-body">
+        <h3>Ganadero Modelo 1</h3>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('ganadero-2')">
+      <img src="assets/ganadero-2.jpg" />
+      <div class="card-body">
+        <h3>Ganadero Modelo 2</h3>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('ganadero-4')">
+      <img src="assets/ganadero-4.jpg" />
+      <div class="card-body">
+        <h3>Ganadero Modelo 4</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================
+       SECCIÓN: FOOD TRUCKS
+  ======================= -->
+  <h2 class="section-title">Food Trucks</h2>
+
+  <div class="catalog-grid">
+
+    <div class="card" onclick="openModal('food-1')">
+      <img src="assets/food-truck-1.jpg" />
+      <div class="card-body">
+        <h3>Food Truck 1</h3>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('food-2')">
+      <img src="assets/food-truck-2.jpg" />
+      <div class="card-body">
+        <h3>Food Truck 2</h3>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('food-3')">
+      <img src="assets/food-truck-3.jpg" />
+      <div class="card-body">
+        <h3>Food Truck 3</h3>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('food-4')">
+      <img src="assets/food-truck-4.jpg" />
+      <div class="card-body">
+        <h3>Food Truck 4</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================
+       SECCIÓN: OFICINAS MÓVILES
+  ======================= -->
+  <h2 class="section-title">Oficinas Móviles</h2>
+
+  <div class="catalog-grid">
+
+    <div class="card" onclick="openModal('oficina-1')">
+      <img src="assets/oficina-movil-1.jpg" />
+      <div class="card-body">
+        <h3>Oficina Móvil 1</h3>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('oficina-5')">
+      <img src="assets/oficina-movil-5.jpg" />
+      <div class="card-body">
+        <h3>Oficina Móvil 5</h3>
+      </div>
+    </div>
+
+    <div class="card" onclick="openModal('oficina-rellena')">
+      <img src="assets/oficina-movil-rellena.jpg" />
+      <div class="card-body">
+        <h3>Oficina Móvil Rellena</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================
+       MAPA GOOGLE
+  ======================= -->
+  <div class="map-container">
+    <iframe src="https://maps.google.com/maps?q=Tlajomulco%20de%20Z%C3%BA%C3%B1iga&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+  </div>
+
+  <!-- ======================
+       BOTÓN WHATSAPP
+  ======================= -->
+  <a class="whatsapp-float" href="https://wa.me/523347540496" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" />
+  </a>
+
+  <!-- ======================
+       MODALES COMPLETOS
+  ======================= -->
+
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal">
+      <img id="modal-img" src="" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+
+      <a id="modal-whatsapp" target="_blank">
+        <button class="close-modal">Solicitar este modelo por WhatsApp</button>
+      </a>
+
+      <button onclick="closeModal()" class="close-modal" style="background:#444;">Cerrar</button>
     </div>
   </div>
 
-  <h2>Multiusos</h2>
-  <div class="grid">
-    <div class="card" onclick="openModal('Multiusos 1', 'remolque-multiusos-1.jpg', 'Medidas: 150 x 300 cm')">
-      <img src="remolque-multiusos-1.jpg" />
-      <div class="card-body">Multiusos 1</div>
-    </div>
-    <div class="card" onclick="openModal('Multiusos 2', 'remolque-multiusos-2.jpg', 'Medidas: 160 x 320 cm')">
-      <img src="remolque-multiusos-2.jpg" />
-      <div class="card-body">Multiusos 2</div>
-    </div>
-    <div class="card" onclick="openModal('Multiusos 3', 'remolque-multiusos-3.jpg', 'Medidas: 180 x 350 cm')">
-      <img src="remolque-multiusos-3.jpg" />
-      <div class="card-body">Multiusos 3</div>
-    </div>
-    <div class="card" onclick="openModal('Multiusos 4', 'remolque-multiusos-4.jpg', 'Medidas: 200 x 380 cm')">
-      <img src="remolque-multiusos-4.jpg" />
-      <div class="card-body">Multiusos 4</div>
-    </div>
-    <div class="card" onclick="openModal('Cama Baja 3T', 'cama-baja-3t.jpg', 'Medidas: 200 x 350 cm, Capacidad 3T')">
-      <img src="cama-baja-3t.jpg" />
-      <div class="card-body">Cama Baja 3T</div>
-    </div>
-    <div class="card" onclick="openModal('Cama Baja 6T', 'cama-baja-6t.jpg', 'Medidas: 220 x 420 cm, Capacidad 6T')">
-      <img src="cama-baja-6t.jpg" />
-      <div class="card-body">Cama Baja 6T</div>
-    </div>
-  </div>
+  <!-- ======================
+       SCRIPT COMPLETO
+  ======================= -->
+  <script>
+    const data = {
 
-  <h2>Ganaderos</h2>
-  <div class="grid">
-    <div class="card" onclick="openModal('Ganadero 2', 'ganadero-2.jpg', 'Medidas: 200 x 450 cm')">
-      <img src="ganadero-2.jpg" />
-      <div class="card-body">Ganadero 2</div>
-    </div>
-    <div class="card" onclick="openModal('Ganadero 4', 'ganadero-4.jpg', 'Medidas: 220 x 500 cm')">
-      <img src="ganadero-4.jpg" />
-      <div class="card-body">Ganadero 4</div>
-    </div>
-    <div class="card" onclick="openModal('Ganadero 1', 'ganadero-1.jpg', 'Medidas: 200 x 400 cm')">
-      <img src="ganadero-1.jpg" />
-      <div class="card-body">Ganadero 1</div>
-    </div>
-  </div>
+      "cama-baja-3t": {
+        title: "Cama Baja 3T",
+        img: "assets/cama-baja-3t.jpg",
+        desc: "Plataforma reforzada, frenos, suspensión de calidad. Capacidad 3 toneladas.",
+      },
+      "cama-baja-6t": {
+        title: "Cama Baja 6T",
+        img: "assets/cama-baja-6t.jpg",
+        desc: "Estructura reforzada para maquinaria y carga pesada.",
+      },
 
-  <h2>Oficinas Móviles</h2>
-  <div class="grid">
-    <div class="card" onclick="openModal('Oficina Móvil 1', 'oficina-movil-1.jpg', 'Medidas: 200 x 350 cm')">
-      <img src="oficina-movil-1.jpg" />
-      <div class="card-body">Oficina Móvil 1</div>
-    </div>
-    <div class="card" onclick="openModal('Oficina Móvil 5', 'oficina-movil-5.jpg', 'Medidas:
+      "multiusos-1": {
+        title: "Multiusos Modelo 1",
+        img: "assets/remolque-multiusos-1.jpg",
+        desc: "Versátil y resistente, ideal para múltiples aplicaciones.",
+      },
+      "multiusos-2": {
+        title: "Multiusos Modelo 2",
+        img: "assets/remolque-multiusos-2.jpg",
+        desc: "Mayor capacidad y estructura reforzada.",
+      },
+      "multiusos-3": {
+        title: "Multiusos Modelo 3",
+        img: "assets/remolque-multiusos-3.jpg",
+        desc: "Diseño robusto y funcional para trabajo continuo.",
+      },
+      "multiusos-4": {
+        title: "Multiusos Modelo 4",
+        img: "assets/remolque-multiusos-4.jpg",
+        desc: "El más completo de la gama multiusos.",
+      },
+
+      "ganadero-1": {
+        title: "Ganadero 1",
+        img: "assets/ganadero-1.jpg",
+        desc: "Refuerzo para ganado pequeño y mediano.",
+      },
+      "ganadero-2": {
+        title: "Ganadero 2",
+        img: "assets/ganadero-2.jpg",
+        desc: "Mayor capacidad y jaula completa.",
+      },
+      "ganadero-4": {
+        title: "Ganadero 4",
+        img: "assets/ganadero-4.jpg",
+        desc: "Estructura premium, ventilación y seguridad.",
+      },
+
+      "food-1": {
+        title: "Food Truck Modelo 1",
+        img: "assets/food-truck-1.jpg",
+        desc: "Incluye ventana, instalación eléctrica y acabados premium.",
+      },
+      "food-2": {
+        title: "Food Truck Modelo 2",
+        img: "assets/food-truck-2.jpg",
+        desc: "Amplio, moderno y perfecto para negocio móvil.",
+      },
+      "food-3": {
+        title: "Food Truck Modelo 3",
+        img: "assets/food-truck-3.jpg",
+        desc: "Estructura reforzada con interiores personalizables.",
+      },
+      "food-4": {
+        title: "Food Truck Modelo 4",
+        img: "assets/food-truck-4.jpg",
+        desc: "Ideal para cocina profesional en movimiento.",
+      },
+
+      "oficina-1": {
+        title: "Oficina Móvil 1",
+        img: "assets/oficina-movil-1.jpg",
+        desc: "Oficina lista para campo, con sistema eléctrico.",
+      },
+      "oficina-5": {
+        title: "Oficina Móvil 5",
+        img: "assets/oficina-movil-5.jpg",
+        desc: "Modelo ampliado para uso prolongado.",
+      },
+      "oficina-rellena": {
+        title: "Oficina Móvil Completa",
+        img: "assets/oficina-movil-rellena.jpg",
+        desc: "Totalmente equipada y reforzada.",
+      }
+
+    };
+
+    function openModal(id) {
+      const item = data[id];
+      document.getElementById("modal-img").src = item.img;
+      document.getElementById("modal-title").innerText = item.title;
+      document.getElementById("modal-description").innerText = item.desc;
+      document.getElementById("modal-whatsapp").href =
+        "https://wa.me/523347540496?text=Quiero información del modelo: " + item.title;
+
+      document.getElementById("modal-overlay").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal-overlay").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
