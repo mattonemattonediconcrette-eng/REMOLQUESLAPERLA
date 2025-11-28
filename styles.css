@@ -169,10 +169,11 @@ nav a:hover {
 /* ========================= */
 
 .hero {
-  /* Fondo interactivo desde Google Drive (public) */
-  background-image: url('https://drive.google.com/uc?export=view&id=1Z1TrDHKEc4WzagMo8xlw8XhCzBOR8uNS');
+  /* Fondo local (descargado a assets/) con parallax ligero */
+  background-image: url('assets/hero-bg.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   min-height: 560px;
   display: flex;
   align-items: center;
@@ -202,6 +203,22 @@ nav a:hover {
   max-width: 760px;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 10px 40px rgba(11,22,28,0.45);
+}
+
+/* Parallax fallback for small screens */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+  .whatsapp-btn::after {
+    content: '';
+  }
+  .whatsapp-btn {
+    padding: 10px 12px;
+  }
+  .logo-img {
+    max-width: 100px;
+  }
 }
 
 .hero-text h2 {
