@@ -1,221 +1,218 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="icon" href="/assets/logo.bak.1764319614.png" type="image/png">
-  <link rel="shortcut icon" href="/assets/logo.bak.1764319614.png" type="image/png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Remolques La Perla - Catálogo 2025</title>
-  <meta name="description" content="Remolques La Perla - Fabricación premium de remolques multiusos, food trucks, RZR, ganaderos y camas bajas en Jalisco." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Remolques La Perla - Fabricación premium de remolques multiusos, food trucks y carga en Jalisco.">
+  <meta name="theme-color" content="#1a1f3a">
+  <title>Remolques La Perla - Fabricación Premium</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="img/logo.bak.1764319614.png" />
+  <!-- LOGO + FAVICON -->
+  <link rel="icon" type="image/png" href="assets/logo.bak.1764319614.png">
+  <link rel="apple-touch-icon" href="assets/logo.bak.1764319614.png">
 
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4 url('img/background-industrial.jpg') repeat fixed; background-size: cover; color: #222; }
-    header { background: rgba(0,0,0,0.8); padding: 20px; text-align: center; color: white; box-shadow: 0 0 20px black; }
-    header img { height: 80px; }
-    .container { width: 95%; max-width: 1400px; margin: auto; }
-    h2 { text-align: center; margin-top: 50px; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 3px; font-weight: bold; color: #111; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 40px 0; }
-    .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.2); transition: 0.3s; }
-    .card:hover { transform: scale(1.04); }
-    .card img { width: 100%; border-radius: 12px; height: 230px; object-fit: cover; }
-    .btn { display: inline-block; background: #b60000; color: white; padding: 10px 20px; border-radius: 8px; margin-top: 10px; cursor: pointer; text-align: center; font-weight: bold; }
-    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 100000; }
-    .modal-content { background: #fff; padding: 30px; max-width: 900px; width: 100%; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto; }
-    .close { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- FONT AWESOME -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-<header>
-  <img src="img/logo.bak.1764319614.png" alt="Remolques La Perla" />
-  <h1>Catálogo Profesional 2025</h1>
+<!-- BOTÓN WHATSAPP FLOTANTE -->
+<a href="https://wa.me/5213347540496?text=Hola,%20estoy%20interesado%20en%20un%20remolque"
+   class="whatsapp-btn" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<header class="header">
+  <div class="header-content">
+    <img src="assets/logo.bak.1764319614.png" alt="Logo Remolques La Perla" class="logo-img">
+    <div>
+      <h1 class="logo-text">REMOLQUES LA PERLA</h1>
+      <p class="tagline">Fabricación Premium de Remolques</p>
+    </div>
+  </div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#modelos">Modelos</a>
+    <a href="#venta-renta">Venta/Renta</a>
+    <a href="#fabricacion">Proceso</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 </header>
 
-<div class="container">
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero-text">
+    <h2>Remolques Multiusos y Especializados</h2>
+    <p>Diseño profesional • Resistencia extrema • Listos para emplacar</p>
+    <a href="#modelos" class="btn btn-primary">VER CATÁLOGO</a>
+  </div>
+</section>
 
-  <h2>FOOD TRUCKS</h2>
-  <div class="grid">
+<main>
 
-    <div class="card">
-      <img src="img/food1-new.jpg" alt="Food Truck Premium" />
-      <h3>Food Truck Premium Madera + Acero</h3>
-      <p>Perfecto para negocios de comida móvil. Diseño elegante estilo industrial.</p>
-      <div class="btn" onclick="openModal('food1')">Ver detalles</div>
+<!-- ===========================
+    SECCIÓN FOOD TRUCKS PRIMERO
+============================== -->
+<section id="modelos" class="modelos-section">
+  <h2>Nuestros Modelos</h2>
+
+  <!-- FOOD TRUCKS -->
+  <div class="categoria">
+    <div class="categoria-header">
+      <h3>🍔 Food Trucks Móviles</h3>
+      <span class="precio-badge">$45,000 - $100,000 MXN</span>
     </div>
+    <div class="galeria">
 
-    <div class="card">
-      <img src="img/food2.jpg" alt="Food Truck Mediano" />
-      <h3>Food Truck PRO</h3>
-      <p>Diseño profesional con acabados interiores en madera y acero inoxidable.</p>
-      <div class="btn" onclick="openModal('food2')">Ver detalles</div>
+      <div class="foto-item" onclick="abrirModal('Food Truck 1', 'assets/food-truck-1.jpg')">
+        <img src="assets/food-truck-1.jpg" loading="lazy">
+        <p>Food Truck 1</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Food Truck 2', 'assets/food-truck-2.jpg')">
+        <img src="assets/food-truck-2.jpg" loading="lazy">
+        <p>Food Truck 2</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Food Truck 3', 'assets/food-truck-3.jpg')">
+        <img src="assets/food-truck-3.jpg" loading="lazy">
+        <p>Food Truck 3</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Food Truck 4 Madera', 'assets/food-truck-4.jpg')">
+        <img src="assets/food-truck-4.jpg" loading="lazy">
+        <p>Food Truck 4 (Madera)</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Food Truck 4 Acero', 'assets/food-truck-4-alt.jpg')">
+        <img src="assets/food-truck-4-alt.jpg" loading="lazy">
+        <p>Food Truck 4 (Acero)</p>
+      </div>
+
     </div>
-
-    <div class="card">
-      <img src="img/food3.jpg" alt="Food Truck Mini" />
-      <h3>Food Truck Compacto</h3>
-      <p>Ideal para emprender con bajo costo y alta funcionalidad.</p>
-      <div class="btn" onclick="openModal('food3')">Ver detalles</div>
-    </div>
-
-    <div class="card">
-      <img src="img/food4.jpg" alt="Food Truck MAX" />
-      <h3>Food Truck MAX</h3>
-      <p>La versión más amplia, lista para alto volumen de clientes.</p>
-      <div class="btn" onclick="openModal('food4')">Ver detalles</div>
-    </div>
-
   </div>
 
-  <!-- Aquí seguirán cientos de líneas: RZR, ganaderos, camas bajas, multiusos, carga, tablas, modales, precios y medidas -->
+  <!-- MULTIUSOS + CAMAS BAJAS -->
+  <div class="categoria">
+    <div class="categoria-header">
+      <h3>🚛 Remolques Multiusos</h3>
+      <span class="precio-badge">$9,500 - $70,000 MXN</span>
+    </div>
 
+    <div class="galeria">
+
+      <div class="foto-item" onclick="abrirModal('Multiusos 1', 'assets/remolque-multiusos-1.jpg')">
+        <img src="assets/remolque-multiusos-1.jpg">
+        <p>Multiusos 1</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Multiusos 2', 'assets/remolque-multiusos-2.jpg')">
+        <img src="assets/remolque-multiusos-2.jpg">
+        <p>Multiusos 2</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Cama Baja 3T', 'assets/cama-baja-3t.jpg')">
+        <img src="assets/cama-baja-3t.jpg">
+        <p>Cama Baja 3T</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Cama Baja 6T', 'assets/cama-baja-6t.jpg')">
+        <img src="assets/cama-baja-6t.jpg">
+        <p>Cama Baja 6T</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GANADEROS -->
+  <div class="categoria">
+    <div class="categoria-header">
+      <h3>🐄 Remolques Ganaderos</h3>
+    </div>
+
+    <div class="galeria">
+
+      <div class="foto-item" onclick="abrirModal('Ganadero 1', 'assets/ganadero-1.jpg')">
+        <img src="assets/ganadero-1.jpg">
+        <p>Ganadero 1</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Ganadero 2', 'assets/ganadero-2.jpg')">
+        <img src="assets/ganadero-2.jpg">
+        <p>Ganadero 2</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Ganadero 4', 'assets/ganadero-4.jpg')">
+        <img src="assets/ganadero-4.jpg">
+        <p>Ganadero 4</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OFICINAS MÓVILES -->
+  <div class="categoria">
+    <div class="categoria-header">
+      <h3>🏢 Oficinas Móviles</h3>
+    </div>
+
+    <div class="galeria">
+
+      <div class="foto-item" onclick="abrirModal('Oficina Móvil 1', 'assets/oficina-movil-1.jpg')">
+        <img src="assets/oficina-movil-1.jpg">
+        <p>Oficina Móvil 1</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Oficina Móvil 5', 'assets/oficina-movil-5.jpg')">
+        <img src="assets/oficina-movil-5.jpg">
+        <p>Oficina Móvil 5</p>
+      </div>
+
+      <div class="foto-item" onclick="abrirModal('Oficina Equipada', 'assets/oficina-movil-rellena.jpg')">
+        <img src="assets/oficina-movil-rellena.jpg">
+        <p>Oficina Equipada</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal()">&times;</span>
+    <img id="modal-img" src="">
+    <h3 id="modal-title"></h3>
+    <a id="modal-whatsapp" class="btn btn-primary" target="_blank">
+      <i class="fab fa-whatsapp"></i> Pedir cotización
+    </a>
+  </div>
 </div>
 
 <script>
-function openModal(id){ document.getElementById(id).style.display = 'flex' }
-function closeModal(id){ document.getElementById(id).style.display = 'none' }
+function abrirModal(nombre, imagen) {
+  document.getElementById("modal-img").src = imagen;
+  document.getElementById("modal-title").innerText = nombre;
+
+  const mensaje = encodeURIComponent(
+    "Hola Remolques La Perla, me interesa el modelo: " + nombre
+  );
+
+  document.getElementById("modal-whatsapp").href =
+    "https://wa.me/5213347540496?text=" + mensaje;
+
+  document.getElementById("modal").style.display = "flex";
+}
+
+function cerrarModal() {
+  document.getElementById("modal").style.display = "none";
+}
 </script>
 
-<div class="modal" id="food1">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('food1')">&times;</span>
-    <h2>Food Truck Premium de Madera + Acero</h2>
-    <img src="img/food1-new.jpg" style="width:100%; border-radius:10px;" />
-    <h3>Medidas</h3>
-    <ul>
-      <li>2.0m x 3.5m x 2.20m (Largo x Ancho x Alto)</li>
-      <li>Estructura reforzada calibre 16</li>
-      <li>Acabados en madera industrial premium</li>
-    </ul>
-    <h3>Incluye</h3>
-    <ul>
-      <li>Ventanas con pistones hidráulicos</li>
-      <li>Barra frontal + barra lateral</li>
-      <li>Instalación eléctrica completa</li>
-      <li>Preparación para plancha / parilla / freidora</li>
-      <li>Luz LED interior + exterior</li>
-    </ul>
-    <h3>Precio</h3>
-    <p><strong>$87,250 MXN + IVA</strong></p>
-  </div>
-</div>
-
-<div class="modal" id="food2">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('food2')">&times;</span>
-    <h2>Food Truck PRO</h2>
-    <img src="img/food2.jpg" style="width:100%; border-radius:10px;" />
-    <p>Medidas: 2.5m x 3.5m x 2.20m</p>
-    <p>Precio: <strong>$99,800 MXN + IVA</strong></p>
-  </div>
-</div>
-
-<div class="modal" id="food3">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('food3')">&times;</span>
-    <h2>Food Truck Compacto</h2>
-    <img src="img/food3.jpg" style="width:100%; border-radius:10px;" />
-    <p>Medidas: 1.8m x 2.8m</p>
-    <p>Precio: <strong>$58,700 MXN + IVA</strong></p>
-  </div>
-</div>
-
-<div class="modal" id="food4">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('food4')">&times;</span>
-    <h2>Food Truck MAX</h2>
-    <img src="img/food4.jpg" style="width:100%; border-radius:10px;" />
-    <p>Medidas: 3.0m x 4.0m</p>
-    <p>Precio: <strong>$129,900 MXN + IVA</strong></p>
-  </div>
-</div>
-
 </body>
-  <!-- EXTENSIÓN A 1000+ LÍNEAS -->
-  <!-- ========================================================= -->
-  <!-- SECCIONES COMPLETAS DE REMOLQUES (GANADEROS, MULTIUSOS, CAMAS BAJAS, OFICINAS, RZR, ETC.) -->
-  <!-- CADA SECCIÓN VIENE CON TARJETAS, MODALES, MEDIDAS Y PRECIOS -->
-
-  <h2>REMOLQUES MULTIUSOS</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="assets/remolque-multiusos-1.jpg" />
-      <h3>Remolque Multiusos 1</h3>
-      <p>Para carga ligera, útil para trabajo diario.</p>
-      <div class="btn" onclick="openModal('multi1')">Ver detalles</div>
-    </div>
-
-    <div class="card">
-      <img src="assets/remolque-multiusos-2.jpg" />
-      <h3>Remolque Multiusos 2</h3>
-      <p>Estructura reforzada y amplia capacidad.</p>
-      <div class="btn" onclick="openModal('multi2')">Ver detalles</div>
-    </div>
-
-    <div class="card">
-      <img src="assets/remolque-multiusos-3.jpg" />
-      <h3>Remolque Multiusos 3</h3>
-      <p>Perfecto para equipos, ferretería, herramientas.</p>
-      <div class="btn" onclick="openModal('multi3')">Ver detalles</div>
-    </div>
-
-    <div class="card">
-      <img src="assets/remolque-multiusos-4.jpg" />
-      <h3>Remolque Multiusos 4</h3>
-      <p>La versión más grande y reforzada de la serie.</p>
-      <div class="btn" onclick="openModal('multi4')">Ver detalles</div>
-    </div>
-  </div>
-
-  <!-- MUCHOS MODALES -->
-  <div class="modal" id="multi1"><div class="modal-content"><span class="close" onclick="closeModal('multi1')">×</span><h2>Remolque Multiusos 1</h2><p>Medidas: 1.5 x 2.5 x 2.1</p><p>Incluye: estructura reforzada, luz LED, pintura electrostática.</p><p><strong>Precio: $32,500 MXN</strong></p></div></div>
-  <div class="modal" id="multi2"><div class="modal-content"><span class="close" onclick="closeModal('multi2')">×</span><h2>Remolque Multiusos 2</h2><p>Medidas: 1.8 x 3.0 x 2.1</p><p>Incluye: chasis doble, luz LED, suspensión reforzada.</p><p><strong>Precio: $38,900 MXN</strong></p></div></div>
-  <div class="modal" id="multi3"><div class="modal-content"><span class="close" onclick="closeModal('multi3')">×</span><h2>Remolque Multiusos 3</h2><p>Medidas: 2.0 x 3.2 x 2.2</p><p>Incluye: cama reforzada, muelles premium, pintura horneada.</p><p><strong>Precio: $42,800 MXN</strong></p></div></div>
-  <div class="modal" id="multi4"><div class="modal-content"><span class="close" onclick="closeModal('multi4')">×</span><h2>Remolque Multiusos 4</h2><p>Medidas: 2.2 x 3.5 x 2.3</p><p>Incluye: estructura industrial, doble eje, freno eléctrico.</p><p><strong>Precio: $49,900 MXN</strong></p></div></div>
-
-  <!-- GANADEROS -->
-  <h2>REMOLQUES GANADEROS</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="assets/ganadero-1.jpg" />
-      <h3>Ganadero 1</h3>
-      <p>Para transporte de ganado menor.</p>
-      <div class="btn" onclick="openModal('gan1')">Ver detalles</div>
-    </div>
-
-    <div class="card">
-      <img src="assets/ganadero-2.jpg" />
-      <h3>Ganadero 2</h3>
-      <p>Estructura más alta y reforzada.</p>
-      <div class="btn" onclick="openModal('gan2')">Ver detalles</div>
-    </div>
-
-    <div class="card">
-      <img src="assets/ganadero-4.jpg" />
-      <h3>Ganadero 4</h3>
-      <p>Para carga más grande y segura.</p>
-      <div class="btn" onclick="openModal('gan4')">Ver detalles</div>
-    </div>
-  </div>
-
-  <!-- MÁS MODALES -->
-  <div class="modal" id="gan1"><div class="modal-content"><span class="close" onclick="closeModal('gan1')">×</span><h2>Ganadero 1</h2><p>Medidas: 1.8 x 3.5 x 2.4</p><p><strong>Precio: $55,900 MXN</strong></p></div></div>
-  <div class="modal" id="gan2"><div class="modal-content"><span class="close" onclick="closeModal('gan2')">×</span><h2>Ganadero 2</h2><p>Medidas: 2.0 x 3.8 x 2.5</p><p><strong>Precio: $62,400 MXN</strong></p></div></div>
-  <div class="modal" id="gan4"><div class="modal-content"><span class="close" onclick="closeModal('gan4')">×</span><h2>Ganadero 4</h2><p>Medidas: 2.2 x 4.0 x 2.6</p><p><strong>Precio: $72,900 MXN</strong></p></div></div>
-
-  <!-- MUCHAS MÁS SECCIONES PARA LLEGAR A 1000+ LÍNEAS -->
-  <!-- CAMAS BAJAS, RZR, UTILITY, OFICINAS MÓVILES, ETC. -->
-
-  <!-- FOOTER SUPER COMPLETO -->
-  <footer style="background:#111; color:white; padding:50px 20px; margin-top:80px;">
-    <h2 style="text-align:center;">Contacto</h2>
-    <p style="text-align:center;">WhatsApp: 3347540496</p>
-    <p style="text-align:center;">Facebook: Remolques La Perla</p>
-    <div style="margin:auto; max-width:900px; padding-top:30px;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.167789521685!2d-103.5122911!3d20.5403146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f550069f7efe1%3A0x95ec392f8fcaa3d3!2sRemolques%20La%20Perla!5e0!3m2!1ses-419!2smx!4v1764330506894!5m2!1ses-419!2smx" width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </footer>
-
 </html>
