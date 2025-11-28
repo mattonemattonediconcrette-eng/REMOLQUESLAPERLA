@@ -67,13 +67,13 @@
           <img src="assets/remolque-multiusos-2.jpg" alt="Remolque Multiusos 2" loading="lazy">
           <p>Multiusos 2</p>
         </div>
-        <div class="foto-item">
-          <img src="assets/remolque-multiusos-3.jpg" alt="Remolque Multiusos 3" loading="lazy">
-          <p>Multiusos 3</p>
+        <div class="foto-item" onclick="mostrarDetalles('cama-baja-3t')">
+          <img src="assets/cama-baja-3t.jpg" alt="Cama Baja 3T" loading="lazy">
+          <p>Cama Baja 3T - $50,000</p>
         </div>
-        <div class="foto-item">
-          <img src="assets/remolque-multiusos-4.jpg" alt="Remolque Multiusos 4" loading="lazy">
-          <p>Multiusos 4</p>
+        <div class="foto-item" onclick="mostrarDetalles('cama-baja-6t')">
+          <img src="assets/cama-baja-6t.jpg" alt="Cama Baja 6T" loading="lazy">
+          <p>Cama Baja 6T - $70,000</p>
         </div>
       </div>
     </div>
@@ -86,9 +86,9 @@
       </div>
       <p class="categoria-desc">Remolques equipados para cocina móvil. Sistemas, instalaciones y acabados profesionales.</p>
       <div class="galeria">
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-1')">
           <img src="assets/food-truck-1.jpg" alt="Food Truck 1" loading="lazy">
-          <p>Food Truck 1</p>
+          <p>Food Truck 1 - Proyecto Personalizado</p>
         </div>
         <div class="foto-item" onclick="mostrarDetalles('food-truck-2')">
           <img src="assets/food-truck-2.jpg" alt="Food Truck 2" loading="lazy">
@@ -144,18 +144,10 @@
       </div>
       <p class="categoria-desc">Diseño especializado para transporte seguro de ganado. Ventilación óptima y materiales resistentes.</p>
       <div class="galeria">
-        <div class="foto-item" onclick="mostrarDetalles('ganadero-1')">
-          <img src="assets/ganadero-1.jpg" alt="Ganadero 1" loading="lazy">
-          <p>Ganadero 1 (5x16 pies)</p>
-        </div>
         <div class="foto-item" onclick="mostrarDetalles('ganadero-2')">
           <img src="assets/ganadero-2.jpg" alt="Ganadero 2" loading="lazy">
           <p>Ganadero 2 - $60,000</p>
         </div>
-                <div class="foto-item" onclick="mostrarDetalles('cama-baja-6t')">
-                  <img src="assets/cama-baja-6t.jpg" alt="Cama Baja 6T" loading="lazy">
-                  <p>Cama Baja 6T - $70,000</p>
-                </div>
         <div class="foto-item">
           <img src="assets/ganadero-3.jpg" alt="Ganadero 3" loading="lazy">
           <p>Ganadero 3</p>
@@ -194,6 +186,14 @@
         <div class="foto-item" onclick="mostrarDetalles('oficina-movil-5')">
           <img src="assets/oficina-movil-5.jpg" alt="Oficina Móvil 5" loading="lazy">
           <p>Oficina Móvil 5 - $120,000</p>
+        </div>
+        <div class="foto-item" onclick="mostrarDetalles('oficina-movil-rellena')">
+          <img src="assets/oficina-movil-rellena.jpg" alt="Oficina Móvil Equipada" loading="lazy">
+          <p>Oficina Móvil Equipada - Proyecto Personalizado</p>
+        </div>
+        <div class="foto-item" onclick="mostrarDetalles('ganadero-1')">
+          <img src="assets/ganadero-1.jpg" alt="Ganadero 1 - Remolque Móvil" loading="lazy">
+          <p>Ganadero 1 (5x16 pies)</p>
         </div>
       </div>
     </div>
@@ -280,6 +280,21 @@
 
 <script>
 const remolquesData = {
+    'food-truck-1': {
+      titulo: 'Food Truck Personalizado',
+      precio: null,
+      descripcion: '🎨 Realizamos cualquier tipo de proyecto personalizado. Te ayudamos a lograr tu sueño con renders y asesoría profesional.',
+      especificaciones: [
+        '✨ Diseño 100% personalizado según tu visión',
+        '🎯 Asesoría completa en renders y planos',
+        '🏗️ Fabricación profesional con acabados premium',
+        '💡 Soluciones innovadoras para tu negocio',
+        '🚀 Nos encanta ayudarte a lograr tus sueños',
+        '⚙️ Instalaciones y equipamiento personalizado'
+      ],
+      medidas: 'Según tu proyecto',
+      opciones: 'Consulta tu idea por WhatsApp - ¡Hacemos realidad tus sueños!'
+    },
     'multiusos-1': {
       titulo: 'Remolque Multiusos 1',
       precio: 9500,
@@ -308,6 +323,21 @@ const remolquesData = {
         'Listo para emplacar'
       ],
       medidas: '140cm x 250cm',
+      opciones: 'Venta inmediata'
+    },
+    'cama-baja-3t': {
+      titulo: 'Cama Baja 3 Toneladas',
+      precio: 50000,
+      descripcion: 'Remolque cama baja de 3 toneladas con 5 birlos, nuevo y listo para emplacar.',
+      especificaciones: [
+        '5 birlos',
+        'Soporta 3 toneladas',
+        'Nuevo',
+        'Listo para emplacar',
+        'Estructura resistente',
+        'Consulta más detalles por WhatsApp'
+      ],
+      medidas: 'Consultar',
       opciones: 'Venta inmediata'
     },
     'ganadero-2': {
@@ -440,6 +470,35 @@ const remolquesData = {
     ],
     medidas: '2 x 3 m',
     opciones: 'Remolque nuevo, entrega inmediata'
+  },
+  'oficina-movil-5': {
+    titulo: 'Oficina Móvil 5',
+    precio: 120000,
+    descripcion: 'Oficina móvil equipada, ideal para proyectos en campo o empresas que requieren movilidad.',
+    especificaciones: [
+      'Totalmente equipada',
+      'Aislada térmica y acústicamente',
+      'Ventanas y puerta de seguridad',
+      'Listo para emplacar',
+      'Entrega inmediata'
+    ],
+    medidas: 'Consultar dimensiones',
+    opciones: 'Venta inmediata'
+  },
+  'oficina-movil-rellena': {
+    titulo: 'Oficina Móvil Rellena - Proyecto Completo',
+    precio: null,
+    descripcion: '🏢 Oficina móvil completamente equipada y funcional. Realizamos cualquier tipo de proyecto personalizado para tu negocio.',
+    especificaciones: [
+      '✨ Totalmente equipada y lista para usar',
+      '💼 Espacio de trabajo optimizado',
+      '🎨 Acabados profesionales y modernos',
+      '📦 Incluye escritorios, sillas y mobiliario',
+      '🛠️ Sistemas eléctricos e iluminación completos',
+      '🚀 Adaptable a cualquier necesidad empresarial'
+    ],
+    medidas: 'Consultar dimensiones específicas',
+    opciones: 'Venta e implementación personalizada - ¡Contáctanos para tu proyecto!'
   }
 };
 
@@ -447,12 +506,16 @@ function mostrarDetalles(id) {
   const datos = remolquesData[id];
   if (!datos) return;
   
-  const mensaje = `*${datos.titulo}*%0A%0A💰 *Precio:* $${datos.precio.toLocaleString('es-MX')} MXN%0A%0A📋 *Especificaciones:*%0A${datos.especificaciones.map(e => '• ' + e).join('%0A')}%0A%0A📏 *Medidas:* ${datos.medidas}%0A%0A✨ *${datos.opciones}*`;
+  // Construir el mensaje de WhatsApp
+  let precioTexto = datos.precio ? `$${datos.precio.toLocaleString('es-MX')} MXN` : 'Consultar precio';
+  const mensaje = `*${datos.titulo}*%0A%0A💰 *Precio:* ${precioTexto}%0A%0A📋 *Especificaciones:*%0A${datos.especificaciones.map(e => '• ' + e).join('%0A')}%0A%0A📏 *Medidas:* ${datos.medidas}%0A%0A✨ *${datos.opciones}*`;
   
   const modalBody = document.getElementById('modal-body');
+  let precioHtml = datos.precio ? `<div class="modal-precio">$${datos.precio.toLocaleString('es-MXN')} MXN</div>` : '<div class="modal-precio">Consultar precio personalizado</div>';
+  
   modalBody.innerHTML = `
     <h2>${datos.titulo}</h2>
-    <div class="modal-precio">$${datos.precio.toLocaleString('es-MX')} MXN</div>
+    ${precioHtml}
     <p class="modal-estado">${datos.descripcion}</p>
     
     <h4>Especificaciones:</h4>
