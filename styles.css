@@ -7,13 +7,20 @@
 /* ========================= */
 
 :root {
-  /* Paleta derivada (aprox.) desde la imagen de fondo */
-  --accent-1: #1b3b4b; /* color oscuro / fondo */
-  --accent-2: #2e8fb8; /* azul-teal */
-  --accent-3: #ff8b3d; /* naranja cálido */
-  --muted: #6b7280;
-  --surface: #ffffff;
-  --glass: rgba(255,255,255,0.06);
+  /* Paleta moderna y elegante */
+  --primary: #1a1f3a; /* azul marino oscuro profundo */
+  --secondary: #f97316; /* naranja vibrante */
+  --accent: #06b6d4; /* cyan/turquesa moderno */
+  --success: #10b981; /* verde éxito */
+  --danger: #ef4444; /* rojo alerta */
+  --muted: #64748b; /* gris profesional */
+  --surface: #ffffff; /* blanco limpio */
+  --bg-light: #f8fafc; /* fondo muy claro */
+  --bg-dark: #0f172a; /* fondo oscuro */
+  --glass: rgba(255,255,255,0.08);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.15);
 }
 
 * {
@@ -27,11 +34,12 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(180deg, #f5f7fa 0%, #efeff2 100%);
-  color: #222;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-light);
+  color: #1e293b;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h2, h3 {
@@ -40,15 +48,16 @@ h2, h3 {
 
 h2 {
   font-size: 2.2rem;
-  color: var(--accent-1);
+  color: var(--primary);
   text-align: center;
   margin-bottom: 24px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 h3 {
   font-size: 1.4rem;
-  color: var(--accent-1);
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -64,14 +73,16 @@ h3 {
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  background: linear-gradient(90deg, var(--accent-2), var(--accent-3));
+  background: linear-gradient(135deg, var(--secondary) 0%, #ea580c 100%);
   color: #fff;
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 8px 30px rgba(46,143,184,0.18), 0 2px 6px rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-lg);
   z-index: 1200;
   transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms;
+  border: none;
+  cursor: pointer;
 }
 
 .whatsapp-btn i {
@@ -79,8 +90,8 @@ h3 {
 }
 
 .whatsapp-btn:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 18px 45px rgba(46,143,184,0.24), 0 6px 18px rgba(0,0,0,0.18);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(249,115,22,0.35);
 }
 
 .whatsapp-btn::after {
@@ -94,11 +105,14 @@ h3 {
 /* ========================= */
 
 .header {
-  background: transparent;
+  background: var(--surface);
   padding: 18px 20px;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255,0.95);
 }
 
 .header-content {
@@ -122,7 +136,7 @@ h3 {
   font-weight: 800;
   margin: 6px 0 0;
   letter-spacing: 1px;
-  color: var(--accent-1);
+  color: var(--primary);
 }
 
 .tagline {
@@ -148,11 +162,8 @@ nav {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
-}
-
 nav a {
-  color: #fff;
+  color: var(--primary);
   text-decoration: none;
   font-weight: 600;
   padding: 8px 15px;
@@ -168,7 +179,7 @@ nav a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: #ffb300;
+  background: var(--secondary);
   transition: width 0.3s ease;
 }
 
@@ -177,7 +188,7 @@ nav a:hover::after {
 }
 
 nav a:hover {
-  color: #ffb300;
+  color: var(--secondary);
 }
 
 /* ========================= */
