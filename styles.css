@@ -2,6 +2,20 @@
 /*         GLOBAL            */
 /* ========================= */
 
+/* ========================= */
+/*         GLOBAL            */
+/* ========================= */
+
+:root {
+  /* Paleta derivada (aprox.) desde la imagen de fondo */
+  --accent-1: #1b3b4b; /* color oscuro / fondo */
+  --accent-2: #2e8fb8; /* azul-teal */
+  --accent-3: #ff8b3d; /* naranja cálido */
+  --muted: #6b7280;
+  --surface: #ffffff;
+  --glass: rgba(255,255,255,0.06);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,10 +27,11 @@ html {
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: #f5f7fa;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #f5f7fa 0%, #efeff2 100%);
+  color: #222;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 h2, h3 {
@@ -24,17 +39,17 @@ h2, h3 {
 }
 
 h2 {
-  font-size: 2.5rem;
-  color: #1a1a1a;
+  font-size: 2.2rem;
+  color: var(--accent-1);
   text-align: center;
-  margin-bottom: 30px;
-  font-weight: bold;
+  margin-bottom: 24px;
+  font-weight: 700;
 }
 
 h3 {
-  font-size: 1.8rem;
-  color: #d32f2f;
-  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--accent-1);
+  font-weight: 700;
 }
 
 /* ========================= */
@@ -43,42 +58,44 @@ h3 {
 
 .whatsapp-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #25d366 0%, #1da851 100%);
-  color: white;
-  border-radius: 50%;
-  display: flex;
+  bottom: 26px;
+  right: 26px;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 36px;
-  z-index: 9999;
+  gap: 10px;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-3));
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(46,143,184,0.18), 0 2px 6px rgba(0,0,0,0.12);
+  z-index: 1200;
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms;
+}
+
+.whatsapp-btn i {
+  font-size: 22px;
 }
 
 .whatsapp-btn:hover {
-  transform: scale(1.15) translateY(-5px);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 45px rgba(46,143,184,0.24), 0 6px 18px rgba(0,0,0,0.18);
 }
 
-.whatsapp-btn:active {
-  transform: scale(0.95);
+.whatsapp-btn::after {
+  content: 'WhatsApp';
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 /* ========================= */
 /*         HEADER            */
 /* ========================= */
 
-header {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 25px 20px;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+.header {
+  background: transparent;
+  padding: 18px 20px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -86,32 +103,29 @@ header {
 
 .header-content {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .logo-img {
-  max-width: 150px;
+  max-width: 120px;
   height: auto;
-  margin-bottom: 10px;
+  margin: 0 auto 6px;
   display: block;
 }
 
 .logo-text {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  letter-spacing: 2px;
-  background: linear-gradient(135deg, #d32f2f, #ff6b6b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 6px 0 0;
+  letter-spacing: 1px;
+  color: var(--accent-1);
 }
 
 .tagline {
   font-size: 0.9rem;
-  color: #ffb300;
-  margin: 5px 0 0 0;
-  font-weight: 500;
+  color: var(--muted);
+  margin-top: 6px;
+  font-weight: 600;
 }
 
 nav {
@@ -155,37 +169,52 @@ nav a:hover {
 /* ========================= */
 
 .hero {
-  background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(26, 26, 26, 0.8) 100%), 
-              url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=1600&h=600&fit=crop') center/cover;
-  background-blend-mode: overlay;
-  min-height: 500px;
+  /* Fondo interactivo desde Google Drive (public) */
+  background-image: url('https://drive.google.com/uc?export=view&id=1Z1TrDHKEc4WzagMo8xlw8XhCzBOR8uNS');
+  background-size: cover;
+  background-position: center;
+  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 40px 20px;
 }
 
-.hero-overlay {
+.hero::before {
+  /* overlay con mezcla para realzar colores */
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27,59,75,0.55), rgba(27,59,75,0.58));
+  mix-blend-mode: multiply;
   z-index: 1;
 }
 
 .hero-text {
-  background: rgba(0, 0, 0, 0.65);
-  padding: 40px 50px;
-  border-radius: 12px;
-  color: white;
-  text-align: center;
-  max-width: 600px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
+  background: rgba(255,255,255,0.03);
+  padding: 40px 36px;
+  border-radius: 14px;
+  color: #fff;
+  text-align: center;
+  max-width: 760px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 40px rgba(11,22,28,0.45);
+}
+
+.hero-text h2 {
+  color: #fff;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.hero-text p {
+  color: var(--accent-3);
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  font-weight: 600;
 }
 
 .hero-text h2 {
@@ -225,8 +254,8 @@ nav a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #d32f2f 0%, #ff6b6b 100%);
-  color: white;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-3));
+  color: #fff;
 }
 
 .btn-primary:hover {
@@ -283,11 +312,11 @@ nav a:hover {
 }
 
 .precio-badge {
-  background: linear-gradient(135deg, #ffb300 0%, #ff9600 100%);
-  color: #000;
+  background: linear-gradient(90deg, rgba(255,139,61,0.95), rgba(255,200,90,0.95));
+  color: #111;
   padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: bold;
+  border-radius: 999px;
+  font-weight: 700;
   font-size: 0.95rem;
 }
 
