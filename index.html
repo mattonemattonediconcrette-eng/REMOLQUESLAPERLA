@@ -152,9 +152,9 @@
           <img src="assets/ganadero-3.jpg" alt="Ganadero 3" loading="lazy">
           <p>Ganadero 3</p>
         </div>
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('ganadero-4')">
           <img src="assets/ganadero-4.jpg" alt="Ganadero 4" loading="lazy">
-          <p>Ganadero 4</p>
+          <p>Ganadero 4 - $105,000</p>
         </div>
       </div>
     </div>
@@ -252,9 +252,81 @@
   </section>
 </main>
 
+<!-- MODAL PARA DETALLES DEL REMOLQUE -->
+<div id="modal-detalles" class="modal-overlay" onclick="cerrarModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="cerrarModal()">✕</button>
+    <div id="modal-body">
+      <!-- Los detalles se cargarán aquí dinámicamente -->
+    </div>
+  </div>
+</div>
+
 <footer>
   <p>&copy; 2025 Remolques La Perla. Todos los derechos reservados.</p>
 </footer>
+
+<script>
+const remolquesData = {
+  'ganadero-4': {
+    titulo: 'Remolque Ganadero 4 - NORTE',
+    precio: 105000,
+    descripcion: 'REMOLQUE NUEVO - EQUIPADO',
+    especificaciones: [
+      'PISO DE MADERA',
+      'JALON PARA BOLA',
+      'GATO DE ELEVACION',
+      'CADENAS DE SEGURIDAD',
+      '2 EJES',
+      '4 LLANTAS 700-15 CON RIN',
+      'LUCES REGLAMENTARIAS SEGÚN SCT',
+      'REDILAS GANADERAS DESMONTABLES CON FRENTE REDONDO',
+      'UNA PUERTA DIVISION Y UNA TRASERA ABATIBLE Y MEDIA CORREDISA'
+    ],
+    medidas: "5' FT. ANCHO X 16\" FT. LARGO",
+    opciones: 'También disponible en 12\", 14\"'
+  }
+};
+
+function mostrarDetalles(id) {
+  const datos = remolquesData[id];
+  if (!datos) return;
+  
+  const mensaje = `*${datos.titulo}*%0A%0A💰 *Precio:* $${datos.precio.toLocaleString('es-MX')} MXN%0A%0A📋 *Especificaciones:*%0A${datos.especificaciones.map(e => '• ' + e).join('%0A')}%0A%0A📏 *Medidas:* ${datos.medidas}%0A%0A✨ *${datos.opciones}*`;
+  
+  const modalBody = document.getElementById('modal-body');
+  modalBody.innerHTML = `
+    <h2>${datos.titulo}</h2>
+    <div class="modal-precio">$${datos.precio.toLocaleString('es-MX')} MXN</div>
+    <p class="modal-estado">${datos.descripcion}</p>
+    
+    <h4>Especificaciones:</h4>
+    <ul class="modal-specs">
+      ${datos.especificaciones.map(e => `<li>${e}</li>`).join('')}
+    </ul>
+    
+    <div class="modal-info">
+      <p><strong>Medidas:</strong> ${datos.medidas}</p>
+      <p><strong>${datos.opciones}</strong></p>
+    </div>
+    
+    <a href="https://wa.me/5213347540496?text=${mensaje}" class="btn btn-primary" target="_blank" style="display: block; text-align: center; margin-top: 20px;">
+      <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+    </a>
+  `;
+  
+  document.getElementById('modal-detalles').style.display = 'flex';
+}
+
+function cerrarModal() {
+  document.getElementById('modal-detalles').style.display = 'none';
+}
+
+// Cerrar modal al presionar Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') cerrarModal();
+});
+</script>
 
 </body>
 </html>

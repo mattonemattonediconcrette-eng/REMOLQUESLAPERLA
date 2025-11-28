@@ -566,8 +566,139 @@ footer {
 }
 
 /* ========================= */
-/*     RESPONSIVE DESIGN     */
+/*         MODAL             */
 /* ========================= */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 35px 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  position: relative;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: var(--secondary);
+}
+
+.modal-content h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.modal-precio {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--secondary);
+  margin: 15px 0;
+}
+
+.modal-estado {
+  background: var(--bg-light);
+  padding: 10px 15px;
+  border-left: 4px solid var(--secondary);
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+.modal-content h4 {
+  color: var(--primary);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.modal-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-specs li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #3a3a2a;
+}
+
+.modal-specs li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.modal-info {
+  background: var(--bg-light);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.modal-info p {
+  margin: 8px 0;
+  color: #3a3a2a;
+}
+
+.foto-item {
+  cursor: pointer;
+}
+
+.foto-item:hover {
+  opacity: 0.9;
+}
+
+/* ========================= */\n/*     RESPONSIVE DESIGN     */\n/* ========================= */
 
 @media (max-width: 768px) {
   .logo-text {
