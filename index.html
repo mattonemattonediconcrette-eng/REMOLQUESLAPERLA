@@ -59,11 +59,11 @@
       </div>
       <p class="categoria-desc">Versátiles y robustos, pensados para uso general, traslado de carga y soportes especiales.</p>
       <div class="galeria">
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('multiusos-1')">
           <img src="assets/remolque-multiusos-1.jpg" alt="Remolque Multiusos 1" loading="lazy">
-          <p>Multiusos 1</p>
+          <p>Multiusos 1 - $9,500</p>
         </div>
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('multiusos-2')">
           <img src="assets/remolque-multiusos-2.jpg" alt="Remolque Multiusos 2" loading="lazy">
           <p>Multiusos 2</p>
         </div>
@@ -148,10 +148,14 @@
           <img src="assets/ganadero-1.jpg" alt="Ganadero 1" loading="lazy">
           <p>Ganadero 1 (5x16 pies)</p>
         </div>
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('ganadero-2')">
           <img src="assets/ganadero-2.jpg" alt="Ganadero 2" loading="lazy">
-          <p>Ganadero 2</p>
+          <p>Ganadero 2 - $60,000</p>
         </div>
+                <div class="foto-item" onclick="mostrarDetalles('cama-baja-6t')">
+                  <img src="assets/cama-baja-6t.jpg" alt="Cama Baja 6T" loading="lazy">
+                  <p>Cama Baja 6T - $70,000</p>
+                </div>
         <div class="foto-item">
           <img src="assets/ganadero-3.jpg" alt="Ganadero 3" loading="lazy">
           <p>Ganadero 3</p>
@@ -272,6 +276,66 @@
 
 <script>
 const remolquesData = {
+    'multiusos-1': {
+      titulo: 'Remolque Multiusos 1',
+      precio: 9500,
+      descripcion: 'Remolque ideal para cuatrimotos, compacto y resistente.',
+      especificaciones: [
+        'Soporta hasta 700 kg',
+        'Medidas: 130cm x 180cm',
+        'Ideal para cuatrimotos',
+        'Rin 13',
+        'Estructura reforzada',
+        'Listo para emplacar'
+      ],
+      medidas: '130cm x 180cm',
+      opciones: 'Venta inmediata'
+    },
+    'multiusos-2': {
+      titulo: 'Remolque Multiusos 2',
+      precio: null,
+      descripcion: 'Remolque para cuatrimotos pequeñas, mayor capacidad.',
+      especificaciones: [
+        'Rin 13',
+        '2000 lb',
+        'Medidas: 140cm x 250cm',
+        'Ideal para cuatrimotos pequeñas',
+        'Estructura reforzada',
+        'Listo para emplacar'
+      ],
+      medidas: '140cm x 250cm',
+      opciones: 'Venta inmediata'
+    },
+    'ganadero-2': {
+      titulo: 'Remolque Ganadero 2 Doble Eje',
+      precio: 60000,
+      descripcion: 'Ideal para 2 caballos, doble eje, listo para emplacar.',
+      especificaciones: [
+        'Doble eje',
+        'Listo para emplacar',
+        'Ideal para 2 caballos',
+        'Estructura reforzada',
+        'Incluye redilas y puerta trasera',
+        'Consulta más detalles por WhatsApp'
+      ],
+      medidas: 'Consultar',
+      opciones: 'Venta inmediata'
+    },
+    'cama-baja-6t': {
+      titulo: 'Cama Baja 6 Toneladas',
+      precio: 70000,
+      descripcion: 'Remolque cama baja nuevo, doble eje, 8 birlos, soporta 6 toneladas.',
+      especificaciones: [
+        'Doble eje',
+        '8 birlos',
+        'Soporta 6 toneladas',
+        'Nuevo',
+        'Listo para emplacar',
+        'Consulta más detalles por WhatsApp'
+      ],
+      medidas: 'Consultar',
+      opciones: 'Venta inmediata'
+    },
   'food-truck-4': {
     titulo: 'Food Truck Mini Madera',
     precio: 63500,
