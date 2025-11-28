@@ -3,593 +3,293 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Remolques La Perla - Fabricación premium de remolques multiusos, food trucks y carga en Jalisco.">
-  <meta name="theme-color" content="#1a1f3a">
-  <title>Remolques La Perla - Fabricación Premium</title>
-  <!-- Optimizaciones de rendimiento -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-  <link rel="preconnect" href="https://www.google.com">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin>
-</head>
+  <title>Remolques La Perla</title>
 
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Tu hoja de estilo -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
 <body>
 
-<!-- BOTÓN WHATSAPP FLOTANTE -->
-<a href="https://wa.me/5215551234567?text=Hola%20Remolques%20La%20Perla%20me%20interesa%20conocer%20sobre%20sus%20remolques" class="whatsapp-btn" target="_blank" title="Contactar por WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- ------------------------------------- -->
+  <!--                 HEADER                -->
+  <!-- ------------------------------------- -->
 
-<header class="header">
-  <div class="header-content">
-    <img src="assets/logo.png" alt="Logo Remolques La Perla" class="logo-img">
-    <div>
+  <header class="header">
+    <div class="header-content">
+
+      <img src="assets/logo.png" alt="Logo" class="logo-img">
+
       <h1 class="logo-text">REMOLQUES LA PERLA</h1>
-      <p class="tagline">Fabricación Premium de Remolques</p>
+      <p class="tagline">Fabricación profesional — Precios directos de taller</p>
+
+      <nav>
+        <a href="#modelos">Modelos</a>
+        <a href="#venta-renta">Venta / Renta</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
     </div>
-  </div>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#modelos">Modelos</a>
-    <a href="#venta-renta">Venta/Renta</a>
-    <a href="#fabricacion">Proceso</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
+  </header>
 
-<section id="inicio" class="hero">
-  <div class="hero-text">
-    <h2>Remolques Multiusos y Especializados</h2>
-    <p>Diseño profesional • Resistencia extrema • Listos para emplacar</p>
-    <a href="#modelos" class="btn btn-primary">VER CATÁLOGO</a>
-  </div>
-</section>
 
-<main>
-  <section id="modelos" class="modelos-section">
+
+  <!-- ------------------------------------- -->
+  <!--                 HERO                  -->
+  <!-- ------------------------------------- -->
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Los mejores remolques de Guadalajara</h2>
+      <p>Calidad profesional, materiales reforzados y garantía real.</p>
+      <a href="#modelos" class="btn btn-primary">Ver Modelos</a>
+    </div>
+  </section>
+
+
+
+  <!-- ------------------------------------- -->
+  <!--                MODELOS                -->
+  <!-- ------------------------------------- -->
+
+  <section id="modelos">
     <h2>Nuestros Modelos</h2>
-    <p class="section-subtitle">Selecciona la categoría para ver ejemplos. Sube tus imágenes y las reemplazo.</p>
+    <p class="section-subtitle">Fabricamos cualquier remolque a medida</p>
 
-    <!-- REMOLQUES MULTIUSOS -->
+    <!-- ====== CATEGORÍA 1 ====== -->
     <div class="categoria">
+
       <div class="categoria-header">
-        <h3>🚛 Remolques Multiusos</h3>
-        <span class="precio-badge">$9,500 - $55,000 MXN</span>
+        <h3>Remolque Plataforma</h3>
+        <span class="precio-badge">Desde $26,500 MXN</span>
       </div>
-      <p class="categoria-desc">Versátiles y robustos, pensados para uso general, traslado de carga y soportes especiales.</p>
+
+      <p class="categoria-desc">
+        Remolque robusto ideal para carga general, motos, cuatrimotos y uso rudo. Estructura reforzada y lámina calibre 14.
+      </p>
+
       <div class="galeria">
-        <div class="foto-item" onclick="mostrarDetalles('multiusos-1')">
-          <img src="assets/remolque-multiusos-1.jpg" alt="Remolque Multiusos 1" loading="lazy">
-          <p>Multiusos 1 - $9,500</p>
+
+        <div class="foto-item" onclick="openModal('modelo1')">
+          <img src="assets/plataforma1.jpg" alt="Remolque plataforma">
+          <p>Plataforma 3x1.75</p>
         </div>
-        <div class="foto-item" onclick="mostrarDetalles('multiusos-2')">
-          <img src="assets/remolque-multiusos-2.jpg" alt="Remolque Multiusos 2" loading="lazy">
-          <p>Multiusos 2</p>
+
+        <div class="foto-item" onclick="openModal('modelo1')">
+          <img src="assets/plataforma2.jpg" alt="Plataforma reforzada">
+          <p>Estructura reforzada</p>
         </div>
-        <div class="foto-item" onclick="mostrarDetalles('cama-baja-3t')">
-          <img src="assets/cama-baja-3t.jpg" alt="Cama Baja 3T" loading="lazy">
-          <p>Cama Baja 3T - $50,000</p>
+
+        <div class="foto-item" onclick="openModal('modelo1')">
+          <img src="assets/plataforma3.jpg" alt="Plataforma carga">
+          <p>Capacidad hasta 750 kg</p>
         </div>
-        <div class="foto-item" onclick="mostrarDetalles('cama-baja-6t')">
-          <img src="assets/cama-baja-6t.jpg" alt="Cama Baja 6T" loading="lazy">
-          <p>Cama Baja 6T - $70,000</p>
-        </div>
+
       </div>
+
     </div>
 
-    <!-- FOOD TRUCKS -->
+    <!-- ====== CATEGORÍA 2 ====== -->
     <div class="categoria">
-      <div class="categoria-header">
-        <h3>🍔 Food Trucks Móviles</h3>
-        <span class="precio-badge">$45,000 - $75,000 MXN</span>
-      </div>
-      <p class="categoria-desc">Remolques equipados para cocina móvil. Sistemas, instalaciones y acabados profesionales.</p>
-      <div class="galeria">
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-1')">
-          <img src="assets/food-truck-1.jpg" alt="Food Truck 1" loading="lazy">
-          <p>Food Truck 1 - Proyecto Personalizado</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-2')">
-          <img src="assets/food-truck-2.jpg" alt="Food Truck 2" loading="lazy">
-          <p>Food Truck 2 - $60,000</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-3')">
-          <img src="assets/food-truck-3.jpg" alt="Food Truck 3" loading="lazy">
-          <p>Food Truck 3 - $70,000 / $92,000 / $99,000</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-4')">
-          <img src="assets/food-truck-4.jpg" alt="Food Truck 4" loading="lazy">
-          <p>Food Truck 4 (madera) - $63,500</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-4-alt')">
-          <img src="assets/food-truck-4-alt.jpg" alt="Food Truck 4 Acero" loading="lazy">
-          <p>Food Truck 4 (acero) - $100,000</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- REMOLQUES DE CARGA -->
-    <div class="categoria">
       <div class="categoria-header">
-        <h3>📦 Remolques de Carga General</h3>
-        <span class="precio-badge">$15,000 - $22,000 MXN</span>
+        <h3>Food Truck — FOOD MAX</h3>
+        <span class="precio-badge">Desde $79,000 MXN</span>
       </div>
-      <p class="categoria-desc">Soluciones para transporte de mercancía general, cerrados o abiertos, personalizables.</p>
-      <div class="galeria">
-        <div class="foto-item">
-          <img src="assets/carga-1.jpg" alt="Carga 1" loading="lazy">
-          <p>Carga 1</p>
-        </div>
-        <div class="foto-item">
-          <img src="assets/carga-2.jpg" alt="Carga 2" loading="lazy">
-          <p>Carga 2</p>
-        </div>
-        <div class="foto-item">
-          <img src="assets/carga-3.jpg" alt="Carga 3" loading="lazy">
-          <p>Carga 3</p>
-        </div>
-        <div class="foto-item">
-          <img src="assets/carga-4.jpg" alt="Carga 4" loading="lazy">
-          <p>Carga 4</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- REMOLQUES GANADEROS -->
-    <div class="categoria">
-      <div class="categoria-header">
-        <h3>🐄 Remolques Ganaderos</h3>
-        <span class="precio-badge">$25,000 - $45,000 MXN</span>
-      </div>
-      <p class="categoria-desc">Diseño especializado para transporte seguro de ganado. Ventilación óptima y materiales resistentes.</p>
-      <div class="galeria">
-        <div class="foto-item" onclick="mostrarDetalles('ganadero-2')">
-          <img src="assets/ganadero-2.jpg" alt="Ganadero 2" loading="lazy">
-          <p>Ganadero 2 - $60,000</p>
-        </div>
-        <div class="foto-item">
-          <img src="assets/ganadero-3.jpg" alt="Ganadero 3" loading="lazy">
-          <p>Ganadero 3</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('ganadero-4')">
-          <img src="assets/ganadero-4.jpg" alt="Ganadero 4" loading="lazy">
-          <p>Ganadero 4 - $105,000</p>
-        </div>
-      </div>
-    </div>
+      <p class="categoria-desc">
+        Nuestro modelo más equipado para emprendedores. Incluye barra, repisas, conexiones y estructura térmica.
+      </p>
 
-    <!-- OFICINAS MÓVILES -->
-    <div class="categoria">
-      <div class="categoria-header">
-        <h3>🏢 Oficinas Móviles</h3>
-        <span class="precio-badge">$35,000 - $65,000 MXN</span>
-      </div>
-      <p class="categoria-desc">Espacios de trabajo móviles totalmente equipados. Ideales para empresas, consultoría y atención al cliente.</p>
       <div class="galeria">
-        <div class="foto-item" onclick="mostrarDetalles('oficina-movil-1')">
-          <img src="assets/oficina-movil-1.jpg" alt="Oficina Móvil 1" loading="lazy">
-          <p>Oficina Móvil 1 - $210,000</p>
+
+        <div class="foto-item" onclick="openModal('modelo2')">
+          <img src="assets/food1.jpg" alt="Food Truck">
+          <p>Food Max con ventana</p>
         </div>
-        <div class="foto-item" onclick="mostrarDetalles('oficina-movil-2')">
-          <img src="assets/oficina-movil-2.jpg" alt="Oficina Móvil 2" loading="lazy">
-          <p>Oficina Móvil 2 - $230,000</p>
+
+        <div class="foto-item" onclick="openModal('modelo2')">
+          <img src="assets/food2.jpg" alt="Food Truck interior">
+          <p>Acabado termoacústico</p>
         </div>
-        <div class="foto-item" onclick="mostrarDetalles('oficina-movil-3')">
-          <img src="assets/oficina-movil-3.jpg" alt="Oficina Móvil 3" loading="lazy">
-          <p>Oficina Móvil 3 - $230,000</p>
+
+        <div class="foto-item" onclick="openModal('modelo2')">
+          <img src="assets/food3.jpg" alt="Food Truck detalles">
+          <p>Ventana abatible reforzada</p>
         </div>
-        <div class="foto-item" onclick="mostrarDetalles('oficina-movil-4')">
-          <img src="assets/oficina-movil-4.jpg" alt="Oficina Móvil 4" loading="lazy">
-          <p>Oficina Móvil 4 - $230,000</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('oficina-movil-5')">
-          <img src="assets/oficina-movil-5.jpg" alt="Oficina Móvil 5" loading="lazy">
-          <p>Oficina Móvil 5 - $120,000</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('oficina-movil-rellena')">
-          <img src="assets/oficina-movil-rellena.jpg" alt="Oficina Móvil Equipada" loading="lazy">
-          <p>Oficina Móvil Equipada - Proyecto Personalizado</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('ganadero-1')">
-          <img src="assets/ganadero-1.jpg" alt="Ganadero 1 - Remolque Móvil" loading="lazy">
-          <p>Ganadero 1 (5x16 pies)</p>
-        </div>
+
       </div>
+
     </div>
 
   </section>
 
-  <section id="venta-renta" class="venta-renta-section">
-    <h2>Venta y Renta de Remolques</h2>
-    <p class="section-subtitle">Elige la opción que mejor se adapta a tus necesidades de negocio.</p>
+
+
+  <!-- ------------------------------------- -->
+  <!--             VENTA / RENTA             -->
+  <!-- ------------------------------------- -->
+
+  <section id="venta-renta">
+    <h2>Venta y Renta</h2>
+  
     <div class="venta-renta-grid">
+
       <div class="venta-renta-card">
-        <div class="venta-renta-icon">🏷️</div>
-        <h3>Venta</h3>
-        <p>Remolques nuevos y certificados listos para emplacar. Financiamiento disponible. Garantía completa en estructura y soldadura.</p>
-        <a href="https://wa.me/5213347540496?text=Hola%20Remolques%20La%20Perla%2C%20me%20interesa%20comprar%20un%20remolque" class="btn btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Consultar Venta</a>
+        <div class="venta-renta-icon"><i class="fa-solid fa-truck"></i></div>
+        <h3>Venta Directa</h3>
+        <p>Fabricamos remolques nuevos con garantía y factura. Puedes personalizar medidas y características.</p>
+        <a class="btn" href="https://wa.me/523347540496" target="_blank">Cotizar</a>
       </div>
+
       <div class="venta-renta-card">
-        <div class="venta-renta-icon">🔄</div>
+        <div class="venta-renta-icon"><i class="fa-solid fa-handshake"></i></div>
         <h3>Renta</h3>
-        <p>Remolques disponibles por días, semanas o meses. Mantenimiento incluido. Flexible según tu proyecto y presupuesto.</p>
-        <a href="https://wa.me/5213347540496?text=Hola%20Remolques%20La%20Perla%2C%20me%20interesa%20rentar%20un%20remolque" class="btn btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Consultar Renta</a>
+        <p>Renta por día o por semana. Plataformas, cajas cerradas y remolques especiales disponibles.</p>
+        <a class="btn" href="https://wa.me/523347540496" target="_blank">Rentar</a>
       </div>
+
     </div>
   </section>
 
-  <section id="fabricacion" class="fabricacion-section">
-    <h2>Proceso de Fabricación</h2>
-    <div class="proceso-grid">
-      <div class="proceso-card">
-        <div class="proceso-number">1</div>
-        <h4>Diseño</h4>
-        <p>Planificación y diseño profesional según especificaciones del cliente</p>
-      </div>
-      <div class="proceso-card">
-        <div class="proceso-number">2</div>
-        <h4>Estructura</h4>
-        <p>Soldadura y armado de la estructura principal con acero de calidad</p>
-      </div>
-      <div class="proceso-card">
-        <div class="proceso-number">3</div>
-        <h4>Acabados</h4>
-        <p>Pintura, recubrimiento y detalles finales de acabado</p>
-      </div>
-      <div class="proceso-card">
-        <div class="proceso-number">4</div>
-        <h4>Pruebas</h4>
-        <p>Control de calidad exhaustivo y pruebas de funcionamiento</p>
-      </div>
-    </div>
-  </section>
 
-  <section id="contacto" class="contacto-section">
+
+  <!-- ------------------------------------- -->
+  <!--                CONTACTO               -->
+  <!-- ------------------------------------- -->
+
+  <section id="contacto">
     <h2>Contacto</h2>
+
     <div class="contact-grid">
+
       <div class="contact-info">
-        <p>📱 <strong>3347540496</strong></p>
-        <p>📍 Tlajomulco de Zúñiga, Jalisco</p>
-        <p>📧 <a href="mailto:remolqueslaperla@gmail.com">remolqueslaperla@gmail.com</a></p>
-        <div class="contacto-buttons">
-          <a href="https://wa.me/5213347540496?text=Hola%20Remolques%20La%20Perla%2C%20me%20interesa%20un%20remolque" class="btn btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          <a href="tel:+5213347540496" class="btn btn-secondary"><i class="fas fa-phone"></i> Llamar</a>
-        </div>
+        <p><strong>Teléfono:</strong> <a href="tel:3347540496">33 47 54 04 96</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/523347540496" target="_blank">Enviar mensaje</a></p>
+        <p><strong>Ubicación:</strong> Guadalajara, Jalisco</p>
       </div>
+
       <div class="contact-map">
-        <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.167789521685!2d-103.5122911!3d20.5403146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f550069f7efe1%3A0x95ec392f8fcaa3d3!2sRemolques%20La%20Perla!5e0!3m2!1ses-419!2smx!4v1764324631003!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="map-embed"
+          src="https://maps.google.com/maps?q=Guadalajara&t=&z=13&ie=UTF8&iwloc=&output=embed">
+        </iframe>
       </div>
+
     </div>
   </section>
-</main>
 
-<!-- MODAL PARA DETALLES DEL REMOLQUE -->
-<div id="modal-detalles" class="modal-overlay" onclick="cerrarModal()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="cerrarModal()">✕</button>
-    <div id="modal-body">
-      <!-- Los detalles se cargarán aquí dinámicamente -->
+
+
+  <!-- ------------------------------------- -->
+  <!--                FOOTER                 -->
+  <!-- ------------------------------------- -->
+
+  <footer>
+    © 2025 Remolques La Perla — Fabricación Profesional
+  </footer>
+
+
+
+  <!-- ===================================================== -->
+  <!--                      MODALES                          -->
+  <!-- ===================================================== -->
+
+  <!-- ====== MODELO 1 ====== -->
+  <div class="modal-overlay" id="modelo1">
+    <div class="modal-content">
+
+      <button class="modal-close" onclick="closeModal('modelo1')">&times;</button>
+
+      <h2>Remolque Plataforma</h2>
+
+      <div class="modal-precio">$26,500 MXN — Precio Base</div>
+
+      <div class="modal-estado">
+        • Tiempo de fabricación: 5 a 7 días hábiles<br>
+        • Incluye garantía y factura
+      </div>
+
+      <h4>Especificaciones</h4>
+      <ul class="modal-specs">
+        <li>Medidas 3m x 1.75m</li>
+        <li>Chasis reforzado</li>
+        <li>Lámina calibre 14</li>
+        <li>Luz LED y conector estándar</li>
+        <li>Eje de 750 kg</li>
+      </ul>
+
+      <div class="modal-info">
+        <p>Personalizable en color, medidas y accesorios.</p>
+        <p>Entrega en Guadalajara.</p>
+      </div>
+
+      <a href="https://wa.me/523347540496" class="btn btn-primary" target="_blank">
+        Cotizar por WhatsApp
+      </a>
+
     </div>
   </div>
-</div>
 
-<footer>
-  <p>&copy; 2025 Remolques La Perla. Todos los derechos reservados.</p>
-</footer>
 
-<script>
-const remolquesData = {
-    'food-truck-1': {
-      titulo: 'Food Truck Personalizado',
-      precio: null,
-      descripcion: '🎨 Realizamos cualquier tipo de proyecto personalizado. Te ayudamos a lograr tu sueño con renders y asesoría profesional.',
-      especificaciones: [
-        '✨ Diseño 100% personalizado según tu visión',
-        '🎯 Asesoría completa en renders y planos',
-        '🏗️ Fabricación profesional con acabados premium',
-        '💡 Soluciones innovadoras para tu negocio',
-        '🚀 Nos encanta ayudarte a lograr tus sueños',
-        '⚙️ Instalaciones y equipamiento personalizado'
-      ],
-      medidas: 'Según tu proyecto',
-      opciones: 'Consulta tu idea por WhatsApp - ¡Hacemos realidad tus sueños!'
-    },
-    'multiusos-1': {
-      titulo: 'Remolque Multiusos 1',
-      precio: 9500,
-      descripcion: 'Remolque ideal para cuatrimotos, compacto y resistente.',
-      especificaciones: [
-        'Soporta hasta 700 kg',
-        'Medidas: 130cm x 180cm',
-        'Ideal para cuatrimotos',
-        'Rin 13',
-        'Estructura reforzada',
-        'Listo para emplacar'
-      ],
-      medidas: '130cm x 180cm',
-      opciones: 'Venta inmediata'
-    },
-    'multiusos-2': {
-      titulo: 'Remolque Multiusos 2',
-      precio: null,
-      descripcion: 'Remolque para cuatrimotos pequeñas, mayor capacidad.',
-      especificaciones: [
-        'Rin 13',
-        '2000 lb',
-        'Medidas: 140cm x 250cm',
-        'Ideal para cuatrimotos pequeñas',
-        'Estructura reforzada',
-        'Listo para emplacar'
-      ],
-      medidas: '140cm x 250cm',
-      opciones: 'Venta inmediata'
-    },
-    'cama-baja-3t': {
-      titulo: 'Cama Baja 3 Toneladas',
-      precio: 50000,
-      descripcion: 'Remolque cama baja de 3 toneladas con 5 birlos, nuevo y listo para emplacar.',
-      especificaciones: [
-        '5 birlos',
-        'Soporta 3 toneladas',
-        'Nuevo',
-        'Listo para emplacar',
-        'Estructura resistente',
-        'Consulta más detalles por WhatsApp'
-      ],
-      medidas: 'Consultar',
-      opciones: 'Venta inmediata'
-    },
-    'ganadero-2': {
-      titulo: 'Remolque Ganadero 2 Doble Eje',
-      precio: 60000,
-      descripcion: 'Ideal para 2 caballos, doble eje, listo para emplacar.',
-      especificaciones: [
-        'Doble eje',
-        'Listo para emplacar',
-        'Ideal para 2 caballos',
-        'Estructura reforzada',
-        'Incluye redilas y puerta trasera',
-        'Consulta más detalles por WhatsApp'
-      ],
-      medidas: 'Consultar',
-      opciones: 'Venta inmediata'
-    },
-    'cama-baja-6t': {
-      titulo: 'Cama Baja 6 Toneladas',
-      precio: 70000,
-      descripcion: 'Remolque cama baja nuevo, doble eje, 8 birlos, soporta 6 toneladas.',
-      especificaciones: [
-        'Doble eje',
-        '8 birlos',
-        'Soporta 6 toneladas',
-        'Nuevo',
-        'Listo para emplacar',
-        'Consulta más detalles por WhatsApp'
-      ],
-      medidas: 'Consultar',
-      opciones: 'Venta inmediata'
-    },
-  'food-truck-4': {
-    titulo: 'Food Truck Mini Madera',
-    precio: 63500,
-    descripcion: 'Modelo mini con acabado en madera, incluye todo lo necesario.',
-    especificaciones: [
-      'Incluye 2 equipos de cocina',
-      'Rin 13',
-      'Muelles de 2000 lb',
-      'Acabado en madera',
-      'Precio con IVA',
-      'Listo para emplacar'
-    ],
-    medidas: '1.50 x 2.00 m',
-    opciones: 'Remolque nuevo, entrega inmediata'
-  },
-  'food-truck-4-alt': {
-    titulo: 'Food Truck Acero Inoxidable',
-    precio: 100000,
-    descripcion: 'Food truck forrado y equipado en acero inoxidable. Medida personalizable.',
-    especificaciones: [
-      'Forrado y equipado en acero inoxidable',
-      'Medida base: 1.50 x 2.50 m',
-      'Se fabrica en la medida que guste',
-      'Listo para emplacar'
-    ],
-    medidas: '1.50 x 2.50 m (personalizable)',
-    opciones: 'Precio mostrado para la medida base'
-  },
-  'oficina-movil-1': {
-    titulo: 'Oficina Móvil Premium',
-    precio: 210000,
-    descripcion: 'Oficina móvil equipada, lista para trabajar en cualquier lugar.',
-    especificaciones: [
-      'Totalmente equipada',
-      'Acabados premium',
-      'Listo para emplacar',
-      'Entrega inmediata'
-    ],
-    medidas: 'Consultar dimensiones',
-    opciones: 'Renta disponible, consulta por WhatsApp'
-  },
-  'oficina-movil-2': {
-    titulo: 'Oficina Móvil Base 2',
-    precio: 230000,
-    descripcion: 'Remolque oficina móvil sin equipar. Perfecta para personalizar según tus necesidades.',
-    especificaciones: [
-      'Estructura completa',
-      'Aislamiento térmico',
-      'Ventanas y puertas incluidas',
-      'Listo para equipar',
-      'Sistema eléctrico base',
-      'Listo para emplacar'
-    ],
-    medidas: 'Consultar dimensiones',
-    opciones: 'Venta inmediata - Equipamiento adicional disponible'
-  },
-  'oficina-movil-3': {
-    titulo: 'Oficina Móvil Base 3',
-    precio: 230000,
-    descripcion: 'Remolque oficina móvil sin equipar. Espacio flexible para tus soluciones de trabajo.',
-    especificaciones: [
-      'Estructura completa',
-      'Aislamiento térmico',
-      'Ventanas y puertas incluidas',
-      'Listo para equipar',
-      'Sistema eléctrico base',
-      'Listo para emplacar'
-    ],
-    medidas: 'Consultar dimensiones',
-    opciones: 'Venta inmediata - Equipamiento adicional disponible'
-  },
-  'oficina-movil-4': {
-    titulo: 'Oficina Móvil Base 4',
-    precio: 230000,
-    descripcion: 'Remolque oficina móvil sin equipar. Construido con calidad premium para tus proyectos.',
-    especificaciones: [
-      'Estructura completa',
-      'Aislamiento térmico',
-      'Ventanas y puertas incluidas',
-      'Listo para equipar',
-      'Sistema eléctrico base',
-      'Listo para emplacar'
-    ],
-    medidas: 'Consultar dimensiones',
-    opciones: 'Venta inmediata - Equipamiento adicional disponible'
-  },
-  'ganadero-1': {
-    titulo: 'Remolque Ganadero 5x16 pies',
-    precio: null,
-    descripcion: 'Remolque ganadero 5x16 pies. Renta disponible.',
-    especificaciones: [
-      'Redilas desmontables',
-      'Puerta trasera abatible',
-      'Estructura reforzada',
-      'Listo para emplacar'
-    ],
-    medidas: '5 x 16 pies',
-    opciones: 'Renta: consultar por WhatsApp'
-  },
-  'ganadero-4': {
-    titulo: 'Remolque Ganadero 4 - NORTE',
-    precio: 105000,
-    descripcion: 'REMOLQUE NUEVO - EQUIPADO',
-    especificaciones: [
-      'PISO DE MADERA',
-      'JALON PARA BOLA',
-      'GATO DE ELEVACION',
-      'CADENAS DE SEGURIDAD',
-      '2 EJES',
-      '4 LLANTAS 700-15 CON RIN',
-      'LUCES REGLAMENTARIAS SEGÚN SCT',
-      'REDILAS GANADERAS DESMONTABLES CON FRENTE REDONDO',
-      'UNA PUERTA DIVISION Y UNA TRASERA ABATIBLE Y MEDIA CORREDISA'
-    ],
-    medidas: "5' FT. ANCHO X 16\" FT. LARGO",
-    opciones: 'También disponible en 12\", 14\"'
-  },
-  'food-truck-2': {
-    titulo: 'Food Truck Mini',
-    precio: 60000,
-    descripcion: 'Modelo mini listo para emplacar, incluye todo lo necesario.',
-    especificaciones: [
-      'Incluye 2 equipos de cocina',
-      'Rin 13',
-      'Muelles de 2000 lb',
-      'Precio con IVA',
-      'Listo para emplacar'
-    ],
-    medidas: '1.50 x 2.00 m',
-    opciones: 'Remolque nuevo, entrega inmediata'
-  },
-  'food-truck-3': {
-    titulo: 'Food Truck Perfet',
-    precio: 70000,
-    descripcion: 'Modelo perfet, incluye 3 equipos de cocina. Opciones de eje.',
-    especificaciones: [
-      'Incluye 3 equipos de cocina',
-      'Rin 15',
-      '3500 lb',
-      'Opcional doble eje: $99,000',
-      'Con un eje: $92,000',
-      'Listo para emplacar'
-    ],
-    medidas: '2 x 3 m',
-    opciones: 'Remolque nuevo, entrega inmediata'
-  },
-  'oficina-movil-5': {
-    titulo: 'Oficina Móvil 5',
-    precio: 120000,
-    descripcion: 'Oficina móvil equipada, ideal para proyectos en campo o empresas que requieren movilidad.',
-    especificaciones: [
-      'Totalmente equipada',
-      'Aislada térmica y acústicamente',
-      'Ventanas y puerta de seguridad',
-      'Listo para emplacar',
-      'Entrega inmediata'
-    ],
-    medidas: 'Consultar dimensiones',
-    opciones: 'Venta inmediata'
-  },
-  'oficina-movil-rellena': {
-    titulo: 'Oficina Móvil Rellena - Proyecto Completo',
-    precio: null,
-    descripcion: '🏢 Oficina móvil completamente equipada y funcional. Realizamos cualquier tipo de proyecto personalizado para tu negocio.',
-    especificaciones: [
-      '✨ Totalmente equipada y lista para usar',
-      '💼 Espacio de trabajo optimizado',
-      '🎨 Acabados profesionales y modernos',
-      '📦 Incluye escritorios, sillas y mobiliario',
-      '🛠️ Sistemas eléctricos e iluminación completos',
-      '🚀 Adaptable a cualquier necesidad empresarial'
-    ],
-    medidas: 'Consultar dimensiones específicas',
-    opciones: 'Venta e implementación personalizada - ¡Contáctanos para tu proyecto!'
-  }
-};
 
-function mostrarDetalles(id) {
-  const datos = remolquesData[id];
-  if (!datos) return;
-  
-  // Construir el mensaje de WhatsApp
-  let precioTexto = datos.precio ? `$${datos.precio.toLocaleString('es-MX')} MXN` : 'Consultar precio';
-  const mensaje = `*${datos.titulo}*%0A%0A💰 *Precio:* ${precioTexto}%0A%0A📋 *Especificaciones:*%0A${datos.especificaciones.map(e => '• ' + e).join('%0A')}%0A%0A📏 *Medidas:* ${datos.medidas}%0A%0A✨ *${datos.opciones}*`;
-  
-  const modalBody = document.getElementById('modal-body');
-  let precioHtml = datos.precio ? `<div class="modal-precio">$${datos.precio.toLocaleString('es-MXN')} MXN</div>` : '<div class="modal-precio">Consultar precio personalizado</div>';
-  
-  modalBody.innerHTML = `
-    <h2>${datos.titulo}</h2>
-    ${precioHtml}
-    <p class="modal-estado">${datos.descripcion}</p>
-    
-    <h4>Especificaciones:</h4>
-    <ul class="modal-specs">
-      ${datos.especificaciones.map(e => `<li>${e}</li>`).join('')}
-    </ul>
-    
-    <div class="modal-info">
-      <p><strong>Medidas:</strong> ${datos.medidas}</p>
-      <p><strong>${datos.opciones}</strong></p>
+  <!-- ====== MODELO 2 ====== -->
+  <div class="modal-overlay" id="modelo2">
+    <div class="modal-content">
+
+      <button class="modal-close" onclick="closeModal('modelo2')">&times;</button>
+
+      <h2>Food Truck — Food Max</h2>
+
+      <div class="modal-precio">$79,000 MXN — Precio Base</div>
+
+      <div class="modal-estado">
+        • Tiempo de fabricación: 12 a 15 días<br>
+        • Estructura térmica premium
+      </div>
+
+      <h4>Especificaciones</h4>
+      <ul class="modal-specs">
+        <li>Barra de servicio</li>
+        <li>Repisas reforzadas</li>
+        <li>Ventana abatible con pistones</li>
+        <li>Piso antiderrapante</li>
+        <li>Pared termoacústica</li>
+      </ul>
+
+      <div class="modal-info">
+        <p>Ideal para comida rápida, cafetería o snacks.</p>
+      </div>
+
+      <a href="https://wa.me/523347540496" class="btn btn-primary" target="_blank">
+        Pedir cotización
+      </a>
+
     </div>
-    
-    <a href="https://wa.me/5213347540496?text=${mensaje}" class="btn btn-primary" target="_blank" style="display: block; text-align: center; margin-top: 20px;">
-      <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-    </a>
-  `;
-  
-  document.getElementById('modal-detalles').style.display = 'flex';
-}
+  </div>
 
-function cerrarModal() {
-  document.getElementById('modal-detalles').style.display = 'none';
-}
 
-// Cerrar modal al presionar Escape
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') cerrarModal();
-});
-</script>
+
+  <!-- ------------------------------------- -->
+  <!--               SCRIPTS                 -->
+  <!-- ------------------------------------- -->
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/523347540496" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
 </body>
 </html>
