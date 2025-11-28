@@ -90,13 +90,13 @@
           <img src="assets/food-truck-1.jpg" alt="Food Truck 1" loading="lazy">
           <p>Food Truck 1</p>
         </div>
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-2')">
           <img src="assets/food-truck-2.jpg" alt="Food Truck 2" loading="lazy">
-          <p>Food Truck 2</p>
+          <p>Food Truck 2 - $60,000</p>
         </div>
-        <div class="foto-item">
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-3')">
           <img src="assets/food-truck-3.jpg" alt="Food Truck 3" loading="lazy">
-          <p>Food Truck 3</p>
+          <p>Food Truck 3 - $70,000 / $92,000 / $99,000</p>
         </div>
         <div class="foto-item">
           <img src="assets/food-truck-4.jpg" alt="Food Truck 4" loading="lazy">
@@ -285,6 +285,35 @@ const remolquesData = {
     ],
     medidas: "5' FT. ANCHO X 16\" FT. LARGO",
     opciones: 'También disponible en 12\", 14\"'
+  },
+  'food-truck-2': {
+    titulo: 'Food Truck Mini',
+    precio: 60000,
+    descripcion: 'Modelo mini listo para emplacar, incluye todo lo necesario.',
+    especificaciones: [
+      'Incluye 2 equipos de cocina',
+      'Rin 13',
+      'Muelles de 2000 lb',
+      'Precio con IVA',
+      'Listo para emplacar'
+    ],
+    medidas: '1.50 x 2.00 m',
+    opciones: 'Remolque nuevo, entrega inmediata'
+  },
+  'food-truck-3': {
+    titulo: 'Food Truck Perfet',
+    precio: 70000,
+    descripcion: 'Modelo perfet, incluye 3 equipos de cocina. Opciones de eje.',
+    especificaciones: [
+      'Incluye 3 equipos de cocina',
+      'Rin 15',
+      '3500 lb',
+      'Opcional doble eje: $99,000',
+      'Con un eje: $92,000',
+      'Listo para emplacar'
+    ],
+    medidas: '2 x 3 m',
+    opciones: 'Remolque nuevo, entrega inmediata'
   }
 };
 
