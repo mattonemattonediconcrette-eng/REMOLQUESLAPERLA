@@ -483,6 +483,74 @@ nav a:hover {
 }
 
 /* ========================= */
+/*       VENTA / RENTA       */
+/* ========================= */
+
+#venta-renta {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf0 100%);
+  text-align: center;
+}
+
+.venta-renta-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.venta-renta-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  flex: 1 1 320px;
+  max-width: 420px;
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--accent-2);
+}
+
+.venta-renta-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  border-top-color: var(--accent-3);
+}
+
+.venta-renta-icon {
+  font-size: 3.2rem;
+  margin-bottom: 15px;
+}
+
+.venta-renta-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: var(--accent-1);
+}
+
+.venta-renta-card p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.venta-renta-card .btn {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .venta-renta-grid {
+    flex-direction: column;
+  }
+  .venta-renta-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ========================= */
 /*         FOOTER            */
 /* ========================= */
 
