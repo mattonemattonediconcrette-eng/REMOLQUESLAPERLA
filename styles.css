@@ -102,15 +102,19 @@ h3 {
 }
 
 .header-content {
+  position: relative;
   text-align: center;
   margin-bottom: 8px;
 }
 
 .logo-img {
-  max-width: 120px;
+  position: absolute;
+  left: 18px;
+  top: 12px;
+  max-width: 110px;
   height: auto;
-  margin: 0 auto 6px;
   display: block;
+  z-index: 110;
 }
 
 .logo-text {
@@ -126,6 +130,18 @@ h3 {
   color: var(--muted);
   margin-top: 6px;
   font-weight: 600;
+}
+
+/* Ajustes para que el logo no tape el contenido en pantallas pequeñas */
+@media (max-width: 480px) {
+  .logo-img {
+    left: 12px;
+    top: 10px;
+    max-width: 90px;
+  }
+  .header-content {
+    padding-left: 110px;
+  }
 }
 
 nav {
@@ -401,6 +417,40 @@ nav a:hover {
   text-align: center;
 }
 
+/* Grid para información y mapa */
+.contact-grid {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1 1 320px;
+  max-width: 520px;
+  text-align: left;
+}
+
+.contact-info p {
+  margin: 6px 0;
+  color: #fff;
+}
+
+.contact-map {
+  flex: 1 1 320px;
+  max-width: 720px;
+}
+
+.map-embed {
+  width: 100%;
+  height: 340px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
+
 #contacto a {
   color: #ffb400;
   text-decoration: none;
@@ -409,6 +459,16 @@ nav a:hover {
 
 #contacto a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+  .map-embed {
+    height: 260px;
+  }
 }
 
 /* ========================= */
