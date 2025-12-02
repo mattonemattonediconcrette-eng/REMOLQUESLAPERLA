@@ -1,0 +1,23 @@
+{
+  "name": "Remolques La Perla",
+  "short_name": "Remolques",
+  "description": "Remolques La Perla - Food trucks y remolques multiusos premium de Jalisco.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#1f1712",
+  "background_color": "#fbf7f0",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

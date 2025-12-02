@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Remolques La Perla - Fabricación premium de remolques multiusos, food trucks y carga en Jalisco.">
-  <meta name="theme-color" content="#1a1f3a">
+  <meta name="theme-color" content="#1f1712">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Remolques La Perla">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Remolques La Perla - Fabricación Premium</title>
   <!-- Optimizaciones de rendimiento -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -12,15 +16,19 @@
   <link rel="preconnect" href="https://www.google.com">
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/logo.png">
   <link rel="icon" href="assets/logo.png">
 </head>
 
 <body>
+  <div id="offline-toast" class="offline-toast" role="status" aria-live="polite" hidden>Sin conexión, navega en el catálogo offline y recibe nuevas ideas cuando vuelvas.</div>
 
-<!-- BOTÓN WHATSAPP FLOTANTE -->
-<a href="https://wa.me/5215551234567?text=Hola%20Remolques%20La%20Perla%20me%20interesa%20conocer%20sobre%20sus%20remolques" class="whatsapp-btn" target="_blank" title="Contactar por WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- BOTÓN WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/5215551234567?text=Hola%20Remolques%20La%20Perla%20me%20interesa%20conocer%20sobre%20sus%20remolques" class="whatsapp-btn" target="_blank" title="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <span class="sr-only">WhatsApp</span>
+  </a>
 
 <header class="header">
   <div class="header-content">
@@ -37,7 +45,10 @@
     <a href="#fabricacion">Proceso</a>
     <a href="#contacto">Contacto</a>
   </nav>
-  <button id="theme-toggle" class="btn btn-secondary" aria-label="Cambiar modo">🌙 Noche</button>
+  <div class="header-actions">
+    <button type="button" id="install-app-btn" class="btn btn-ghost" hidden>Instalar app</button>
+    <button type="button" id="theme-toggle" class="btn btn-secondary" aria-label="Cambiar modo">🌙 Noche</button>
+  </div>
 </header>
 
 <section id="inicio" class="hero">
@@ -52,6 +63,38 @@
   <section id="modelos" class="modelos-section">
     <h2>Nuestros Modelos</h2>
     <p class="section-subtitle">Selecciona la categoría para ver ejemplos. Sube tus imágenes y las reemplazo.</p>
+
+    <!-- FOOD TRUCKS -->
+    <div class="categoria">
+      <div class="categoria-header">
+        <h3>🍔 Food Trucks Móviles</h3>
+        <span class="precio-badge">$45,000 - $75,000 MXN</span>
+        <span class="free-badge">Integraciones gratis</span>
+      </div>
+      <p class="categoria-desc">Remolques equipados para cocina móvil con sistemas gratis de iluminación, gas y cobros para que abras más rápido.</p>
+      <div class="galeria">
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-1')">
+          <img src="assets/food-truck-1.jpg" alt="Food Truck 1" loading="lazy">
+          <p>Food Truck 1 - Proyecto Personalizado</p>
+        </div>
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-2')">
+          <img src="assets/food-truck-2.jpg" alt="Food Truck 2" loading="lazy">
+          <p>Food Truck 2 - $60,000</p>
+        </div>
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-3')">
+          <img src="assets/food-truck-3.jpg" alt="Food Truck 3" loading="lazy">
+          <p>Food Truck 3 - $70,000 / $92,000 / $99,000</p>
+        </div>
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-4')">
+          <img src="assets/food-truck-4.jpg" alt="Food Truck 4" loading="lazy">
+          <p>Food Truck 4 (madera) - $63,500</p>
+        </div>
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-4-alt')">
+          <img src="assets/food-truck-4-alt.jpg" alt="Food Truck 4 Acero" loading="lazy">
+          <p>Food Truck 4 (acero) - $100,000</p>
+        </div>
+      </div>
+    </div>
 
     <!-- REMOLQUES MULTIUSOS -->
     <div class="categoria">
@@ -76,37 +119,6 @@
         <div class="foto-item" onclick="mostrarDetalles('cama-baja-6t')">
           <img src="assets/cama-baja-6t.jpg" alt="Cama Baja 6T" loading="lazy">
           <p>Cama Baja 6T - $70,000</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- FOOD TRUCKS -->
-    <div class="categoria">
-      <div class="categoria-header">
-        <h3>🍔 Food Trucks Móviles</h3>
-        <span class="precio-badge">$45,000 - $75,000 MXN</span>
-      </div>
-      <p class="categoria-desc">Remolques equipados para cocina móvil. Sistemas, instalaciones y acabados profesionales.</p>
-      <div class="galeria">
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-1')">
-          <img src="assets/food-truck-1.jpg" alt="Food Truck 1" loading="lazy">
-          <p>Food Truck 1 - Proyecto Personalizado</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-2')">
-          <img src="assets/food-truck-2.jpg" alt="Food Truck 2" loading="lazy">
-          <p>Food Truck 2 - $60,000</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-3')">
-          <img src="assets/food-truck-3.jpg" alt="Food Truck 3" loading="lazy">
-          <p>Food Truck 3 - $70,000 / $92,000 / $99,000</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-4')">
-          <img src="assets/food-truck-4.jpg" alt="Food Truck 4" loading="lazy">
-          <p>Food Truck 4 (madera) - $63,500</p>
-        </div>
-        <div class="foto-item" onclick="mostrarDetalles('food-truck-4-alt')">
-          <img src="assets/food-truck-4-alt.jpg" alt="Food Truck 4 Acero" loading="lazy">
-          <p>Food Truck 4 (acero) - $100,000</p>
         </div>
       </div>
     </div>
@@ -261,7 +273,7 @@
         </div>
       </div>
       <div class="contact-map">
-        <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.167789521685!2d-103.5122911!3d20.5403146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f550069f7efe1%3A0x95ec392f8fcaa3d3!2sRemolques%20La%20Perla!5e0!3m2!1ses-419!2smx!4v1764324631003!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.167789521685!2d-103.5122911!3d20.5403146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f550069f7efe1%3A0x95ec392f8fcaa3d3!2sRemolques%20La%20Perla!5e0!3m2!1ses-419!2smx!4v1764324631003!5m2!1ses-419!2smx" width="600" height="450" title="Mapa de Remolques La Perla" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -270,7 +282,7 @@
 <!-- MODAL PARA DETALLES DEL REMOLQUE -->
 <div id="modal-detalles" class="modal-overlay" onclick="cerrarModal()">
   <div class="modal-content" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="cerrarModal()">✕</button>
+    <button type="button" class="modal-close" onclick="cerrarModal()">✕</button>
     <div id="modal-body">
       <!-- Los detalles se cargarán aquí dinámicamente -->
     </div>
@@ -596,7 +608,7 @@ function mostrarDetalles(id) {
       <p><strong>${datos.opciones}</strong></p>
     </div>
     
-    <a href="https://wa.me/5213347540496?text=${mensaje}" class="btn btn-primary" target="_blank" style="display: block; text-align: center; margin-top: 20px;">
+    <a href="https://wa.me/5213347540496?text=${mensaje}" class="btn btn-primary modal-cta" target="_blank">
       <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
     </a>
   `;
@@ -612,6 +624,53 @@ function cerrarModal() {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') cerrarModal();
 });
+
+const installBtn = document.getElementById('install-app-btn');
+const offlineToast = document.getElementById('offline-toast');
+let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', function(event) {
+  event.preventDefault();
+  deferredPrompt = event;
+  if (installBtn) {
+    installBtn.removeAttribute('hidden');
+  }
+});
+
+if (installBtn) {
+  installBtn.addEventListener('click', async function() {
+    if (!deferredPrompt) return;
+    installBtn.setAttribute('disabled', 'true');
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    installBtn.hidden = true;
+    installBtn.removeAttribute('disabled');
+    deferredPrompt = null;
+  });
+}
+
+const updateOnlineStatus = () => {
+  if (!offlineToast) return;
+  if (navigator.onLine) {
+    offlineToast.hidden = true;
+    offlineToast.classList.remove('is-visible');
+  } else {
+    offlineToast.hidden = false;
+    offlineToast.classList.add('is-visible');
+  }
+};
+
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+updateOnlineStatus();
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').catch(function(err) {
+      console.warn('Service worker registration failed:', err);
+    });
+  });
+}
 </script>
 
 </body>
