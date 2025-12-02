@@ -7,23 +7,27 @@
 /* ========================= */
 
 :root {
-  --primary: #2f1b12;
-  --secondary: #f4a261;
-  --accent: #e07a5f;
-  --success: #2a9d8f;
-  --danger: #c03221;
-  --muted: #5c4c3a;
-  --surface: #fbf7f0;
-  --bg-light: #f1ebe3;
-  --bg-dark: #1f1712;
-  --dark-paper: #151010;
-  --dark-panel: #211815;
-  --dark-muted: #d6c5b4;
+  --primary: #1a1a1a;
+  --secondary: #ff6b35;
+  --accent: #f7931e;
+  --success: #10b981;
+  --danger: #ef4444;
+  --muted: #6b7280;
+  --surface: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-dark: #0f172a;
+  --dark-paper: #1e293b;
+  --dark-panel: #334155;
+  --dark-muted: #cbd5e1;
   --dark-border: rgba(255,255,255,0.1);
-  --glass: rgba(0,0,0,0.08);
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
-  --shadow-lg: 0 12px 32px rgba(0,0,0,0.25);
+  --glass: rgba(255,255,255,0.1);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -183,19 +187,20 @@ h2, h3 {
 }
 
 h2 {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   color: var(--primary);
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--primary);
   font-weight: 800;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.5px;
 }
 
 /* ========================= */
@@ -256,19 +261,21 @@ h3 {
 }
 
 .header {
-  background: var(--surface);
-  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px 32px;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(12px);
-  background-color: rgba(255,255,255,0.95);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
   flex-wrap: wrap;
+  transition: var(--transition);
 }
 
 .header-actions {
@@ -321,18 +328,24 @@ nav a:hover {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 70px 20px;
-  min-height: 320px;
-  background: linear-gradient(135deg, #0b1524, #14243d 55%, #1e2e44);
+  padding: 120px 32px;
+  min-height: 85vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero.foodtruck-hero {
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(220px, 320px);
-  gap: 36px;
-  background: linear-gradient(110deg, rgba(8, 12, 20, 0.95), rgba(19, 24, 34, 0.85)),
-              url('assets/food-truck-1.jpg') center/cover;
-  min-height: 420px;
+  grid-template-columns: minmax(320px, 1.2fr) minmax(280px, 380px);
+  gap: 60px;
+  align-items: center;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(102, 126, 234, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  min-height: 85vh;
 }
 
 
@@ -349,15 +362,22 @@ nav a:hover {
 .hero-text {
   position: relative;
   z-index: 3;
-  background: rgba(0,0,0,0.35);
-  padding: 40px 36px;
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 48px 40px;
+  border-radius: var(--radius-lg);
   color: #fff;
   text-align: left;
-  max-width: 640px;
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 10px 40px rgba(11,22,28,0.55);
-  animation: heroGlow 10s ease-in-out infinite;
+  max-width: 680px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  transition: var(--transition);
+}
+
+.hero-text:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
 .hero-label {
@@ -492,22 +512,43 @@ nav a:hover {
 /* ========================= */
 
 .btn {
-  display: inline-block;
-  padding: 12px 32px;
-  background: linear-gradient(135deg, #f4a261 0%, #d9824b 100%);
-  color: #1b1008;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
   cursor: pointer;
   border: none;
   font-size: 1rem;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(210, 132, 80, 0.35);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
 }
 
 .btn-ghost {
@@ -559,8 +600,8 @@ nav a:hover {
 /* ========================= */
 
 #modelos {
-  padding: 80px 20px;
-  background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+  padding: 100px 32px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
   text-align: center;
 }
 
@@ -579,11 +620,23 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   flex-wrap: wrap;
-  gap: 20px;
-  padding-bottom: 16px;
-  border-bottom: 3px solid var(--secondary);
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+  position: relative;
+}
+
+.categoria-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
 }
 
 .categoria-header h3 {
@@ -635,17 +688,33 @@ nav a:hover {
 
 .foto-item {
   position: relative;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
   cursor: pointer;
   background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.foto-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 100%);
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.foto-item:hover::after {
+  opacity: 1;
 }
 
 .foto-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--secondary);
 }
 
 .foto-item img {
