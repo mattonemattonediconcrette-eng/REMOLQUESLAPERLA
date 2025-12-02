@@ -109,6 +109,10 @@
           <img src="assets/food-truck-4-alt.jpg" alt="Food Truck 4 Acero" loading="lazy">
           <p>Food Truck 4 (acero) - $100,000</p>
         </div>
+        <div class="foto-item" onclick="mostrarDetalles('food-truck-5')">
+          <img src="assets/oficina-movil-1.jpg" alt="Food Truck 5" loading="lazy">
+          <p>Food Truck 5 - $210,000</p>
+        </div>
       </div>
     </div>
 
@@ -197,10 +201,6 @@
       </div>
       <p class="categoria-desc">Espacios de trabajo móviles totalmente equipados. Ideales para empresas, consultoría y atención al cliente.</p>
       <div class="galeria">
-        <div class="foto-item" onclick="mostrarDetalles('oficina-movil-1')">
-          <img src="assets/oficina-movil-1.jpg" alt="Oficina Móvil 1" loading="lazy">
-          <p>Oficina Móvil 1 - $210,000</p>
-        </div>
         <div class="foto-item" onclick="mostrarDetalles('oficina-movil-2')">
           <img src="assets/oficina-movil-2.jpg" alt="Oficina Móvil 2" loading="lazy">
           <p>Oficina Móvil 2 - $230,000</p>
@@ -449,18 +449,20 @@ const remolquesData = {
     medidas: '1.50 x 2.50 m (personalizable)',
     opciones: 'Precio mostrado para la medida base'
   },
-  'oficina-movil-1': {
-    titulo: 'Oficina Móvil Premium',
+  'food-truck-5': {
+    titulo: 'Food Truck Premium',
     precio: 210000,
-    descripcion: 'Oficina móvil equipada, lista para trabajar en cualquier lugar.',
+    descripcion: 'Food truck totalmente equipado con acabados premium, listo para operar.',
     especificaciones: [
-      'Totalmente equipada',
+      'Totalmente equipado',
       'Acabados premium',
+      'Cocina profesional completa',
+      'Sistema eléctrico y de gas',
       'Listo para emplacar',
       'Entrega inmediata'
     ],
     medidas: 'Consultar dimensiones',
-    opciones: 'Renta disponible, consulta por WhatsApp'
+    opciones: 'Venta y renta disponible, consulta por WhatsApp'
   },
   'oficina-movil-2': {
     titulo: 'Oficina Móvil Base 2',
