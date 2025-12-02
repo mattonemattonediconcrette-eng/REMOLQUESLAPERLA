@@ -378,11 +378,27 @@ nav a:hover {
 
 .hero-pills {
   margin: 20px 0 0;
-  padding-left: 16px;
+  padding-left: 0;
+  list-style: none;
   display: grid;
   gap: 8px;
   color: rgba(248,250,252,0.95);
   font-size: 0.95rem;
+}
+
+.hero-pills li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.hero-pills li::before {
+  content: '✓';
+  color: #fbbf24;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 900;
+  font-size: 1.1rem;
 }
 
 .hero-visual {
@@ -759,8 +775,15 @@ nav a:hover {
 }
 
 .venta-renta-icon {
-  font-size: 3.2rem;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--secondary);
+  background: rgba(244, 162, 97, 0.15);
+  padding: 8px 20px;
+  border-radius: 8px;
   margin-bottom: 15px;
+  display: inline-block;
 }
 
 .venta-renta-card h3 {
@@ -1033,6 +1056,52 @@ footer {
   display: block;
   text-align: center;
   margin-top: 20px;
+}
+
+.modal-payment {
+  margin: 30px 0 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-radius: 12px;
+  border: 2px solid #86efac;
+}
+
+.modal-payment h4 {
+  margin: 0 0 16px;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.payment-options {
+  display: grid;
+  gap: 12px;
+}
+
+.payment-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #fff;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.payment-btn:hover {
+  border-color: var(--secondary);
+  background: #fffbf5;
+  transform: translateX(4px);
+}
+
+.payment-btn svg {
+  flex-shrink: 0;
 }
 
 .foto-item {
