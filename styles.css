@@ -17,6 +17,10 @@
   --surface: #fef5e7; /* blanco cálido/crema */
   --bg-light: #f5e6d3; /* fondo tierra claro */
   --bg-dark: #4a3728; /* fondo marrón oscuro */
+  --dark-paper: #191716;
+  --dark-panel: #251f1b;
+  --dark-muted: #d5c9b7;
+  --dark-border: rgba(255,255,255,0.08);
   --glass: rgba(0,0,0,0.08);
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
@@ -40,6 +44,76 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body[data-theme="dark"] {
+  background: #0b0a09;
+  color: #f8f4ed;
+}
+
+body[data-theme="dark"] .header {
+  background: rgba(10,10,10,0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+
+body[data-theme="dark"] nav a {
+  color: #fdfaf6;
+}
+
+body[data-theme="dark"] nav a:hover {
+  color: #f59e0b;
+}
+
+body[data-theme="dark"] .hero-text {
+  background: rgba(9,9,9,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+body[data-theme="dark"] .section-subtitle {
+  color: #e9dcca;
+}
+
+body[data-theme="dark"] .categoria {
+  background: var(--dark-panel);
+  color: #fefcf8;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  border: 1px solid var(--dark-border);
+}
+
+body[data-theme="dark"] .categoria-desc,
+body[data-theme="dark"] .foto-item p,
+body[data-theme="dark"] .venta-renta-card p,
+body[data-theme="dark"] .contact-info p {
+  color: #e6dfd4;
+}
+
+body[data-theme="dark"] .precio-badge {
+  background: linear-gradient(90deg, rgba(255,159,38,0.9), rgba(255,115,0,0.9));
+  color: #111;
+}
+
+body[data-theme="dark"] #contacto {
+  background: linear-gradient(180deg, #050505 0%, #1d1913 100%);
+}
+
+body[data-theme="dark"] .contact-map {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+body[data-theme="dark"] .contact-map .map-embed {
+  box-shadow: none;
+}
+
+body[data-theme="dark"] .venta-renta-card {
+  background: #1b1612;
+  border-color: rgba(255,159,38,0.8);
+  color: #f7f2eb;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+body[data-theme="dark"] footer {
+  background: #0e0c0b;
 }
 
 h2, h3 {
@@ -98,6 +172,24 @@ h3 {
   content: 'WhatsApp';
   font-weight: 700;
   font-size: 0.95rem;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.1);
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 12px 28px rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+#theme-toggle {
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
 }
 
 /* ========================= */
@@ -163,6 +255,7 @@ nav {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  flex: 1;
 }
 
 nav a {
@@ -198,18 +291,20 @@ nav a:hover {
 /*          HERO             */
 /* ========================= */
 
-.hero {
-  /* Fondo local (descargado a assets/) con parallax ligero */
-  background-image: url('assets/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 560px;
+.header {
+  background: var(--surface);
+  padding: 18px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255,0.95);
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .hero::before {
@@ -518,7 +613,7 @@ nav a:hover {
 .venta-renta-card {
   background: var(--surface);
   padding: 30px 25px;
-  border-radius: 8px;
+  position: fixed;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   flex: 1 1 320px;
   max-width: 420px;
