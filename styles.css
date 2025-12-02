@@ -98,23 +98,24 @@
   .header-content {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    gap: 12px;
+  }
+  
   .hero.foodtruck-hero {
     grid-template-columns: 1fr;
     min-height: auto;
     padding: 50px 16px;
   }
+  
   .hero-visual {
     order: -1;
     margin-bottom: 18px;
-  }
   }
 
   .logo-img {
     width: 90px;
   }
-}
-  align-items: center;
-  gap: 12px;
 }
 
 body[data-theme="dark"] nav a {
@@ -273,49 +274,6 @@ h3 {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.header-content {
-  position: relative;
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-.logo-img {
-  position: absolute;
-  left: 18px;
-  top: 12px;
-  max-width: 110px;
-  height: auto;
-  display: block;
-  z-index: 110;
-}
-
-.logo-text {
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin: 6px 0 0;
-  letter-spacing: 1px;
-  color: var(--primary);
-}
-
-.tagline {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-top: 6px;
-  font-weight: 600;
-}
-
-/* Ajustes para que el logo no tape el contenido en pantallas pequeñas */
-@media (max-width: 480px) {
-  .logo-img {
-    left: 12px;
-    top: 10px;
-    max-width: 90px;
-  }
-  .header-content {
-    padding-left: 110px;
-  }
 }
 
 nav {
@@ -480,7 +438,6 @@ nav a:hover {
     width: 100%;
     justify-content: flex-end;
   }
-}
 }
 
 .hero-text h2 {

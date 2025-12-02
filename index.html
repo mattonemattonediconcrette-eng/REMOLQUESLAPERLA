@@ -94,7 +94,7 @@
           <p>Food Truck 1 - Proyecto Personalizado</p>
         </div>
         <div class="foto-item" onclick="mostrarDetalles('food-truck-2')">
-          <img src="assets/food-truck-2.jpg" alt="Food Truck 2" loading="lazy">
+          <img src="assets/food-truck-1.jpg" alt="Food Truck 2" loading="lazy">
           <p>Food Truck 2 - $60,000</p>
         </div>
         <div class="foto-item" onclick="mostrarDetalles('food-truck-3')">
@@ -145,23 +145,23 @@
         <h3>📦 Remolques de Carga General</h3>
         <span class="precio-badge">$15,000 - $22,000 MXN</span>
       </div>
-      <p class="categoria-desc">Soluciones para transporte de mercancía general, cerrados o abiertos, personalizables.</p>
+      <p class="categoria-desc">Soluciones para transporte de mercancía general: camas bajas, volteo y cerrados personalizables.</p>
       <div class="galeria">
-        <div class="foto-item">
-          <img src="assets/carga-1.jpg" alt="Carga 1" loading="lazy">
-          <p>Carga 1</p>
+        <div class="foto-item" onclick="mostrarDetalles('cama-baja-1')">
+          <img src="assets/cama-baja-3t.jpg" alt="Cama Baja Estándar" loading="lazy">
+          <p>Cama Baja Estándar</p>
         </div>
-        <div class="foto-item">
-          <img src="assets/carga-2.jpg" alt="Carga 2" loading="lazy">
-          <p>Carga 2</p>
+        <div class="foto-item" onclick="mostrarDetalles('cama-baja-2')">
+          <img src="assets/cama-baja-6t.jpg" alt="Cama Baja Reforzada" loading="lazy">
+          <p>Cama Baja Reforzada</p>
         </div>
-        <div class="foto-item">
-          <img src="assets/carga-3.jpg" alt="Carga 3" loading="lazy">
-          <p>Carga 3</p>
+        <div class="foto-item" onclick="mostrarDetalles('volteo-1')">
+          <img src="assets/carga-1.jpg" alt="Remolque de Volteo 1" loading="lazy">
+          <p>Remolque de Volteo 1</p>
         </div>
-        <div class="foto-item">
-          <img src="assets/carga-4.jpg" alt="Carga 4" loading="lazy">
-          <p>Carga 4</p>
+        <div class="foto-item" onclick="mostrarDetalles('volteo-2')">
+          <img src="assets/carga-2.jpg" alt="Remolque de Volteo 2" loading="lazy">
+          <p>Remolque de Volteo 2</p>
         </div>
       </div>
     </div>
@@ -595,6 +595,62 @@ const remolquesData = {
     ],
     medidas: 'Consultar dimensiones específicas',
     opciones: 'Venta e implementación personalizada - ¡Contáctanos para tu proyecto!'
+  },
+  'cama-baja-1': {
+    titulo: 'Cama Baja Estándar',
+    precio: null,
+    descripcion: 'Remolque cama baja ideal para transporte de maquinaria y carga pesada.',
+    especificaciones: [
+      'Estructura reforzada',
+      'Rampa de carga incluida',
+      'Sistema de sujeción',
+      'Listo para emplacar',
+      'Consulta capacidades por WhatsApp'
+    ],
+    medidas: 'Consultar',
+    opciones: 'Venta inmediata'
+  },
+  'cama-baja-2': {
+    titulo: 'Cama Baja Reforzada',
+    precio: null,
+    descripcion: 'Remolque cama baja de alta capacidad para cargas industriales.',
+    especificaciones: [
+      'Doble eje reforzado',
+      'Mayor capacidad de carga',
+      'Rampa hidráulica opcional',
+      'Sistema de anclaje premium',
+      'Listo para emplacar'
+    ],
+    medidas: 'Consultar',
+    opciones: 'Venta inmediata'
+  },
+  'volteo-1': {
+    titulo: 'Remolque de Volteo 1',
+    precio: null,
+    descripcion: 'Remolque basculante para materiales de construcción y escombro.',
+    especificaciones: [
+      'Sistema de volteo hidráulico',
+      'Caja reforzada',
+      'Ideal para construcción',
+      'Listo para emplacar',
+      'Consulta capacidades por WhatsApp'
+    ],
+    medidas: 'Consultar',
+    opciones: 'Venta inmediata'
+  },
+  'volteo-2': {
+    titulo: 'Remolque de Volteo 2',
+    precio: null,
+    descripcion: 'Remolque basculante de mayor capacidad para trabajos pesados.',
+    especificaciones: [
+      'Sistema hidráulico reforzado',
+      'Mayor volumen de carga',
+      'Compuerta trasera de seguridad',
+      'Estructura ultra resistente',
+      'Listo para emplacar'
+    ],
+    medidas: 'Consultar',
+    opciones: 'Venta inmediata'
   }
 };
 
