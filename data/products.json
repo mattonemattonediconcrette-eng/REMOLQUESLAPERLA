@@ -1,0 +1,44 @@
+[ 
+  {
+    "id": "rem-carga-1",
+    "name": "Remolque de Carga - Estándar",
+    "category": "Remolques de Carga",
+    "short_description": "Estructura reforzada, ejes de alta capacidad, ideal para trabajo rudo.",
+    "price": "Precio a consultar",
+    "images": [
+      "/assets/images/remolque-carga-1.jpg",
+      "/assets/images/remolque-carga-1-2.jpg"
+    ]
+  },
+  {
+    "id": "foodtruck-1",
+    "name": "Remolque Food Truck - Base",
+    "category": "Remolques Food Truck",
+    "short_description": "Listo para equipar, distribución funcional y acabados profesionales.",
+    "price": "Precio a consultar",
+    "images": [
+      "/assets/images/foodtruck-1.jpg",
+      "/assets/images/foodtruck-1-2.jpg"
+    ]
+  },
+  {
+    "id": "rem-especial-1",
+    "name": "Remolque Especial - Multiusos",
+    "category": "Remolques Especiales",
+    "short_description": "Diseño a medida para proyectos especiales y comerciales.",
+    "price": "Precio a consultar",
+    "images": [
+      "/assets/images/remolque-especial-1.jpg"
+    ]
+  },
+  {
+    "id": "caja-sec-1",
+    "name": "Cajas secas para herramientas",
+    "category": "Cajas y Accesorios",
+    "short_description": "Cajas secas resistentes para almacenamiento de herramientas y equipo. Varias medidas disponibles.",
+    "price": "Precio a consultar",
+    "images": [
+      "/assets/images/caja-sec-1.jpg"
+    ]
+  }
+]
