@@ -1,0 +1,287 @@
+[
+  {
+    "id": "remolque-carga-cama-baja-3t",
+    "slug": "remolque-carga-cama-baja-3-toneladas",
+    "name": "Remolque de Carga Cama Baja 3 Toneladas",
+    "category": "carga",
+    "categoryName": "Remolques de Carga",
+    "image": "assets/cama-baja-3t.jpg",
+    "description": "Remolque de carga con cama baja ideal para transportar hasta 3 toneladas. Estructura reforzada con ejes de alta capacidad.",
+    "features": [
+      "Capacidad de carga: 3 toneladas",
+      "Diseño de cama baja para facilitar carga y descarga",
+      "Estructura de acero reforzado",
+      "Ejes de alta resistencia",
+      "Ideal para trabajo pesado continuo",
+      "Fabricado en Jalisco, México"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Remolque de Carga Cama Baja 3 Toneladas"
+  },
+  {
+    "id": "remolque-carga-cama-baja-6t",
+    "slug": "remolque-carga-cama-baja-6-toneladas",
+    "name": "Remolque de Carga Cama Baja 6 Toneladas",
+    "category": "carga",
+    "categoryName": "Remolques de Carga",
+    "image": "assets/cama-baja-6t.jpg",
+    "description": "Remolque de carga pesada con cama baja para transportar hasta 6 toneladas. Diseño robusto para trabajo rudo.",
+    "features": [
+      "Capacidad de carga: 6 toneladas",
+      "Cama baja de acceso fácil",
+      "Construcción robusta de acero industrial",
+      "Sistema de frenos reforzado",
+      "Neumáticos de alta resistencia",
+      "Garantía de fabricación"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Remolque de Carga Cama Baja 6 Toneladas"
+  },
+  {
+    "id": "food-truck-premium",
+    "slug": "food-truck-premium",
+    "name": "Food Truck Premium",
+    "category": "food-truck",
+    "categoryName": "Remolques Food Truck",
+    "image": "assets/food-truck-1.jpg",
+    "description": "Food truck completamente equipado con distribución funcional y acabados profesionales. Listo para iniciar tu negocio de comida.",
+    "features": [
+      "Diseño moderno y atractivo",
+      "Espacio optimizado para cocina",
+      "Ventanas de servicio amplias",
+      "Instalación eléctrica completa",
+      "Acabados en acero inoxidable",
+      "Personalización disponible"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Food Truck Premium"
+  },
+  {
+    "id": "food-truck-compacto",
+    "slug": "food-truck-compacto",
+    "name": "Food Truck Compacto",
+    "category": "food-truck",
+    "categoryName": "Remolques Food Truck",
+    "image": "assets/food-truck-2.jpg",
+    "description": "Food truck compacto ideal para negocios móviles. Diseño eficiente con todos los elementos necesarios para operar.",
+    "features": [
+      "Diseño compacto y funcional",
+      "Perfecto para espacios reducidos",
+      "Fácil de transportar",
+      "Equipamiento básico incluido",
+      "Excelente relación calidad-precio",
+      "Listo para personalizar"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Food Truck Compacto"
+  },
+  {
+    "id": "food-truck-profesional",
+    "slug": "food-truck-profesional",
+    "name": "Food Truck Profesional",
+    "category": "food-truck",
+    "categoryName": "Remolques Food Truck",
+    "image": "assets/food-truck-3.jpg",
+    "description": "Food truck de nivel profesional con amplio espacio y equipamiento completo. Ideal para negocios establecidos.",
+    "features": [
+      "Amplio espacio de trabajo",
+      "Ventilación profesional",
+      "Áreas de preparación y servicio",
+      "Almacenamiento optimizado",
+      "Imagen comercial premium",
+      "Certificado para uso comercial"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Food Truck Profesional"
+  },
+  {
+    "id": "food-truck-deluxe",
+    "slug": "food-truck-deluxe",
+    "name": "Food Truck Deluxe",
+    "category": "food-truck",
+    "categoryName": "Remolques Food Truck",
+    "image": "assets/food-truck-4.jpg",
+    "description": "Food truck de lujo con todos los detalles premium. Máxima presencia comercial y funcionalidad.",
+    "features": [
+      "Diseño de alta gama",
+      "Equipamiento completo premium",
+      "Iluminación LED integrada",
+      "Sistema de sonido opcional",
+      "Rotulación personalizada",
+      "Listo para operar"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Food Truck Deluxe"
+  },
+  {
+    "id": "remolque-ganadero-estandar",
+    "slug": "remolque-ganadero-estandar",
+    "name": "Remolque Ganadero Estándar",
+    "category": "ganadero",
+    "categoryName": "Remolques Ganaderos",
+    "image": "assets/ganadero-1.jpg",
+    "description": "Remolque especializado para transporte de ganado. Diseño seguro y ventilado para el bienestar animal.",
+    "features": [
+      "Barandales de seguridad",
+      "Ventilación adecuada",
+      "Piso antiderrapante",
+      "Puerta de acceso amplia",
+      "Construcción resistente",
+      "Cumple normativas de transporte"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Remolque Ganadero Estándar"
+  },
+  {
+    "id": "remolque-ganadero-reforzado",
+    "slug": "remolque-ganadero-reforzado",
+    "name": "Remolque Ganadero Reforzado",
+    "category": "ganadero",
+    "categoryName": "Remolques Ganaderos",
+    "image": "assets/ganadero-2.jpg",
+    "description": "Remolque ganadero de construcción reforzada para ganado mayor. Máxima seguridad y durabilidad.",
+    "features": [
+      "Estructura extra reforzada",
+      "Ideal para ganado bovino",
+      "Sistema de cierre seguro",
+      "Suspensión mejorada",
+      "Mayor capacidad de carga",
+      "Diseño robusto profesional"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Remolque Ganadero Reforzado"
+  },
+  {
+    "id": "remolque-ganadero-premium",
+    "slug": "remolque-ganadero-premium",
+    "name": "Remolque Ganadero Premium",
+    "category": "ganadero",
+    "categoryName": "Remolques Ganaderos",
+    "image": "assets/ganadero-4.jpg",
+    "description": "Remolque ganadero premium con las mejores características para el transporte profesional de ganado.",
+    "features": [
+      "Diseño premium profesional",
+      "Ventilación superior",
+      "Acabados de calidad",
+      "Fácil limpieza y mantenimiento",
+      "Protección contra corrosión",
+      "Cumplimiento total de normas"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Remolque Ganadero Premium"
+  },
+  {
+    "id": "remolque-multiusos-basico",
+    "slug": "remolque-multiusos-basico",
+    "name": "Remolque Multiusos Básico",
+    "category": "multiusos",
+    "categoryName": "Remolques Multiusos",
+    "image": "assets/remolque-multiusos-1.jpg",
+    "description": "Remolque versátil para múltiples aplicaciones. Ideal para trabajo general y transporte de materiales.",
+    "features": [
+      "Diseño versátil adaptable",
+      "Construcción resistente",
+      "Fácil carga y descarga",
+      "Mantenimiento sencillo",
+      "Excelente relación calidad-precio",
+      "Múltiples configuraciones"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Remolque Multiusos Básico"
+  },
+  {
+    "id": "remolque-multiusos-mediano",
+    "slug": "remolque-multiusos-mediano",
+    "name": "Remolque Multiusos Mediano",
+    "category": "multiusos",
+    "categoryName": "Remolques Multiusos",
+    "image": "assets/remolque-multiusos-2.jpg",
+    "description": "Remolque multiusos de tamaño mediano, perfecto para contratistas y negocios de servicios.",
+    "features": [
+      "Capacidad mediana optimizada",
+      "Barandales removibles",
+      "Plataforma robusta",
+      "Enganche universal",
+      "Pintura anticorrosiva",
+      "Garantía de fabricación"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Remolque Multiusos Mediano"
+  },
+  {
+    "id": "remolque-multiusos-grande",
+    "slug": "remolque-multiusos-grande",
+    "name": "Remolque Multiusos Grande",
+    "category": "multiusos",
+    "categoryName": "Remolques Multiusos",
+    "image": "assets/remolque-multiusos-3.jpg",
+    "description": "Remolque multiusos de gran capacidad para trabajos que requieren transportar grandes volúmenes.",
+    "features": [
+      "Gran capacidad de carga",
+      "Plataforma amplia",
+      "Sistema de frenos mejorado",
+      "Construcción industrial",
+      "Ideal para trabajo pesado",
+      "Personalización disponible"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Remolque Multiusos Grande"
+  },
+  {
+    "id": "remolque-multiusos-premium",
+    "slug": "remolque-multiusos-premium",
+    "name": "Remolque Multiusos Premium",
+    "category": "multiusos",
+    "categoryName": "Remolques Multiusos",
+    "image": "assets/remolque-multiusos-4.jpg",
+    "description": "Remolque multiusos premium con acabados superiores y máxima versatilidad.",
+    "features": [
+      "Acabados premium",
+      "Máxima versatilidad",
+      "Componentes de alta calidad",
+      "Diseño profesional",
+      "Excelente durabilidad",
+      "Soporte técnico incluido"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa el Remolque Multiusos Premium"
+  },
+  {
+    "id": "oficina-movil-basica",
+    "slug": "oficina-movil-basica",
+    "name": "Oficina Móvil Básica",
+    "category": "oficina-movil",
+    "categoryName": "Oficinas Móviles",
+    "image": "assets/oficina-movil-1.jpg",
+    "description": "Oficina móvil básica ideal para obras de construcción o eventos. Espacio funcional y seguro.",
+    "features": [
+      "Espacio de oficina compacto",
+      "Ventanas con seguridad",
+      "Puerta con cerradura",
+      "Instalación eléctrica básica",
+      "Aislamiento térmico",
+      "Fácil de transportar"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa la Oficina Móvil Básica"
+  },
+  {
+    "id": "oficina-movil-equipada",
+    "slug": "oficina-movil-equipada",
+    "name": "Oficina Móvil Equipada",
+    "category": "oficina-movil",
+    "categoryName": "Oficinas Móviles",
+    "image": "assets/oficina-movil-5.jpg",
+    "description": "Oficina móvil completamente equipada con todas las comodidades para trabajo profesional.",
+    "features": [
+      "Espacio amplio de trabajo",
+      "Aire acondicionado",
+      "Mobiliario incluido",
+      "Instalación eléctrica completa",
+      "Iluminación LED",
+      "Lista para trabajar"
+    ],
+    "price": "Cotizar",
+    "whatsappMessage": "Hola, me interesa la Oficina Móvil Equipada"
+  }
+]

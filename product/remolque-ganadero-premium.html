@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remolque Ganadero Premium | Remolques La Perla</title>
+  <meta name="description" content="Remolque ganadero premium con las mejores características para el transporte profesional de ganado." />
+  <meta name="keywords" content="Remolque Ganadero Premium, Remolques Ganaderos, remolques en jalisco, venta de remolques" />
+  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <style>
+    :root {
+      --azul: #0b1c2d;
+      --azul-oscuro: #08121c;
+      --amarillo: #f5b301;
+      --gris: #f4f6f8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--gris);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--azul);
+      color: #fff;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.25);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: .5px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 22px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color .2s;
+    }
+
+    nav a:hover { color: var(--amarillo); }
+
+    .product-detail {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 40px;
+    }
+
+    .breadcrumb {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+      color: var(--azul);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      color: #666;
+      margin: 0 8px;
+    }
+
+    .product-container {
+      background: #fff;
+      border-radius: 18px;
+      padding: 50px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    }
+
+    .product-info h1 {
+      font-size: 2.2rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: var(--azul);
+    }
+
+    .product-category {
+      display: inline-block;
+      background: var(--amarillo);
+      color: #000;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .product-description {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .product-features {
+      margin-bottom: 30px;
+    }
+
+    .product-features h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--azul);
+    }
+
+    .product-features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .product-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      font-weight: 500;
+    }
+
+    .product-features li:last-child {
+      border-bottom: none;
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--amarillo);
+      color: #000;
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 10px;
+      transition: transform .2s, box-shadow .2s;
+      font-size: 1.1rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,.35);
+      z-index: 999;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,.45);
+    }
+
+    footer {
+      background: var(--azul-oscuro);
+      color: #aaa;
+      text-align: center;
+      padding: 18px;
+      font-size: .9rem;
+      margin-top: 60px;
+    }
+
+    @media(max-width: 768px) {
+      .product-container {
+        grid-template-columns: 1fr;
+        padding: 30px;
+        gap: 30px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .product-detail {
+        padding: 0 20px;
+      }
+
+      .product-info h1 {
+        font-size: 1.8rem;
+      }
+
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Remolques La Perla</h1>
+  <nav>
+    <a href="/">Inicio</a>
+    <a href="/#productos">Remolques</a>
+    <a href="/#contacto">Contacto</a>
+  </nav>
+</header>
+
+<div class="product-detail">
+  <div class="breadcrumb">
+    <a href="/">Inicio</a>
+    <span>›</span>
+    <a href="/#productos">Productos</a>
+    <span>›</span>
+    <span>Remolques Ganaderos</span>
+    <span>›</span>
+    <span>Remolque Ganadero Premium</span>
+  </div>
+
+  <div class="product-container">
+    <div class="product-image-container">
+      <img src="/assets/ganadero-4.jpg" alt="Remolque Ganadero Premium" class="product-image">
+    </div>
+
+    <div class="product-info">
+      <span class="product-category">Remolques Ganaderos</span>
+      <h1>Remolque Ganadero Premium</h1>
+      <p class="product-description">Remolque ganadero premium con las mejores características para el transporte profesional de ganado.</p>
+
+      <div class="product-features">
+        <h3>Características</h3>
+        <ul>
+          <li>✔ Diseño premium profesional</li>
+          <li>✔ Ventilación superior</li>
+          <li>✔ Acabados de calidad</li>
+          <li>✔ Fácil limpieza y mantenimiento</li>
+          <li>✔ Protección contra corrosión</li>
+          <li>✔ Cumplimiento total de normas</li>
+        </ul>
+      </div>
+
+      <div class="product-price">
+        Precio: Cotizar
+      </div>
+
+      <a class="btn" href="https://wa.me/523347540496?text=Hola%2C%20me%20interesa%20el%20Remolque%20Ganadero%20Premium" target="_blank">Cotizar por WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Remolques La Perla · Hecho para durar
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/523347540496?text=Hola%2C%20me%20interesa%20el%20Remolque%20Ganadero%20Premium" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
+    <path d="M19.11 17.205c-.302-.151-1.787-.881-2.064-.981-.277-.101-.479-.151-.681.151-.202.302-.782.981-.958 1.184-.176.202-.353.227-.655.076-.302-.151-1.275-.47-2.43-1.5-.898-.8-1.504-1.787-1.681-2.089-.176-.302-.019-.466.132-.617.136-.135.302-.353.453-.529.151-.176.202-.302.302-.504.101-.202.05-.378-.025-.529-.076-.151-.681-1.64-.933-2.246-.245-.589-.494-.509-.681-.519l-.579-.01c-.202 0-.529.076-.806.378-.277.302-1.059 1.034-1.059 2.521s1.084 2.924 1.235 3.126c.151.202 2.136 3.264 5.178 4.576.724.312 1.288.499 1.728.639.726.231 1.387.198 1.909.12.583-.087 1.787-.73 2.039-1.435.252-.705.252-1.309.176-1.435-.076-.126-.277-.202-.579-.353z"/>
+    <path d="M16.003 3C9.373 3 4 8.373 4 15.003c0 2.646.864 5.094 2.329 7.082L4 29l7.123-2.287a11.94 11.94 0 004.88 1.04h.001C22.627 27.753 28 22.38 28 15.75 28 9.12 22.627 3.747 16.003 3zm0 21.753h-.001a9.93 9.93 0 01-4.74-1.201l-.34-.18-4.228 1.357 1.378-4.122-.22-.353a9.93 9.93 0 01-1.531-5.251C6.32 9.82 10.82 5.32 16.003 5.32c5.182 0 9.683 4.5 9.683 9.683 0 5.183-4.5 9.75-9.683 9.75z"/>
+  </svg>
+</a>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+</script>
+
+</body>
+</html>
