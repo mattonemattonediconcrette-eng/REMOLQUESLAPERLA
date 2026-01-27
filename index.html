@@ -1,211 +1,293 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remolques MX</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remolques en Jalisco | Venta de Remolques de Carga y Food Truck</title>
+  <meta name="description" content="Venta y fabricación de remolques en Jalisco. Cotiza hoy remolques de carga, food truck y especiales. Atención inmediata por WhatsApp." />
+  <meta name="keywords" content="remolques en jalisco, venta de remolques, remolques de carga, remolques food truck, fabricar remolque" />
+
+  <!-- Pixel y Google Ads (pega aquí tus códigos cuando los tengas) -->
+  <!-- Facebook Pixel -->
+  <!-- Google Ads Global Tag -->
+
   <style>
+    :root {
+      --azul: #0b1c2d;
+      --azul-oscuro: #08121c;
+      --amarillo: #f5b301;
+      --gris: #f4f6f8;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      background: url('https://i.imgur.com/cZsPKYz.jpg') no-repeat center center fixed;
-      background-size: cover;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--gris);
+      color: #222;
+      line-height: 1.6;
     }
+
     header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--azul);
+      color: #fff;
+      padding: 18px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
-      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 6px 20px rgba(0,0,0,.25);
     }
-    header .logo {
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: .5px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 22px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color .2s;
+    }
+
+    nav a:hover { color: var(--amarillo); }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url('hero.jpg') center/cover no-repeat;
+      min-height: 85vh;
       display: flex;
       align-items: center;
-    }
-    header .logo img {
-      height: 50px;
-      margin-right: 10px;
-    }
-    header h1 {
-      font-size: 1.5rem;
-      margin: 0;
-    }
-    nav a {
-      text-decoration: none;
+      justify-content: center;
+      text-align: center;
       color: #fff;
-      background: #b8860b;
-      padding: 10px 15px;
-      border-radius: 8px;
-      margin-left: 10px;
-      font-weight: bold;
-      transition: 0.3s;
+      padding: 30px;
     }
-    nav a:hover {
-      background: #daa520;
+
+    .hero-content {
+      max-width: 900px;
     }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: rgba(0, 0, 0, 0.6);
-    }
+
     .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.6);
-      margin: 20px;
-      border-radius: 15px;
-    }
-    .section h3 {
-      font-size: 2rem;
+      font-size: 2.6rem;
       margin-bottom: 20px;
-      color: #ffd700;
     }
-    .products, .models {
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: .95;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 28px;
+      background: var(--amarillo);
+      color: #000;
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 10px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+
+    section {
+      padding: 80px 40px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+      gap: 35px;
     }
+
     .card {
-      background: rgba(0,0,0,0.7);
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.8);
-      transition: transform 0.3s;
+      background: #fff;
+      border-radius: 18px;
+      padding: 35px 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.08);
+      transition: transform .25s, box-shadow .25s;
     }
+
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(0,0,0,.15);
     }
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 10px;
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
     }
-    .card h4 {
-      margin: 10px 0;
-      color: #ffd700;
+
+    .card p {
+      font-size: 1rem;
+      opacity: .9;
     }
-    .price {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #90ee90;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.8);
+
+    .beneficios {
+      background: #fff;
+      border-radius: 20px;
+      padding: 60px 40px;
       margin-top: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.08);
     }
-    /* Botón flotante WhatsApp */
-    .whatsapp-float {
+
+    .beneficios ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .beneficios li {
+      font-weight: 600;
+    }
+
+    .contact {
+      background: var(--azul);
+      color: #fff;
+      text-align: center;
+      padding: 90px 30px;
+    }
+
+    footer {
+      background: var(--azul-oscuro);
+      color: #aaa;
+      text-align: center;
+      padding: 18px;
+      font-size: .9rem;
+    }
+
+    @media(max-width: 768px) {
+      .hero h2 { font-size: 2rem; }
+      header { flex-direction: column; gap: 10px; }
+    }
+  .whatsapp-float {
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 40px;
-      right: 40px;
-      background-color: #25d366;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
       color: #FFF;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,.35);
+      z-index: 999;
+      transition: transform .2s, box-shadow .2s;
     }
-    .whatsapp-float i {
-      margin-top: 16px;
+
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,.45);
     }
-    /* Botón flotante Facebook */
-    .facebook-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 110px;
-      right: 40px;
-      background-color: #1877f2;
-      color: #FFF;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 28px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
+
+    @media(max-width: 768px) {
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        bottom: 20px;
+        right: 20px;
+      }
     }
-    .facebook-float i {
-      margin-top: 16px;
-    }
+
   </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="https://i.imgur.com/QkFyGMz.png" alt="Logo Remolques MX">
-      <h1>Remolques MX</h1>
+
+<header>
+  <h1>Remolques La Perla</h1>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Remolques</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <h2>Venta de Remolques en Jalisco</h2>
+    <p>Fabricamos remolques de carga, food truck y especiales. Cotiza hoy y recibe atención inmediata.</p>
+    <a class="btn" href="https://wa.me/523347540496" target="_blank">Cotizar por WhatsApp</a>
+  </div>
+</section>
+
+<section id="productos">
+  <h2>Nuestros Remolques</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Remolques de Carga</h3>
+      <p>Estructura reforzada, ejes de alta capacidad y diseño pensado para trabajo pesado continuo.</p>
     </div>
-    <nav class="ml-10 flex gap-4">
-      <a href="index.html">🏠 Inicio</a>
-      <a href="herreria.html">🔨 Herrería Personalizada</a>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h2>Bienvenido a Remolques MX</h2>
-    <p>Remolques de calidad premium fabricados en Jalisco</p>
-  </section>
-
-  <!-- Productos Prefabricados -->
-  <section class="section">
-    <h3>Productos Prefabricados</h3>
-    <div class="products">
-      <div class="card">
-        <img src="https://i.imgur.com/WQlJjCI.jpg" alt="Toldo para Puerta 1">
-        <h4>Toldo para Puerta 1</h4>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/bslalBj.jpg" alt="Toldo para Puerta 2">
-        <h4>Toldo para Puerta 2</h4>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/bslalBj.jpg" alt="Toldo Premium">
-        <h4>Toldo Premium</h4>
-      </div>
+    <div class="card">
+      <h3>Remolques Food Truck</h3>
+      <p>Listos para equipar, con distribución funcional, acabados profesionales y presencia comercial.</p>
     </div>
-  </section>
-
-  <!-- Modelos Estrella -->
-  <section class="section">
-    <h3>Modelos Estrella</h3>
-    <div class="models">
-      <div class="card">
-        <img src="https://i.imgur.com/RYTzCzA.jpg" alt="Remolque B2">
-        <h4>Remolque B2</h4>
-        <p class="price">$24,500 MXN</p>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/0lLTZSw.jpg" alt="Remolque Confort Food">
-        <h4>Remolque Confort Food</h4>
-        <p class="price">$67,500 MXN</p>
-      </div>
+    <div class="card">
+      <h3>Remolques Especiales</h3>
+      <p>Diseñamos y fabricamos remolques a la medida de tu proyecto o negocio.</p>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Remolques MX | Todos los derechos reservados</p>
-  </footer>
+  <div class="beneficios">
+    <h2>¿Por qué Remolques La Perla?</h2>
+    <ul>
+      <li>✔ Fabricación 100% en Jalisco</li>
+      <li>✔ Materiales de alta resistencia</li>
+      <li>✔ Diseños personalizados</li>
+      <li>✔ Ideal para trabajo rudo y negocio</li>
+      <li>✔ Atención directa sin intermediarios</li>
+      <li>✔ Entregas confiables</li>
+    </ul>
+  </div>
+</section>
 
-  <!-- Botones flotantes -->
-  <a href="https://wa.me/5213312345678" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://facebook.com" class="facebook-float" target="_blank">
-    <i class="fab fa-facebook-f"></i>
-  </a>
+<section id="contacto" class="contact">
+  <h2>Cotiza tu Remolque Hoy</h2>
+  <p>📍 Jalisco, México</p>
+  <p>📲 WhatsApp directo: <strong>334 754 0496</strong></p>
+  <p>Respuesta rápida para clientes de Facebook y Google.</p>
+
+  <form action="https://wa.me/523347540496" method="get" target="_blank" style="max-width:500px;margin:30px auto;">
+    <input type="text" placeholder="Nombre" required style="width:100%;padding:12px;margin-bottom:12px;border-radius:8px;border:none;">
+    <input type="text" placeholder="Tipo de remolque (carga, food truck…)" required style="width:100%;padding:12px;margin-bottom:12px;border-radius:8px;border:none;">
+    <button class="btn" type="submit">Enviar y Cotizar</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Remolques La Perla · Hecho para durar
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/523347540496" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
+    <path d="M19.11 17.205c-.302-.151-1.787-.881-2.064-.981-.277-.101-.479-.151-.681.151-.202.302-.782.981-.958 1.184-.176.202-.353.227-.655.076-.302-.151-1.275-.47-2.43-1.5-.898-.8-1.504-1.787-1.681-2.089-.176-.302-.019-.466.132-.617.136-.135.302-.353.453-.529.151-.176.202-.302.302-.504.101-.202.05-.378-.025-.529-.076-.151-.681-1.64-.933-2.246-.245-.589-.494-.509-.681-.519l-.579-.01c-.202 0-.529.076-.806.378-.277.302-1.059 1.034-1.059 2.521s1.084 2.924 1.235 3.126c.151.202 2.136 3.264 5.178 4.576.724.312 1.288.499 1.728.639.726.231 1.387.198 1.909.12.583-.087 1.787-.73 2.039-1.435.252-.705.252-1.309.176-1.435-.076-.126-.277-.202-.579-.353z"/>
+    <path d="M16.003 3C9.373 3 4 8.373 4 15.003c0 2.646.864 5.094 2.329 7.082L4 29l7.123-2.287a11.94 11.94 0 004.88 1.04h.001C22.627 27.753 28 22.38 28 15.75 28 9.12 22.627 3.747 16.003 3zm0 21.753h-.001a9.93 9.93 0 01-4.74-1.201l-.34-.18-4.228 1.357 1.378-4.122-.22-.353a9.93 9.93 0 01-1.531-5.251C6.32 9.82 10.82 5.32 16.003 5.32c5.182 0 9.683 4.5 9.683 9.683 0 5.183-4.5 9.75-9.683 9.75z"/>
+  </svg>
+</a>
+
+
 </body>
 </html>
