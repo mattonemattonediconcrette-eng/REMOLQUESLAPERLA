@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mattonemattonediconcrette-eng.github.io/REMOLQUESLAPERLA/sitemap.xml
