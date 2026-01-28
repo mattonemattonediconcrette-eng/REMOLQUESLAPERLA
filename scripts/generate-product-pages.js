@@ -41,14 +41,26 @@ if (!fs.existsSync(PRODUCT_DIR)) {
   fs.mkdirSync(PRODUCT_DIR, { recursive: true });
 }
 
+// HTML escape function to prevent XSS
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
+
 // Template for product page
 function generateProductHTML(product) {
   const firstImage = product.images && product.images.length > 0 ? product.images[0] : '/assets/logo.png';
-  const featuresHTML = product.features.map(f => `      <li>✓ ${f}</li>`).join('\n');
+  const featuresHTML = product.features.map(f => `      <li>✓ ${escapeHtml(f)}</li>`).join('\n');
   const imagesHTML = product.images && product.images.length > 0 
     ? product.images.map((img, idx) => `
       <div class="product-image">
-        <img src="${img}" alt="${product.name} - Imagen ${idx + 1}" loading="lazy">
+        <img src="${escapeHtml(img)}" alt="${escapeHtml(product.name)} - Imagen ${idx + 1}" loading="lazy">
       </div>`).join('\n')
     : '';
 
@@ -57,25 +69,25 @@ function generateProductHTML(product) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${product.name} | Remolques La Perla</title>
-  <meta name="description" content="${product.description}">
-  <meta name="keywords" content="remolques en jalisco, ${product.slug}, ${product.category.toLowerCase()}, venta de remolques">
+  <title>${escapeHtml(product.name)} | Remolques La Perla</title>
+  <meta name="description" content="${escapeHtml(product.description)}">
+  <meta name="keywords" content="remolques en jalisco, ${escapeHtml(product.slug)}, ${escapeHtml(product.category.toLowerCase())}, venta de remolques">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="product">
-  <meta property="og:title" content="${product.name}">
-  <meta property="og:description" content="${product.description}">
-  <meta property="og:image" content="${BASE_URL}${firstImage}">
-  <meta property="og:url" content="${BASE_URL}/product/${product.slug}.html">
+  <meta property="og:title" content="${escapeHtml(product.name)}">
+  <meta property="og:description" content="${escapeHtml(product.description)}">
+  <meta property="og:image" content="${escapeHtml(BASE_URL + firstImage)}">
+  <meta property="og:url" content="${escapeHtml(BASE_URL + '/product/' + product.slug + '.html')}">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${product.name}">
-  <meta name="twitter:description" content="${product.description}">
-  <meta name="twitter:image" content="${BASE_URL}${firstImage}">
+  <meta name="twitter:title" content="${escapeHtml(product.name)}">
+  <meta name="twitter:description" content="${escapeHtml(product.description)}">
+  <meta name="twitter:image" content="${escapeHtml(BASE_URL + firstImage)}">
   
   <link rel="manifest" href="/manifest.json">
-  <link rel="canonical" href="${BASE_URL}/product/${product.slug}.html">
+  <link rel="canonical" href="${escapeHtml(BASE_URL + '/product/' + product.slug + '.html')}">
   
   <style>
     :root {
@@ -326,12 +338,12 @@ function generateProductHTML(product) {
 
   <div class="container">
     <div class="breadcrumb">
-      <a href="/">Inicio</a> / <a href="/#productos">Productos</a> / ${product.name}
+      <a href="/">Inicio</a> / <a href="/#productos">Productos</a> / ${escapeHtml(product.name)}
     </div>
 
     <div class="product-header">
-      <span class="category-badge">${product.category}</span>
-      <h1>${product.name}</h1>
+      <span class="category-badge">${escapeHtml(product.category)}</span>
+      <h1>${escapeHtml(product.name)}</h1>
     </div>
 
     <div class="product-content">
@@ -341,7 +353,7 @@ ${imagesHTML}
 
       <div class="product-info">
         <h2>Descripción</h2>
-        <p>${product.description}</p>
+        <p>${escapeHtml(product.description)}</p>
 
         <h2>Características</h2>
         <ul class="features">
@@ -349,8 +361,8 @@ ${featuresHTML}
         </ul>
 
         <div class="price-box">
-          <div class="availability">${product.availability}</div>
-          <div class="price">${product.price}</div>
+          <div class="availability">${escapeHtml(product.availability)}</div>
+          <div class="price">${escapeHtml(product.price)}</div>
         </div>
 
         <a href="https://wa.me/523347540496?text=Hola, me interesa el ${encodeURIComponent(product.name)}" class="btn" target="_blank">
