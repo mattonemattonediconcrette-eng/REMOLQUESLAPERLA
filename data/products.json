@@ -1,0 +1,132 @@
+[
+  {
+    "id": "food-truck",
+    "name": "Remolque Food Truck",
+    "slug": "food-truck",
+    "category": "Food Truck",
+    "description": "Remolque food truck profesional, listo para equipar con tu negocio gastronómico. Diseño funcional con distribución optimizada, acabados de alta calidad y presencia comercial impactante.",
+    "features": [
+      "Estructura reforzada de acero",
+      "Acabados profesionales en acero inoxidable",
+      "Distribución funcional optimizada",
+      "Ventanas panorámicas para atención al cliente",
+      "Sistema eléctrico preparado",
+      "Ideal para emprendedores gastronómicos"
+    ],
+    "images": [
+      "/assets/food-truck-1.jpg",
+      "/assets/food-truck-2.jpg",
+      "/assets/food-truck-3.jpg",
+      "/assets/food-truck-4.jpg"
+    ],
+    "price": "Desde $150,000 MXN",
+    "availability": "Disponible para pedido"
+  },
+  {
+    "id": "ganadero",
+    "name": "Remolque Ganadero",
+    "slug": "ganadero",
+    "category": "Especiales",
+    "description": "Remolque ganadero diseñado para transporte seguro de ganado. Construcción robusta con ventilación adecuada y sistema de sujeción confiable.",
+    "features": [
+      "Estructura reforzada para carga pesada",
+      "Ventilación lateral adecuada",
+      "Piso antiderrapante",
+      "Sistema de sujeción interno",
+      "Rampa de acceso trasera",
+      "Cumple normativas de transporte animal"
+    ],
+    "images": [
+      "/assets/ganadero-1.jpg",
+      "/assets/ganadero-2.jpg",
+      "/assets/ganadero-4.jpg"
+    ],
+    "price": "Consultar precio",
+    "availability": "Fabricación a medida"
+  },
+  {
+    "id": "cama-baja-3t",
+    "name": "Remolque Cama Baja 3 Toneladas",
+    "slug": "cama-baja-3t",
+    "category": "Carga",
+    "description": "Remolque de cama baja con capacidad de 3 toneladas. Ideal para transporte de maquinaria ligera, vehículos y equipos. Diseño de cama baja facilita la carga y descarga.",
+    "features": [
+      "Capacidad: 3 toneladas",
+      "Cama baja para fácil acceso",
+      "Rampas hidráulicas o mecánicas",
+      "Ejes reforzados",
+      "Sistema de frenos neumático",
+      "Ideal para maquinaria y vehículos"
+    ],
+    "images": [
+      "/assets/cama-baja-3t.jpg"
+    ],
+    "price": "Desde $80,000 MXN",
+    "availability": "Disponible"
+  },
+  {
+    "id": "cama-baja-6t",
+    "name": "Remolque Cama Baja 6 Toneladas",
+    "slug": "cama-baja-6t",
+    "category": "Carga",
+    "description": "Remolque de cama baja de alta capacidad (6 toneladas). Perfecto para transporte de maquinaria pesada, equipos industriales y cargas de gran volumen.",
+    "features": [
+      "Capacidad: 6 toneladas",
+      "Estructura ultra reforzada",
+      "Ejes de alta capacidad",
+      "Sistema de frenos de aire",
+      "Rampas de acceso reforzadas",
+      "Diseño para trabajo pesado continuo"
+    ],
+    "images": [
+      "/assets/cama-baja-6t.jpg"
+    ],
+    "price": "Desde $120,000 MXN",
+    "availability": "Disponible"
+  },
+  {
+    "id": "oficina-movil",
+    "name": "Remolque Oficina Móvil",
+    "slug": "oficina-movil",
+    "category": "Especiales",
+    "description": "Remolque acondicionado como oficina móvil. Perfecto para obras de construcción, eventos, o como oficina temporal. Incluye escritorio, iluminación y climatización.",
+    "features": [
+      "Espacio de trabajo funcional",
+      "Sistema eléctrico completo",
+      "Iluminación LED",
+      "Ventanas con protección",
+      "Aislamiento térmico y acústico",
+      "Ideal para construcción y eventos"
+    ],
+    "images": [
+      "/assets/oficina-movil-1.jpg",
+      "/assets/oficina-movil-5.jpg",
+      "/assets/oficina-movil-rellena.jpg"
+    ],
+    "price": "Desde $100,000 MXN",
+    "availability": "Fabricación a medida"
+  },
+  {
+    "id": "multiusos",
+    "name": "Remolque Multiusos",
+    "slug": "multiusos",
+    "category": "Carga",
+    "description": "Remolque multiusos versátil para diversas aplicaciones: transporte de materiales, mudanzas, carga general. Diseño robusto y adaptable a tus necesidades.",
+    "features": [
+      "Diseño versátil y adaptable",
+      "Estructura robusta de acero",
+      "Múltiples puntos de amarre",
+      "Protección lateral opcional",
+      "Fácil mantenimiento",
+      "Ideal para negocios diversos"
+    ],
+    "images": [
+      "/assets/remolque-multiusos-1.jpg",
+      "/assets/remolque-multiusos-2.jpg",
+      "/assets/remolque-multiusos-3.jpg",
+      "/assets/remolque-multiusos-4.jpg"
+    ],
+    "price": "Desde $60,000 MXN",
+    "availability": "Disponible"
+  }
+]

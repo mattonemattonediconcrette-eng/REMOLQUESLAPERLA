@@ -1,0 +1,473 @@
+#!/usr/bin/env node
+/**
+ * Generate static product pages and sitemap for Remolques La Perla
+ * Usage: node scripts/generate-product-pages.js [--baseUrl=https://example.com]
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+let BASE_URL = 'https://remolqueslaperla.example';
+
+args.forEach(arg => {
+  if (arg.startsWith('--baseUrl=')) {
+    BASE_URL = arg.split('=')[1];
+  }
+});
+
+// Ensure trailing slash is removed
+BASE_URL = BASE_URL.replace(/\/$/, '');
+
+// Paths
+const PRODUCTS_JSON = path.join(__dirname, '../data/products.json');
+const PRODUCT_DIR = path.join(__dirname, '../product');
+const SITEMAP_PATH = path.join(__dirname, '../sitemap.xml');
+
+// Read products data
+let products = [];
+try {
+  const data = fs.readFileSync(PRODUCTS_JSON, 'utf8');
+  products = JSON.parse(data);
+  console.log(`✓ Loaded ${products.length} products from data/products.json`);
+} catch (error) {
+  console.error('Error reading products.json:', error.message);
+  process.exit(1);
+}
+
+// Ensure product directory exists
+if (!fs.existsSync(PRODUCT_DIR)) {
+  fs.mkdirSync(PRODUCT_DIR, { recursive: true });
+}
+
+// HTML escape function to prevent XSS
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
+
+// Template for product page
+function generateProductHTML(product) {
+  const firstImage = product.images && product.images.length > 0 ? product.images[0] : '/assets/logo.png';
+  const featuresHTML = product.features.map(f => `      <li>✓ ${escapeHtml(f)}</li>`).join('\n');
+  const imagesHTML = product.images && product.images.length > 0 
+    ? product.images.map((img, idx) => `
+      <div class="product-image">
+        <img src="${escapeHtml(img)}" alt="${escapeHtml(product.name)} - Imagen ${idx + 1}" loading="lazy">
+      </div>`).join('\n')
+    : '';
+
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(product.name)} | Remolques La Perla</title>
+  <meta name="description" content="${escapeHtml(product.description)}">
+  <meta name="keywords" content="remolques en jalisco, ${escapeHtml(product.slug)}, ${escapeHtml(product.category.toLowerCase())}, venta de remolques">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="${escapeHtml(product.name)}">
+  <meta property="og:description" content="${escapeHtml(product.description)}">
+  <meta property="og:image" content="${escapeHtml(BASE_URL + firstImage)}">
+  <meta property="og:url" content="${escapeHtml(BASE_URL + '/product/' + product.slug + '.html')}">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(product.name)}">
+  <meta name="twitter:description" content="${escapeHtml(product.description)}">
+  <meta name="twitter:image" content="${escapeHtml(BASE_URL + firstImage)}">
+  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="${escapeHtml(BASE_URL + '/product/' + product.slug + '.html')}">
+  
+  <style>
+    :root {
+      --azul: #0b1c2d;
+      --azul-oscuro: #08121c;
+      --amarillo: #f5b301;
+      --gris: #f4f6f8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--gris);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--azul);
+      color: #fff;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.25);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: .5px;
+    }
+
+    header a {
+      color: var(--amarillo);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .breadcrumb {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+      color: var(--azul);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .product-header {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    }
+
+    .product-header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.5rem;
+      color: var(--azul);
+    }
+
+    .category-badge {
+      display: inline-block;
+      background: var(--amarillo);
+      color: var(--azul-oscuro);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .product-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .product-images {
+      display: grid;
+      gap: 15px;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.1);
+    }
+
+    .product-info {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    }
+
+    .product-info h2 {
+      margin-top: 0;
+      color: var(--azul);
+    }
+
+    .product-info p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+
+    .features li {
+      padding: 10px 0;
+      font-size: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .features li:last-child {
+      border-bottom: none;
+    }
+
+    .price-box {
+      background: var(--azul);
+      color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .price-box .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 10px 0;
+      color: var(--amarillo);
+    }
+
+    .price-box .availability {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--amarillo);
+      color: var(--azul-oscuro);
+      padding: 15px 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 8px 20px rgba(245,179,1,.35);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(245,179,1,.45);
+    }
+
+    .cta-section {
+      background: var(--azul);
+      color: #fff;
+      padding: 60px 40px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cta-section h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      background: var(--azul-oscuro);
+      color: #aaa;
+      text-align: center;
+      padding: 18px;
+      font-size: .9rem;
+      margin-top: 60px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,.35);
+      z-index: 999;
+      text-decoration: none;
+      font-size: 30px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,.45);
+    }
+
+    @media(max-width: 768px) {
+      .product-content {
+        grid-template-columns: 1fr;
+      }
+      
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .product-header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚛 Remolques La Perla</h1>
+    <a href="/">← Volver al inicio</a>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Inicio</a> / <a href="/#productos">Productos</a> / ${escapeHtml(product.name)}
+    </div>
+
+    <div class="product-header">
+      <span class="category-badge">${escapeHtml(product.category)}</span>
+      <h1>${escapeHtml(product.name)}</h1>
+    </div>
+
+    <div class="product-content">
+      <div class="product-images">
+${imagesHTML}
+      </div>
+
+      <div class="product-info">
+        <h2>Descripción</h2>
+        <p>${escapeHtml(product.description)}</p>
+
+        <h2>Características</h2>
+        <ul class="features">
+${featuresHTML}
+        </ul>
+
+        <div class="price-box">
+          <div class="availability">${escapeHtml(product.availability)}</div>
+          <div class="price">${escapeHtml(product.price)}</div>
+        </div>
+
+        <a href="https://wa.me/523347540496?text=Hola, me interesa el ${encodeURIComponent(product.name)}" class="btn" target="_blank">
+          📲 Cotizar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2>¿Listo para tu remolque?</h2>
+      <p>Contáctanos ahora para una cotización personalizada.</p>
+      <p>📞 WhatsApp: <strong>334 754 0496</strong></p>
+      <p>📍 Jalisco, México</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Remolques La Perla · Hecho para durar
+  </footer>
+
+  <a href="https://wa.me/523347540496" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    📱
+  </a>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('Service Worker registered'))
+          .catch(err => console.error('Service Worker registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
+`;
+}
+
+// Generate product pages
+let generatedPages = [];
+products.forEach(product => {
+  const filename = `${product.slug}.html`;
+  const filepath = path.join(PRODUCT_DIR, filename);
+  const html = generateProductHTML(product);
+  
+  fs.writeFileSync(filepath, html, 'utf8');
+  generatedPages.push(`/product/${filename}`);
+  console.log(`✓ Generated: product/${filename}`);
+});
+
+// Generate sitemap.xml
+function generateSitemap() {
+  const today = new Date().toISOString().split('T')[0];
+  
+  let urls = [
+    {
+      loc: BASE_URL + '/',
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '1.0'
+    },
+    {
+      loc: BASE_URL + '/offline.html',
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.3'
+    }
+  ];
+
+  // Add product pages
+  products.forEach(product => {
+    urls.push({
+      loc: `${BASE_URL}/product/${product.slug}.html`,
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.8'
+    });
+  });
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(url => `  <url>
+    <loc>${url.loc}</loc>
+    <lastmod>${url.lastmod}</lastmod>
+    <changefreq>${url.changefreq}</changefreq>
+    <priority>${url.priority}</priority>
+  </url>`).join('\n')}
+</urlset>
+`;
+
+  fs.writeFileSync(SITEMAP_PATH, xml, 'utf8');
+  console.log(`✓ Generated: sitemap.xml (${urls.length} URLs)`);
+}
+
+generateSitemap();
+
+// Summary
+console.log('\n📊 Generation Summary:');
+console.log(`   Products: ${products.length}`);
+console.log(`   Pages generated: ${generatedPages.length}`);
+console.log(`   Sitemap: sitemap.xml`);
+console.log(`   Base URL: ${BASE_URL}`);
+console.log('\n✅ Static product pages and sitemap generated successfully!');
+console.log('\n📝 Next steps:');
+console.log('   1. Upload missing hero images: /assets/images/hero-todos.jpg, hero-todos-1200.jpg, hero-todos.webp');
+console.log('   2. Verify product images are present in /assets/');
+console.log('   3. Update service worker with: npm run update-sw (or manually update sw.js)');
+console.log('   4. Test locally: python -m http.server or npx serve .');
