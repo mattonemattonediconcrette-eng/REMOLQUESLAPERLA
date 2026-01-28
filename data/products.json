@@ -1,0 +1,174 @@
+[
+  {
+    "id": 1,
+    "slug": "food-truck",
+    "name": "Food Truck Premium",
+    "category": "Food Truck",
+    "shortDescription": "Remolque food truck equipado, listo para tu negocio gastronómico móvil.",
+    "description": "Nuestros remolques food truck están diseñados específicamente para negocios gastronómicos móviles. Estructura reforzada, acabados profesionales y distribución funcional que optimiza cada centímetro. Incluye instalaciones para agua, gas y electricidad. Ideal para emprendedores que buscan presencia comercial de alto impacto.",
+    "features": [
+      "Estructura de acero reforzado",
+      "Instalaciones para agua, gas y electricidad",
+      "Ventanas amplias de servicio",
+      "Acabados en acero inoxidable",
+      "Distribución funcional optimizada",
+      "Pintura automotriz de alta durabilidad"
+    ],
+    "specs": {
+      "largo": "4.5m - 6m",
+      "ancho": "2.2m - 2.5m",
+      "altura": "2.4m - 2.8m",
+      "peso": "800kg - 1200kg"
+    },
+    "images": [
+      "/assets/food-truck-1.jpg",
+      "/assets/food-truck-2.jpg",
+      "/assets/food-truck-3.jpg",
+      "/assets/food-truck-4.jpg"
+    ],
+    "price": "Desde $180,000 MXN",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "slug": "cama-baja-3t",
+    "name": "Remolque Cama Baja 3 Toneladas",
+    "category": "Carga",
+    "shortDescription": "Remolque de cama baja para carga pesada, capacidad 3 toneladas.",
+    "description": "Remolque de cama baja especialmente diseñado para transporte de maquinaria pesada y equipo industrial. Estructura robusta con ejes de alta capacidad que soportan hasta 3 toneladas. Rampa hidráulica para carga y descarga eficiente. Ideal para construcción, agricultura y servicios industriales.",
+    "features": [
+      "Capacidad de carga: 3 toneladas",
+      "Rampa hidráulica incluida",
+      "Ejes reforzados de alta capacidad",
+      "Sistema de frenos ABS",
+      "Plataforma antiderrapante",
+      "Anclajes múltiples para carga"
+    ],
+    "specs": {
+      "largo": "5.5m",
+      "ancho": "2.3m",
+      "altura": "0.8m",
+      "capacidad": "3000kg"
+    },
+    "images": [
+      "/assets/cama-baja-3t.jpg"
+    ],
+    "price": "Desde $120,000 MXN",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "slug": "cama-baja-6t",
+    "name": "Remolque Cama Baja 6 Toneladas",
+    "category": "Carga",
+    "shortDescription": "Remolque de cama baja para carga extra pesada, capacidad 6 toneladas.",
+    "description": "El remolque de cama baja más robusto de nuestra línea, diseñado para trabajos de alta exigencia. Doble eje reforzado que soporta hasta 6 toneladas de carga. Sistema de suspensión mejorado para mayor estabilidad en carretera. Rampa hidráulica de alto rendimiento. La solución perfecta para transporte de maquinaria pesada, equipos industriales y materiales de construcción.",
+    "features": [
+      "Capacidad de carga: 6 toneladas",
+      "Doble eje reforzado",
+      "Rampa hidráulica de alto rendimiento",
+      "Sistema de frenos ABS en todos los ejes",
+      "Suspensión neumática",
+      "Luces LED de alta visibilidad"
+    ],
+    "specs": {
+      "largo": "7m",
+      "ancho": "2.5m",
+      "altura": "0.9m",
+      "capacidad": "6000kg"
+    },
+    "images": [
+      "/assets/cama-baja-6t.jpg"
+    ],
+    "price": "Desde $200,000 MXN",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "slug": "remolque-ganadero",
+    "name": "Remolque Ganadero",
+    "category": "Ganadero",
+    "shortDescription": "Remolque especializado para transporte seguro de ganado.",
+    "description": "Remolque ganadero diseñado para el transporte seguro y cómodo de ganado. Estructura ventilada con barandales reforzados. Piso antiderrapante para seguridad animal. Puerta trasera de apertura amplia para carga y descarga eficiente. Ideal para ganaderos y transportistas pecuarios que buscan calidad y durabilidad.",
+    "features": [
+      "Estructura ventilada",
+      "Barandales reforzados de seguridad",
+      "Piso antiderrapante",
+      "Puerta trasera de apertura amplia",
+      "Resistente a la corrosión",
+      "Capacidad para 8-12 cabezas de ganado"
+    ],
+    "specs": {
+      "largo": "5m",
+      "ancho": "2.2m",
+      "altura": "2m",
+      "capacidad": "2000kg"
+    },
+    "images": [
+      "/assets/ganadero-1.jpg",
+      "/assets/ganadero-2.jpg",
+      "/assets/ganadero-4.jpg"
+    ],
+    "price": "Desde $140,000 MXN",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "slug": "oficina-movil",
+    "name": "Oficina Móvil",
+    "category": "Especiales",
+    "shortDescription": "Remolque convertido en oficina móvil totalmente equipada.",
+    "description": "Solución innovadora para oficinas móviles. Remolque totalmente equipado y acondicionado para funcionar como espacio de trabajo profesional. Incluye instalaciones eléctricas, climatización, escritorio y área de recepción. Ideal para proyectos de construcción, eventos, campañas y negocios que requieren presencia temporal en diferentes ubicaciones.",
+    "features": [
+      "Instalación eléctrica completa",
+      "Sistema de climatización",
+      "Aislamiento térmico y acústico",
+      "Escritorio y área de trabajo",
+      "Iluminación LED profesional",
+      "Ventanas con vidrio templado"
+    ],
+    "specs": {
+      "largo": "6m",
+      "ancho": "2.4m",
+      "altura": "2.6m",
+      "areaUtil": "14m²"
+    },
+    "images": [
+      "/assets/oficina-movil-1.jpg",
+      "/assets/oficina-movil-5.jpg",
+      "/assets/oficina-movil-rellena.jpg"
+    ],
+    "price": "Desde $250,000 MXN",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "slug": "remolque-multiusos",
+    "name": "Remolque Multiusos",
+    "category": "Multiusos",
+    "shortDescription": "Remolque versátil para múltiples aplicaciones y cargas generales.",
+    "description": "Remolque multiusos de alta versatilidad, perfecto para todo tipo de cargas y aplicaciones. Estructura reforzada con laterales ajustables. Plataforma robusta que soporta cargas diversas. Ideal para comerciantes, constructores y emprendedores que necesitan una solución flexible y confiable para transporte de mercancías, materiales o equipos.",
+    "features": [
+      "Estructura versátil y robusta",
+      "Laterales ajustables o desmontables",
+      "Plataforma de acero reforzado",
+      "Sistema de amarre múltiple",
+      "Suspensión balanceada",
+      "Acabado anticorrosivo"
+    ],
+    "specs": {
+      "largo": "4m - 5m",
+      "ancho": "2m - 2.3m",
+      "altura": "1.8m",
+      "capacidad": "1500kg - 2500kg"
+    },
+    "images": [
+      "/assets/remolque-multiusos-1.jpg",
+      "/assets/remolque-multiusos-2.jpg",
+      "/assets/remolque-multiusos-3.jpg",
+      "/assets/remolque-multiusos-4.jpg"
+    ],
+    "price": "Desde $95,000 MXN",
+    "featured": false
+  }
+]
