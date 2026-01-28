@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remolque Ganadero | Remolques La Perla</title>
+  <meta name="description" content="Remolque ganadero diseñado para transporte seguro de ganado. Construcción robusta con ventilación adecuada y sistema de sujeción confiable.">
+  <meta name="keywords" content="remolques en jalisco, ganadero, especiales, venta de remolques">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Remolque Ganadero">
+  <meta property="og:description" content="Remolque ganadero diseñado para transporte seguro de ganado. Construcción robusta con ventilación adecuada y sistema de sujeción confiable.">
+  <meta property="og:image" content="https://remolqueslaperla.example/assets/ganadero-1.jpg">
+  <meta property="og:url" content="https://remolqueslaperla.example/product/ganadero.html">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Remolque Ganadero">
+  <meta name="twitter:description" content="Remolque ganadero diseñado para transporte seguro de ganado. Construcción robusta con ventilación adecuada y sistema de sujeción confiable.">
+  <meta name="twitter:image" content="https://remolqueslaperla.example/assets/ganadero-1.jpg">
+  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://remolqueslaperla.example/product/ganadero.html">
+  
+  <style>
+    :root {
+      --azul: #0b1c2d;
+      --azul-oscuro: #08121c;
+      --amarillo: #f5b301;
+      --gris: #f4f6f8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--gris);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--azul);
+      color: #fff;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.25);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: .5px;
+    }
+
+    header a {
+      color: var(--amarillo);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .breadcrumb {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+      color: var(--azul);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .product-header {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    }
+
+    .product-header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.5rem;
+      color: var(--azul);
+    }
+
+    .category-badge {
+      display: inline-block;
+      background: var(--amarillo);
+      color: var(--azul-oscuro);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .product-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .product-images {
+      display: grid;
+      gap: 15px;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.1);
+    }
+
+    .product-info {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    }
+
+    .product-info h2 {
+      margin-top: 0;
+      color: var(--azul);
+    }
+
+    .product-info p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+
+    .features li {
+      padding: 10px 0;
+      font-size: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .features li:last-child {
+      border-bottom: none;
+    }
+
+    .price-box {
+      background: var(--azul);
+      color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .price-box .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 10px 0;
+      color: var(--amarillo);
+    }
+
+    .price-box .availability {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--amarillo);
+      color: var(--azul-oscuro);
+      padding: 15px 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 8px 20px rgba(245,179,1,.35);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(245,179,1,.45);
+    }
+
+    .cta-section {
+      background: var(--azul);
+      color: #fff;
+      padding: 60px 40px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cta-section h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      background: var(--azul-oscuro);
+      color: #aaa;
+      text-align: center;
+      padding: 18px;
+      font-size: .9rem;
+      margin-top: 60px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,.35);
+      z-index: 999;
+      text-decoration: none;
+      font-size: 30px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,.45);
+    }
+
+    @media(max-width: 768px) {
+      .product-content {
+        grid-template-columns: 1fr;
+      }
+      
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .product-header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚛 Remolques La Perla</h1>
+    <a href="/">← Volver al inicio</a>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Inicio</a> / <a href="/#productos">Productos</a> / Remolque Ganadero
+    </div>
+
+    <div class="product-header">
+      <span class="category-badge">Especiales</span>
+      <h1>Remolque Ganadero</h1>
+    </div>
+
+    <div class="product-content">
+      <div class="product-images">
+
+      <div class="product-image">
+        <img src="/assets/ganadero-1.jpg" alt="Remolque Ganadero - Imagen 1" loading="lazy">
+      </div>
+
+      <div class="product-image">
+        <img src="/assets/ganadero-2.jpg" alt="Remolque Ganadero - Imagen 2" loading="lazy">
+      </div>
+
+      <div class="product-image">
+        <img src="/assets/ganadero-4.jpg" alt="Remolque Ganadero - Imagen 3" loading="lazy">
+      </div>
+      </div>
+
+      <div class="product-info">
+        <h2>Descripción</h2>
+        <p>Remolque ganadero diseñado para transporte seguro de ganado. Construcción robusta con ventilación adecuada y sistema de sujeción confiable.</p>
+
+        <h2>Características</h2>
+        <ul class="features">
+      <li>✓ Estructura reforzada para carga pesada</li>
+      <li>✓ Ventilación lateral adecuada</li>
+      <li>✓ Piso antiderrapante</li>
+      <li>✓ Sistema de sujeción interno</li>
+      <li>✓ Rampa de acceso trasera</li>
+      <li>✓ Cumple normativas de transporte animal</li>
+        </ul>
+
+        <div class="price-box">
+          <div class="availability">Fabricación a medida</div>
+          <div class="price">Consultar precio</div>
+        </div>
+
+        <a href="https://wa.me/523347540496?text=Hola, me interesa el Remolque%20Ganadero" class="btn" target="_blank">
+          📲 Cotizar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2>¿Listo para tu remolque?</h2>
+      <p>Contáctanos ahora para una cotización personalizada.</p>
+      <p>📞 WhatsApp: <strong>334 754 0496</strong></p>
+      <p>📍 Jalisco, México</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Remolques La Perla · Hecho para durar
+  </footer>
+
+  <a href="https://wa.me/523347540496" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    📱
+  </a>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('Service Worker registered'))
+          .catch(err => console.error('Service Worker registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
