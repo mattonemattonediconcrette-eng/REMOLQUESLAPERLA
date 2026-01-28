@@ -1,4 +1,4 @@
-const CACHE_NAME = 'rlp-cache-v4';
+const CACHE_NAME = 'rlp-cache-v5';
 const OFFLINE_URL = 'offline.html';
 const ASSETS_TO_CACHE = [
   '/',
@@ -6,16 +6,38 @@ const ASSETS_TO_CACHE = [
   '/manifest.json',
   '/styles.css',
   '/offline.html',
+  '/sitemap.xml',
+  '/data/products.json',
+  // Product pages
+  '/product/food-truck.html',
+  '/product/ganadero.html',
+  '/product/cama-baja-3t.html',
+  '/product/cama-baja-6t.html',
+  '/product/oficina-movil.html',
+  '/product/multiusos.html',
+  // Logo and hero images
   '/assets/logo.png',
+  '/assets/images/hero-todos.jpg',
+  '/assets/images/hero-todos-1200.jpg',
+  '/assets/images/hero-todos.webp',
+  // Product images
   '/assets/food-truck-1.jpg',
   '/assets/food-truck-2.jpg',
   '/assets/food-truck-3.jpg',
   '/assets/food-truck-4.jpg',
   '/assets/food-truck-4-alt.jpg',
+  '/assets/ganadero-1.jpg',
+  '/assets/ganadero-2.jpg',
+  '/assets/ganadero-4.jpg',
+  '/assets/cama-baja-3t.jpg',
+  '/assets/cama-baja-6t.jpg',
+  '/assets/oficina-movil-1.jpg',
+  '/assets/oficina-movil-5.jpg',
+  '/assets/oficina-movil-rellena.jpg',
   '/assets/remolque-multiusos-1.jpg',
   '/assets/remolque-multiusos-2.jpg',
-  '/assets/cama-baja-3t.jpg',
-  '/assets/cama-baja-6t.jpg'
+  '/assets/remolque-multiusos-3.jpg',
+  '/assets/remolque-multiusos-4.jpg'
 ];
 
 self.addEventListener('install', (event) => {
