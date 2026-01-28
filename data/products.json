@@ -1,0 +1,156 @@
+[
+  {
+    "id": "food-truck",
+    "name": "Food Truck Premium",
+    "slug": "food-truck-premium",
+    "category": "Food Truck",
+    "description": "Remolque food truck totalmente equipado y listo para iniciar tu negocio. Diseño profesional con acabados de primera calidad.",
+    "longDescription": "Nuestro food truck premium está diseñado para emprendedores que buscan calidad y funcionalidad. Incluye espacio optimizado para cocina, área de preparación y almacenamiento. Acabados profesionales en acero inoxidable, sistema eléctrico completo y ventilación adecuada. Perfecto para tacos, hamburguesas, comida asiática, postres y más.",
+    "features": [
+      "Estructura reforzada de acero",
+      "Acabados en acero inoxidable",
+      "Sistema eléctrico completo 110V",
+      "Ventilación profesional",
+      "Piso antiderrapante",
+      "Ventanas de servicio amplias",
+      "Espacio para almacenamiento",
+      "Diseño personalizable"
+    ],
+    "price": "Desde $120,000 MXN",
+    "image": "/assets/food-truck-1.jpg",
+    "images": [
+      "/assets/food-truck-1.jpg",
+      "/assets/food-truck-2.jpg",
+      "/assets/food-truck-3.jpg",
+      "/assets/food-truck-4.jpg"
+    ],
+    "keywords": "food truck jalisco, remolque food truck, negocio comida, food truck en venta"
+  },
+  {
+    "id": "cama-baja-3t",
+    "name": "Remolque Cama Baja 3 Toneladas",
+    "slug": "remolque-cama-baja-3-toneladas",
+    "category": "Carga",
+    "description": "Remolque de cama baja con capacidad de 3 toneladas. Ideal para transporte de maquinaria ligera, vehículos y equipos.",
+    "longDescription": "Remolque profesional de cama baja diseñado para trabajo pesado. Con capacidad de carga de 3 toneladas, es perfecto para transportar maquinaria, vehículos, materiales de construcción y equipos industriales. Estructura robusta de acero, sistema de suspensión resistente y rampas de carga incluidas.",
+    "features": [
+      "Capacidad de 3 toneladas",
+      "Cama baja para fácil carga",
+      "Estructura de acero reforzado",
+      "Rampas incluidas",
+      "Suspensión de alta resistencia",
+      "Sistema de frenos neumático",
+      "Luces LED reglamentarias",
+      "Pintura anticorrosiva"
+    ],
+    "price": "Desde $85,000 MXN",
+    "image": "/assets/cama-baja-3t.jpg",
+    "images": [
+      "/assets/cama-baja-3t.jpg"
+    ],
+    "keywords": "remolque cama baja, remolque 3 toneladas, transporte maquinaria, remolque carga jalisco"
+  },
+  {
+    "id": "cama-baja-6t",
+    "name": "Remolque Cama Baja 6 Toneladas",
+    "slug": "remolque-cama-baja-6-toneladas",
+    "category": "Carga",
+    "description": "Remolque de cama baja para trabajo pesado con capacidad de 6 toneladas. Construcción robusta para uso industrial.",
+    "longDescription": "Remolque industrial de cama baja con capacidad para 6 toneladas, diseñado para las exigencias del trabajo pesado continuo. Ideal para empresas de construcción, transporte de maquinaria pesada, equipos agrícolas y vehículos. Fabricado con los mejores materiales y estándares de seguridad.",
+    "features": [
+      "Capacidad de 6 toneladas",
+      "Doble eje reforzado",
+      "Cama baja extra resistente",
+      "Rampas hidráulicas opcionales",
+      "Suspensión industrial",
+      "Sistema de frenos de aire",
+      "Iluminación LED completa",
+      "Garantía estructural"
+    ],
+    "price": "Desde $145,000 MXN",
+    "image": "/assets/cama-baja-6t.jpg",
+    "images": [
+      "/assets/cama-baja-6t.jpg"
+    ],
+    "keywords": "remolque 6 toneladas, remolque industrial, cama baja pesada, transporte equipos"
+  },
+  {
+    "id": "remolque-multiusos",
+    "name": "Remolque Multiusos",
+    "slug": "remolque-multiusos",
+    "category": "Multiusos",
+    "description": "Remolque versátil para múltiples aplicaciones. Desde carga general hasta uso comercial.",
+    "longDescription": "Remolque multiusos diseñado para adaptarse a diferentes necesidades. Perfecto para pequeños negocios, transporte de mercancía, mudanzas, eventos y más. Construcción sólida con opción de personalización según tus requerimientos específicos.",
+    "features": [
+      "Diseño versátil",
+      "Estructura robusta",
+      "Fácil mantenimiento",
+      "Personalizable",
+      "Sistema eléctrico estándar",
+      "Piso reforzado",
+      "Laterales removibles opcionales",
+      "Excelente relación calidad-precio"
+    ],
+    "price": "Desde $45,000 MXN",
+    "image": "/assets/remolque-multiusos-1.jpg",
+    "images": [
+      "/assets/remolque-multiusos-1.jpg",
+      "/assets/remolque-multiusos-2.jpg",
+      "/assets/remolque-multiusos-3.jpg",
+      "/assets/remolque-multiusos-4.jpg"
+    ],
+    "keywords": "remolque multiusos, remolque carga, remolque versátil, remolque jalisco"
+  },
+  {
+    "id": "remolque-ganadero",
+    "name": "Remolque Ganadero",
+    "slug": "remolque-ganadero",
+    "category": "Especializado",
+    "description": "Remolque especializado para transporte de ganado. Ventilación adecuada y construcción segura.",
+    "longDescription": "Remolque ganadero profesional diseñado específicamente para el transporte seguro de ganado bovino, caballos y otros animales. Cumple con normativas de bienestar animal, cuenta con ventilación adecuada, piso antiderrapante y sistemas de seguridad para garantizar un traslado confortable.",
+    "features": [
+      "Ventilación óptima",
+      "Piso antiderrapante",
+      "Divisiones internas ajustables",
+      "Puerta trasera de fácil acceso",
+      "Estructura reforzada",
+      "Altura adecuada",
+      "Sistema de seguridad para animales",
+      "Cumple normativas de transporte"
+    ],
+    "price": "Desde $95,000 MXN",
+    "image": "/assets/ganadero-1.jpg",
+    "images": [
+      "/assets/ganadero-1.jpg",
+      "/assets/ganadero-2.jpg",
+      "/assets/ganadero-4.jpg"
+    ],
+    "keywords": "remolque ganadero, transporte ganado, remolque caballos, remolque animales jalisco"
+  },
+  {
+    "id": "oficina-movil",
+    "name": "Oficina Móvil",
+    "slug": "oficina-movil",
+    "category": "Especializado",
+    "description": "Remolque adaptado como oficina móvil. Ideal para obras, eventos y negocios itinerantes.",
+    "longDescription": "Oficina móvil completamente equipada para profesionales y empresas que necesitan un espacio de trabajo funcional y transportable. Incluye escritorio, sillas, iluminación, sistema eléctrico, climatización opcional y acabados profesionales. Perfecto para supervisión de obras, ventas en campo, eventos y más.",
+    "features": [
+      "Espacio interior climatizable",
+      "Sistema eléctrico completo",
+      "Iluminación LED",
+      "Escritorio y área de trabajo",
+      "Ventanas con protección",
+      "Piso de vinil o alfombra",
+      "Puerta de acceso segura",
+      "Personalizable según necesidades"
+    ],
+    "price": "Desde $110,000 MXN",
+    "image": "/assets/oficina-movil-1.jpg",
+    "images": [
+      "/assets/oficina-movil-1.jpg",
+      "/assets/oficina-movil-5.jpg",
+      "/assets/oficina-movil-rellena.jpg"
+    ],
+    "keywords": "oficina móvil, remolque oficina, oficina transportable, oficina obra"
+  }
+]
