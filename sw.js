@@ -1,21 +1,28 @@
-const CACHE_NAME = 'rlp-cache-v4';
+const CACHE_NAME = 'rlp-cache-v5';
 const OFFLINE_URL = 'offline.html';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
+  '/offline.html',
   '/manifest.json',
   '/styles.css',
-  '/offline.html',
+  '/data/products.json',
   '/assets/logo.png',
-  '/assets/food-truck-1.jpg',
-  '/assets/food-truck-2.jpg',
-  '/assets/food-truck-3.jpg',
-  '/assets/food-truck-4.jpg',
-  '/assets/food-truck-4-alt.jpg',
-  '/assets/remolque-multiusos-1.jpg',
-  '/assets/remolque-multiusos-2.jpg',
-  '/assets/cama-baja-3t.jpg',
-  '/assets/cama-baja-6t.jpg'
+  '/assets/images/hero-todos.jpg',
+  '/assets/images/hero-todos-1200.jpg',
+  '/assets/images/hero-todos.webp',
+  '/product/rem-carga-1.html',
+  '/product/rem-carga-plataforma-1.html',
+  '/product/rem-carga-cama-baja-1.html',
+  '/product/foodtruck-1.html',
+  '/product/foodtruck-llave-en-mano-1.html',
+  '/product/rem-especial-1.html',
+  '/product/caja-sec-1.html',
+  '/product/rem-ganaderos-1.html',
+  '/product/rem-oficina-1.html',
+  '/product/rem-atv-1.html',
+  '/product/rem-enclosed-1.html',
+  '/product/rem-refrigerado-1.html'
 ];
 
 self.addEventListener('install', (event) => {
